@@ -193,6 +193,7 @@ end
     [106    40.0   NaN  11.09], 'Kirk1983',     'Falco_tinnunculus' % PMR 321 kJ/d; 20.1 kJ/l O2
     % Piciformes
     [ 25    41.0  1.275  7.94], 'RezeSwan2002', 'Dryobates_pubescens' % 3.06 19.05  ml O2/h.g
+    [ 25.8  41.0   NaN   6.69], 'SwanLikn2006', 'Leuconotopicus_villosus' % PMR 2.24 W; 20.1 kJ/l O2
     % Psittaciformes
     [89.4   40.0   NaN  12.79], 'HindBaud1993', 'Platycercus_elegans' % actually Platycercus_eximius
     [36.0   39.7  1.28   7.91], 'HindBaud1993', 'Melopsittacus_undulatus' % BundHopl1999 give AS 21
@@ -222,8 +223,8 @@ end
     [46.5   41.6   NaN   6.30], 'WierChap2007', 'Myiozetetes_similis' % PMR 2.11 W; 20.1 kJ/l O2 Tyrannidae
     [61.5   41.6   NaN   2.23], 'WierChap2007', 'Mionectes_oleagineus' % PMR 0.75 W; 20.1 kJ/l O2 Tyrannidae
    %[14.5   41.6   NaN   4.18], 'WierChap2007', 'Tolmomyias_assimillis' %x PMR 1.4 W; 20.1 kJ/l O2 Tyrannidae
-   %[14.0   41.6 0.642   3.87], 'RezeSwan2002', 'Contopus_virens' %x  2.75 16.57 ml O2/h.g  Tyrannidae
-   %[14.0   41.5 0.595  3.867], 'DuteSwan1996', 'Contopus_virens' %x  Tyrannidae
+    [14.0   41.6 0.642   3.87], 'RezeSwan2002', 'Contopus_virens' %  2.75 16.57 ml O2/h.g  Tyrannidae
+    [14.0   41.5 0.595  3.867], 'DuteSwan1996', 'Contopus_virens' %  Tyrannidae
     [10.0   41.6   NaN   3.34], 'WierChap2007', 'Myiobius_atricaudus' % PMR 1.12 W; 20.1 kJ/l O2 Onychorhynchidae
     % % Passeri
     [275    41.6 10.67  68.13], 'BernThom1973', 'Corvus_ossifragus' % 0.013 0.083 W/g Corvidae
@@ -1083,6 +1084,16 @@ end
 %   year = {1979},
 %   volume = {11(2)},
 %   pages = {123-126}
+% }
+%
+% @ARTICLE{SwanLikn2006,
+%   doi = {10.1242/jeb.02024}, 
+%   author = {David L. Swanso and Eric T. Liknes},
+%   title = {A comparative analysis of thermogenic capacity and cold tolerance in small birds},
+%   journal = {Journal of Experimental Biology},
+%   year = {2006},
+%   volume = {209(3)},
+%   pages = {466–474}
 % }
 %
 % @ARTICLE{TaylMalo1980,
