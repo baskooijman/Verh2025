@@ -632,12 +632,11 @@ Mamm = [ ... % weight (g), BMR (ml O2/h), revised version
  figure
  plot(Wrange,Jrange_mamm,'k', 'LineWidth',2)
  hold on
- text(1,4,'T = T_{body}')
  plot(log10(data(:,1)),log10(data(:,3)),'o', 'MarkerSize',5, 'LineWidth',2, 'MarkerFaceColor',[1 .5 .5], 'MarkerEdgeColor',[1 .5 .5])
  xlabel('_{10}log body mass, g')
  ylabel('_{10}log BMR, mg O_2/h')
  title(['scaling exponent ',num2str(slope_mamm),' for ', num2str(n_mamm),' mammals of WhitSeym2003']);
- saveas(gcf, 'W_BMR_mamm_WhitSeym2003_Tb.png')
+ saveas(gcf, 'W_BMR_mamm_WhitSeym2003.png')
  
  figure
  data(:,3) = data(:,3)./tempcorr(C2K(data(:,2)),C2K(36.2),8000); Data = log10(data(:,[1 3])); Data = Data(~isnan(Data(:,2)),:);
@@ -649,7 +648,7 @@ Mamm = [ ... % weight (g), BMR (ml O2/h), revised version
  xlabel('_{10}log body mass, g')
  ylabel('_{10}log BMR, mg O_2/h')
  title(['scaling exponent ',num2str(slope_mamm),' for ', num2str(n_mamm),' mammals of WhitSeym2003']);
- saveas(gcf, 'W_BMR_mamm_WhitSeym2003_36C.png')
+ saveas(gcf, 'W_BMR_mamm_WhitSeym2003.png')
  
 % reference
 % @ARTICLE{WhitSeym2003,
