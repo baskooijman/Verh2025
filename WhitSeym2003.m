@@ -1,6 +1,7 @@
 % Supporting information for White and Seymour (2003) Proc. Natl. Acad. Sci. USA, 10.1073/pnas.0436428100
 
-Mamm = [ ... % weight (g), BMR (ml O2/h), revised version
+% revised version by Craig White (the SI for the PNAS paper is wrong; Craig White pers comm 2025/09/03)
+Mamm = [ ... % weight (g), body temp (C), BMR (ml O2/h), 
     {'Antilocapra americana'           }        37800      NaN                   9318             
     {'Connochaetes taurinus'           }    1.965e+05      NaN                  41242             
     {'Ovis canadensis'                 }        69125      NaN                  19120             
@@ -622,8 +623,6 @@ Mamm = [ ... % weight (g), BMR (ml O2/h), revised version
     {'Tachyglossus setosus'            }         3580       30                    548             
   ];
 
-    
-    
   nm = strrep(Mamm(:,1),' ','_'); data = cell2mat(Mamm(:,2:4)); Wrange = [0;7];
  [~,slope_mamm,Jrange_mamm] = get_axis(log10(data(:,[1 3])),Wrange); n_mamm = size(data,1);
 
