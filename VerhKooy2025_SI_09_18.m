@@ -158,7 +158,7 @@ end
     [104 18  0.0014  0.0041], 'Nespoloetal2017', 'Amphiuma_means' % 0.0272;0.0823 W
     [3.47 14  0.00003  0.00011], 'Nespoloetal2017', 'Ensatina_eschscholtzii' % 0.0007;0.0022 W
     [4.69 15  0.00004  0.00017], 'Nespoloetal2017', 'Plethodon_glutinosus' % 0.0008;0.0035 W
-    [0.78 15  0.00001  0.00004], 'Nespoloetal2017', 'Batrachoseps_attenuatus' 0.0002;0.0008 W
+    [0.78 15  0.00001  0.00004], 'Nespoloetal2017', 'Batrachoseps_attenuatus' % 0.0002;0.0008 W
     [1.67 13  0.00001  0.00011], 'Nespoloetal2017', 'Bolitoglossa_subpalmata' % 0.0003;0.0023 W
     [20.05 15  0.00012  0.0004], 'Nespoloetal2017', 'Desmognathus_quadramaculatus' % 0.0016;0.0076 W
     [1.41 15  0.00001  0.00008], 'Nespoloetal2017', 'Eurycea_longicauda' % 0.0003;0.0016 W
