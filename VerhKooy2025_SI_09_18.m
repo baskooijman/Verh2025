@@ -133,37 +133,37 @@ end
 
 % 1 mg O2/h = 0.7 ml O2/h; %x means not in AmP
   amp = { ... % Amphibia, mass(g), temp(C), SMR(ml O2/min), PMR(ml O2/min) 
-    [ 2  13 0.0007  0.0075], 'Fede1986', 'Desmognathus_ochrophaeus' % 0.9 10 mumol/h.g
-    [4.1 13  0.005  0.0376], 'Full1985', 'Plethodon_jordani' % PMR 0.55 ml O2/h.g; FAS 6-9
-  %  [30.7 20  0.0003  0.0022], 'Nespoloetal2017', 'Discoglossus_pictus' % 0.0063;0.0456 W
-    [2.6 20  0.00004  0.0003], 'Nespoloetal2017', 'Bombina_orientalis' % 0.0008;0.0069 W
-  %  [252 22  0.0031  0.0343], 'Nespoloetal2017', 'Rhinella_marina' % 0.0619;0.6893 W
-    [26.1 25  0.0007  0.0093], 'Nespoloetal2017', 'Anaxyrus_boreas' % 0.0147;0.1861 W
-    [8.7 20  0.0001  0.0019], 'Nespoloetal2017', 'Epidalea_calamita' % 0.0028;0.0378 W
-  %  [39.59 25  0.0012  0.0129], 'Nespoloetal2017', 'Anaxyrus_cognatus' % 0.025;0.2586 W
-    %[1.55 20  0.00004  0.0003], 'Nespoloetal2017', 'Colostethus_inguinalis' % 0.0008;0.0063 W
-  %  [2.02 20  0. 00004  0.0005], 'Nespoloetal2017', 'Dendrobates_auratus' % 0.0008;0.0099 W
-   % [0.27 20  0.00001  0.00004], 'Nespoloetal2017', 'Colostethus_nubicola' % 0.0002;0.0008 W
-    %[1.3 19  0.00004  0.0004], 'Nespoloetal2017', 'Pseudacris_crucifer' % 0.0008;0.008 W
-   % [2.76 20  0. 00004  0.0002], 'Nespoloetal2017', 'Pseudacris_regilla' % 0.0009;0.0042 W
-   % [5 20  0.00009  0.0009], 'Nespoloetal2017', 'Osteopilus_septentrionaliss' % 0.0018;0.0182 W
-    %[5.7 20  0. 00009  0.0008], 'Nespoloetal2017', 'Agalychnis_callidryas' % 0.0019;0.0167 W
-    %[15.1 20  0.00013  0.0017], 'Nespoloetal2017', 'Smilisca_fodiens' % 0.0027;0.0335 W
-    [0.9 25  0.00002  0.00018], 'Nespoloetal2017', 'Hyperolius_viridiflavus' % 0.0005;0.0037 W
-    [22.1	18  0.00050  0.0044], 'Nespoloetal2017', 'Xenopus_laevis' % 0.01;0.0891 W
+    [ 2    13   0.0007  0.0075], 'Fede1986', 'Desmognathus_ochrophaeus' % 0.9 10 mumol/h.g
+    [4.1   13   0.005   0.0376], 'Full1985', 'Plethodon_jordani' % PMR 0.55 ml O2/h.g; FAS 6-9
+  % [30.7  20   0.0003  0.0022], 'Nespoloetal2017', 'Discoglossus_pictus' % 0.0063;0.0456 W
+    [2.6   20   0.00004 0.0003], 'Nespoloetal2017', 'Bombina_orientalis' % 0.0008;0.0069 W
+  % [252   22   0.0031  0.0343], 'Nespoloetal2017', 'Rhinella_marina' % 0.0619;0.6893 W
+    [26.1  25   0.0007  0.0093], 'Nespoloetal2017', 'Anaxyrus_boreas' % 0.0147;0.1861 W
+    [8.7   20   0.0001  0.0019], 'Nespoloetal2017', 'Epidalea_calamita' % 0.0028;0.0378 W
+  % [39.6  25   0.0012  0.0129], 'Nespoloetal2017', 'Anaxyrus_cognatus' % 0.025;0.2586 W
+  % [1.55  20   0.00004  0.0003], 'Nespoloetal2017', 'Colostethus_inguinalis' % 0.0008;0.0063 W
+  % [2.02  20   0. 00004  0.0005], 'Nespoloetal2017', 'Dendrobates_auratus' % 0.0008;0.0099 W
+  % [0.27  20   0.00001  0.00004], 'Nespoloetal2017', 'Colostethus_nubicola' % 0.0002;0.0008 W
+  % [1.3   19   0.00004  0.0004], 'Nespoloetal2017', 'Pseudacris_crucifer' % 0.0008;0.008 W
+  % [2.76  20   0. 00004  0.0002], 'Nespoloetal2017', 'Pseudacris_regilla' % 0.0009;0.0042 W
+  % [5     20   0.00009  0.0009], 'Nespoloetal2017', 'Osteopilus_septentrionaliss' % 0.0018;0.0182 W
+  % [5.7   20   0. 00009  0.0008], 'Nespoloetal2017', 'Agalychnis_callidryas' % 0.0019;0.0167 W
+  % [15.1  20   0.00013  0.0017], 'Nespoloetal2017', 'Smilisca_fodiens' % 0.0027;0.0335 W
+    [0.9   25   0.00002  0.00018], 'Nespoloetal2017', 'Hyperolius_viridiflavus' % 0.0005;0.0037 W
+    [22.1  18   0.00050  0.0044], 'Nespoloetal2017', 'Xenopus_laevis' % 0.01;0.0891 W
     [481.15 20  0.00395  0.0955], 'Nespoloetal2017', 'Pyxicephalus_adspersus' % 0.0794;1.9203 W
-  %  [38.4 10  0.00045  0.0016], 'Nespoloetal2017', 'Rana_pipiens' % 0.0090;0.0315 W
-    [43.58 20  0.00046  0.0019], 'Nespoloetal2017', 'Lithobates_catesbeiana' % 0.0092;0.0387 W
-    [2.79 15  0.00003  0.00008], 'Nespoloetal2017', 'Ambystoma_macrodactylum' % 0.0016;0.0113 W
-    [104 18  0.0014  0.0041], 'Nespoloetal2017', 'Amphiuma_means' % 0.0272;0.0823 W
-    [3.47 14  0.00003  0.00011], 'Nespoloetal2017', 'Ensatina_eschscholtzii' % 0.0007;0.0022 W
-    [4.69 15  0.00004  0.00017], 'Nespoloetal2017', 'Plethodon_glutinosus' % 0.0008;0.0035 W
-    [0.78 15  0.00001  0.00004], 'Nespoloetal2017', 'Batrachoseps_attenuatus' % 0.0002;0.0008 W
-    [1.67 13  0.00001  0.00011], 'Nespoloetal2017', 'Bolitoglossa_subpalmata' % 0.0003;0.0023 W
-    [20.05 15  0.00012  0.0004], 'Nespoloetal2017', 'Desmognathus_quadramaculatus' % 0.0016;0.0076 W
-    [1.41 15  0.00001  0.00008], 'Nespoloetal2017', 'Eurycea_longicauda' % 0.0003;0.0016 W
-    [101.9 15  0.00034  0.00088], 'Nespoloetal2017', 'Necturus_maculosus' % 0.0068;0.0176 W
-    [1.48 15  0.00001  0.00006], 'Nespoloetal2017', 'Notophthalmus_viridescens' % 0.0003;0.0012 W
+  %  [38.4 10   0.00045  0.0016], 'Nespoloetal2017', 'Rana_pipiens' % 0.0090;0.0315 W
+    [43.58 20   0.00046  0.0019], 'Nespoloetal2017', 'Lithobates_catesbeianus' % 0.0092;0.0387 W
+    [2.79  15   0.00003  0.00008], 'Nespoloetal2017', 'Ambystoma_macrodactylum' % 0.0016;0.0113 W
+    [104   18   0.0014  0.0041], 'Nespoloetal2017', 'Amphiuma_means' % 0.0272;0.0823 W
+    [3.47  14   0.00003  0.00011], 'Nespoloetal2017', 'Ensatina_eschscholtzii' % 0.0007;0.0022 W
+    [4.69  15   0.00004  0.00017], 'Nespoloetal2017', 'Plethodon_glutinosus' % 0.0008;0.0035 W
+    [0.78  15   0.00001  0.00004], 'Nespoloetal2017', 'Batrachoseps_attenuatus' % 0.0002;0.0008 W
+    [1.67  13   0.00001  0.00011], 'Nespoloetal2017', 'Bolitoglossa_subpalmata' % 0.0003;0.0023 W
+    [20.05 15   0.00012  0.0004], 'Nespoloetal2017', 'Desmognathus_quadramaculatus' % 0.0016;0.0076 W
+    [1.41  15   0.00001  0.00008], 'Nespoloetal2017', 'Eurycea_longicauda' % 0.0003;0.0016 W
+    [101.9 15   0.00034  0.00088], 'Nespoloetal2017', 'Necturus_maculosus' % 0.0068;0.0176 W
+    [1.48  15   0.00001  0.00006], 'Nespoloetal2017', 'Notophthalmus_viridescens' % 0.0003;0.0012 W
   };
 
 
@@ -175,20 +175,20 @@ end
    %[ 931 35   2.1   20.8], 'ChriConl1994', 'Varanus_panoptes' %x
    %[ 904 35   1.2   13.7], 'ChriConl1994', 'Varanus_mertensi' %x
     [ 580 35  0.841 9.783], 'Glee1979',     'Amblyrhynchus_cristatus' % 0.087	1.012 ml O2/h.g
-    [ 4.94  25  0.0054    0.04], 'KamelGatten1983', 'Anniella_pulchra'  % SMR 0.0662 ml/g/h; MMR: 0.4863
-    [4.97 	25   0.0032   0.0473], 'KamelGatten1983', 'Trogonophis_wiegmanni'  % SMR 0.0391 ml/g/h; MMR: 0.5705
-    [32.17 	25   0.0205   0.6796   ], 'KamelGatten1983', 'Ophisaurus_ventralis'  % SMR 0.0382 ml/g/h; MMR: 1.2675
+   %[ 4.94  25  0.0054    0.04], 'KamelGatten1983', 'Anniella_pulchra'  % SMR 0.0662 ml/g/h; MMR: 0.4863
+   %[4.97 	25   0.0032   0.0473], 'KamelGatten1983', 'Trogonophis_wiegmanni'  % SMR 0.0391 ml/g/h; MMR: 0.5705
+   %[32.17 	25   0.0205   0.6796   ], 'KamelGatten1983', 'Ophisaurus_ventralis'  % SMR 0.0382 ml/g/h; MMR: 1.2675
     [19.04 	25   0.0188   0.1477   ], 'KamelGatten1983', 'Thamnophis_butleri'  % SMR 0.0591 ml/g/h; MMR: 0.4653
-   [10.2 	15   0.00306   0.01394   ], 'Withers1981', 'Mabuya_capensis'  % SMR: 0.018; MMR:0.082 ml/g/hr
-   [10.2 	15   0.00306   0.01394   ], 'Withers1981', 'Mabuya_varia'  % SMR: 0.018; MMR:0.082 ml/g/hr
-   [10.2 	15   0.00306   0.01394   ], 'Withers1981', 'Mabuya_sulcata'  % SMR: 0.018; MMR:0.082 ml/g/hr
-   [1.1 	15   0.00088   0.014355   ], 'Withers1981', 'Scelotes_gronovii'  % SMR: 0.048; MMR:0.783 ml/g/hr
-   [7.3 	15   0.00511   0.0623   ], 'Withers1981', 'Acontias_meleagris'  % SMR: 0.042; MMR:0.512 ml/g/hr
-   [1.7 	15   0.00034   0.0055   ], 'Withers1981', 'Typhlacontias_brevipes'  % SMR: 0.012; MMR:0.194 ml/g/hr
-   [505 	35   1.212   9.2583   ], 'Gleeson1981', 'Varanus_salvator'	% all male; SMR: 0.144; MMR: 1.10 ml/g/hr
+   %[10.2 	15   0.00306   0.01394   ], 'Withers1981', 'Mabuya_capensis'  % SMR: 0.018; MMR:0.082 ml/g/hr
+   %[10.2 	15   0.00306   0.01394   ], 'Withers1981', 'Mabuya_varia'  % SMR: 0.018; MMR:0.082 ml/g/hr
+   %[10.2 	15   0.00306   0.01394   ], 'Withers1981', 'Mabuya_sulcata'  % SMR: 0.018; MMR:0.082 ml/g/hr
+   %[1.1 	15   0.00088   0.014355   ], 'Withers1981', 'Scelotes_gronovii'  % SMR: 0.048; MMR:0.783 ml/g/hr
+   %[7.3 	15   0.00511   0.0623   ], 'Withers1981', 'Acontias_meleagris'  % SMR: 0.042; MMR:0.512 ml/g/hr
+   %[1.7 	15   0.00034   0.0055   ], 'Withers1981', 'Typhlacontias_brevipes'  % SMR: 0.012; MMR:0.194 ml/g/hr
+   %[505 	35   1.212   9.2583   ], 'Gleeson1981', 'Varanus_salvator'	% all male; SMR: 0.144; MMR: 1.10 ml/g/hr
    [2885 	35   14.04   31.25   ], 'Gleeson1979', 'Amblyrhynchus_cristatus'	% adults; walking; SMR: 0.292; MMR: 0.65 ml/g/hr
-    [2362 	35   12.991   30.706   ], 'Gleeson1979', 'Conolophus_subcristatus'	% adults; walking: SMR:0.33; MMR: 0.78 ml/g/hr
-    [4731 	35   23.58   53.62   ], 'Gleeson1979', 'Conolophus_subcristatus'	% adults; walking: SMR:0.299; MMR: 0.68 ml/g/hr
+   %[2362 	35   12.991   30.706   ], 'Gleeson1979', 'Conolophus_subcristatus'	% adults; walking: SMR:0.33; MMR: 0.78 ml/g/hr
+   %[4731 	35   23.58   53.62   ], 'Gleeson1979', 'Conolophus_subcristatus'	% adults; walking: SMR:0.299; MMR: 0.68 ml/g/hr
   };
 
   ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min); %x means not in AmP
@@ -449,9 +449,9 @@ end
     [    33  37.0 0.772   3.79], 'Bozi1992',     'Dipodomys_merriami' % 46.3 227.5 ml O2/h
     [    34  37.0 0.627   4.29], 'Bozi1992',     'Dipodomys_merriami' % 37.6 257.5 ml O2/h
     [    45  39.6 0.835   3.34], 'Bozi1992',     'Heteromys_salvini' % 50.1 200.3 ml O2/h
-    [    20  34.7 0.397   2.84], 'Bozi1992',     'Perognathus_fallax' % 23.8 170.2 ml O2/h
-    [    21  34.7 0.463   2.78], 'Bozi1992',     'Perognathus_fallax' % 27.8 166.6 ml O2/h
-    [    18  34.7 0.425   2.56], 'Bozi1992',     'Perognathus_fallax' % 25.5 147.5 ml O2/h
+   %[    20  34.7 0.397   2.84], 'Bozi1992',     'Perognathus_fallax' % 23.8 170.2 ml O2/h
+   %[    21  34.7 0.463   2.78], 'Bozi1992',     'Perognathus_fallax' % 27.8 166.6 ml O2/h
+   %[    18  34.7 0.425   2.56], 'Bozi1992',     'Perognathus_fallax' % 25.5 147.5 ml O2/h
    %[   176  37.6 3.053  12.91], 'Bozi1992',     'Octodon_bridgesi' %x 183.2 774.4 ml O2/h
     [   195  37.6 3.023  17.88], 'Bozi1992',     'Octodon_degus' % 181.4 1072.5 ml O2/h
    %[   173  37.6 2.855  15.28], 'Bozi1992',     'Octodon_lunatus' %x 171.3 916.9 ml O2/h
