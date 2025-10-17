@@ -109,6 +109,10 @@ PMR.method = ['Loco.land','Loco.water','Loco.fly', 'Loco.flyburst', 'DEEModel', 
   % 1 mg O2/h = 0.7 ml O2/h
   cho = { ... % Chondrichthyes, mass(g), temp(C), SMR(ml O2/min), MMR(ml O2/min), PMR.method
     [3400       25      6.3     10.2]   'Loco.water', 'GrahDewa1990', 'Negaprion_brevirostris' % 160 257 mg O2/h.kg
+    [1000       28      2.4     6.25]   'Loco.water', 'BouyWat2020', 'Carcharhinus_melanopterus' % 143.5  375 mg O2/h.kg^-0.87
+    [1380       30      3.56   9.15]   'Loco.water', 'BouyMont2017', 'Negaprion_brevirostris' % 155  398 mg O2/h.kg
+    [1020       30	1.85     6.57]   'ChaseAir', 'BouyOrne2018', 'Carcharhinus_melanopterus' %110  390 mg O2/h.kg
+    [6310       18.2	2.10     20.98]   'Chase', 'PrinBign2023', 'Heterodontus_francisci' % 125.9 1258.92 mg/hr
     [6000       15      7.4     10.8]   'Loco.water', 'GrahDewa1990', 'Triakis_semifasciata' % 105 154 mg O2/h.kg
     [3900       18      13.7    21.2]   'Loco.water', 'GrahDewa1990', 'Isurus_oxyrinchus' % 300 466 mg O2/h.kg
     [2530       18.5    1.47    7.25]   'Loco.water', 'PiipMeye1977', 'Scyliorhinus_stellaris' % 0.026 0.128 mmol/kg.min
@@ -1148,6 +1152,30 @@ end
 %   author = {Bishop, C. M.}
 % }
 % 
+% @article{BouyWat2020,
+%   title = {The power struggle: assessing interacting global change stressors via experimental studies on sharks},
+%   journal = {Scientific Reports},
+%   volume = {10(1)},
+%   year = {2020},
+%   pages = {19887},
+%   author = {Bouyoucos, I. A., Watson, S. A., Planes, S., Simpfendorfer, C. A., Schwieterman, G. D., Whitney, N. M., & Rummer, J. L.}
+% }
+% @article{BouyMont2017,
+%   title = {Swimming speeds and metabolic rates of semi-captive juvenile lemon sharks (Negaprion brevirostris, Poey) estimated with acceleration biologgers},
+%   journal = {Journal of Experimental Marine Biology and Ecology},
+%   volume = {486},
+%   year = {2017},
+%   pages = {245-254},
+%   author = {Bouyoucos, Ian A., Daniel W. Montgomery, Jacob W. Brownscombe, Steven J. Cooke, Cory D. Suski, John W. Mandelman, and Edward J. Brooks}
+% }
+% @article{BouyOrne2018,
+%   title = {Dead tired: evaluating the physiological status and survival of neonatal reef sharks under stress.},
+%   journal = {Conservation Physiology},
+%   volume = {6},
+%   year = {2018},
+%   pages = {coy053},
+%   author = {Bouyoucos, Ian A., Ornella C. Weideli, Serge Planes, Colin A. Simpfendorfer, and Jodie L. Rummer.}
+% }
 % @article{Bozi1992,
 %   title = {Scaling of Basal and Maximum Metabolic Rate in Rodents and the Aerobic Capacity Model for the Evolution of Endothermy},
 %   journal = {Physiological Zoology},
@@ -1444,6 +1472,16 @@ end
 %   volume = {11},
 %   pages = {207-215}
 % }
+%
+% @ARTICLE{PrinBigm2023,
+%   author = {Prinzing, T. S., Bigman, J. S., Skelton, Z. R., Dulvy, N. K., & Wegner, N. C.},
+%   title = {The allometric scaling of oxygen supply and demand in the California horn shark, Heterodontus francisci},
+%   journal = {Journal of Experimental Biology},
+%   year = {2023},
+%   volume = {226(15)},
+%   pages = {jeb246054}
+% }
+%
 %
 % @ARTICLE{RezeSwan2002,
 %   doi = {10.1093/czoolo/56.6.741},
