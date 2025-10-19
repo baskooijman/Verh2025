@@ -103,7 +103,7 @@ end
     {'o', 8, 3, [1 0 0], [1 .5 .5]}, 'Primates'; ....
   };
 
-PMR.method = ['Loco.land','Loco.water','Loco.fly', 'Loco.flyburst', 'DEEModel', 'Turpor.arousal', 'Digest', 'Righting','Cold',‘DietaryEnergy’, ‘WeightLoss’, ‘Loco.waterActive’, ‘Loco.flyActive’, ‘Loco.landActive’, ’DEEModel’,'Check'];
+PMR.method = ['Loco.land','Loco.water','Loco.fly', 'Loco.flyburst', 'Turpor.arousal', 'Digest', 'Righting','Cold','DietaryEnergy', 'WeightLoss', 'Loco.waterActive', 'Loco.flyActive', 'Loco.landActive', 'DEEModel','Check'];
 %For all 'Check' entries, source has not yet been examined 
 
   % 1 mg O2/h = 0.7 ml O2/h
@@ -598,7 +598,8 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
   %prt_tab({[mar(:,[4 3 2]);pla(:,[4 3 2])], [cell2mat(mar(:,1));cell2mat(pla(:,1))]},{'species', 'bibkey', 'PMR.method', 'mass,g', 'temp,C', 'SMR,ml O2/min', 'PMR,ml O2/min'}, 'Mammalia')
   
 
-% Species Validation: filter out species not present in AmP
+% Species and PMR Methods Validation: 
+% filter out species not present in AmP and data collected following some inappropriate PMR methods
 load('allStat.mat'); % or popStat.mat
 speciesList = fieldnames(allStat); % list of valid AmP species
 groupNames = {'act', 'amp', 'ave', 'cho', 'mar', 'pla', 'squ'};
@@ -606,10 +607,22 @@ groupTables = struct();
 groupClean = struct();
 groupDataMatrix = struct();
 
+%Define PMR.methods to omit from analyses
+pmrExclusionList = {
+    'DietaryEnergy', 'Not oxygen consumption';
+    'WeightLoss', 'Not oxygen consumption';
+    'Loco.waterActive', 'Potentially not max';
+    'Loco.flyActive', 'Potentially not max';
+    'Loco.landActive', 'Potentially not max';
+    'DEEModel','Not oxygen consumption';
+};
+
+
 % Initialize log for omitted species
+
 omittedLog = table( ...
-    strings(0,1), strings(0,1), strings(0,1), ...
-    'VariableNames', {'species', 'group', 'reason'});
+    strings(0,1), strings(0,1), strings(0,1), strings(0,1), strings(0,1), ...
+    'VariableNames', {'species', 'group', 'PMR_method', 'AmP_reason', 'PMR_reason'});
 
 for g = 1:length(groupNames)
     groupName = groupNames{g};
@@ -631,10 +644,13 @@ for g = 1:length(groupNames)
         speciesName = strtrim(groupData{i,4}); % remove leading/trailing spaces
         isBinomial = contains(speciesName, '_') && ~contains(speciesName, ' '); % stricter check
         isInAmP = ismember(speciesName, speciesList);
+        pmrMethod = string(groupData{i,2});
+        isPMRExcluded = ismember(pmrMethod, pmrExclusionList(:,1));
+
 
         T.species(i) = string(speciesName);
         T.bibkey(i) = string(groupData{i,3});
-        T.PMR_method(i) = string(groupData{i,2});
+        T.PMR_method(i) = pmrMethod;
         entry = groupData{i,1};
         T.mass_g(i) = entry(1);
         T.temp_C(i) = entry(2);
@@ -643,15 +659,26 @@ for g = 1:length(groupNames)
         T.inAmP(i) = isBinomial && isInAmP;
 
         % Log omitted species
-        if ~isBinomial
-            omittedLog = [omittedLog; {
-                string(speciesName), string(groupName), "Not binomial format"
-            }];
-        elseif ~isInAmP
-            omittedLog = [omittedLog; {
-                string(speciesName), string(groupName), "Not in AmP"
-            }];
-        end
+ampReason = "";
+pmrReason = "";
+
+if ~isBinomial
+    ampReason = "Not binomial format";
+elseif ~isInAmP
+    ampReason = "Not in AmP";
+end
+
+if isPMRExcluded
+    idx = find(strcmp(pmrExclusionList(:,1), pmrMethod));
+    pmrReason = pmrExclusionList{idx,2};
+end
+
+if ~T.inAmP(i) || isPMRExcluded
+    omittedLog = [omittedLog; {
+        string(speciesName), string(groupName), pmrMethod, ampReason, pmrReason
+    }];
+end
+
     end
 
     % Save original (unfiltered) table
@@ -659,8 +686,9 @@ for g = 1:length(groupNames)
     filename_all = fullfile(outputDir, ['species_raw_' groupName '.xlsx']);
     writetable(T_all, filename_all);
 
-    % Filter to valid AmP species
-    T = T(T.inAmP, :);
+% Filter to valid AmP species and PMR methods
+    validEntries = T.inAmP & ~ismember(T.PMR_method, pmrExclusionList(:,1));
+    T = T(validEntries, :);
 
     % Save filtered table
     filename_filtered = fullfile(outputDir, ['species_filtered_' groupName '.xlsx']);
@@ -684,7 +712,9 @@ end
 
 % Save log of omitted species
 logFile = fullfile(outputDir,'omitted_species_log.xlsx');
+omittedLog.Properties.VariableNames = {'Species','Group','PMR_Method','AmP_Reason','PMR_Reason'};
 writetable(omittedLog, logFile);
+
 
 
 %End species validation, resume analyses
