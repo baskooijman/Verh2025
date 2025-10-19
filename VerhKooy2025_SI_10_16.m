@@ -103,7 +103,7 @@ end
     {'o', 8, 3, [1 0 0], [1 .5 .5]}, 'Primates'; ....
   };
 
-PMR.method = ['Loco.land','Loco.water','Loco.fly', 'Loco.flyburst', 'DEEModel', 'Turpor.arousal', 'Digest', 'Righting','Cold','Indirect','Check'];
+PMR.method = ['Loco.land','Loco.water','Loco.fly', 'Loco.flyburst', 'DEEModel', 'Turpor.arousal', 'Digest', 'Righting','Cold',‘DietaryEnergy’, ‘WeightLoss’, ‘Loco.waterActive’, ‘Loco.flyActive’, ‘Loco.landActive’, ’DEEModel’,'Check'];
 %For all 'Check' entries, source has not yet been examined 
 
   % 1 mg O2/h = 0.7 ml O2/h
@@ -300,19 +300,19 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [  489  40.7  11.00 34.66]  'Loco.land', 'FedaPins1974', 'Alectoris_graeca' % 1.35 4.253 ml O2/h.g 
     [  194  38.9   4.33 11.97]  'Loco.land', 'FedaPins1974', 'Colinus_virginianus' % 1.34 3.703 ml O2/h.g 
     % Anseriformes
-    [275    4.12   NaN  23.22]  'Indirect', 'Kirk1983',     'Dendrocygna_autumnalis' % PMR 672 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
+    [275    4.12   NaN  23.22]  'DietaryEnergy', 'Kirk1983',     'Dendrocygna_autumnalis' % PMR 672 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
    [944.1 39.7 12.23  61.51]  'Cold', 'HindBaud1993', 'Anas_castanea' %x
-    [190    41.2   NaN  21.39]  'Indirect', 'Kirk1983',     'Aythya_affinis' % PMR 619 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
+    [190    41.2   NaN  21.39]  'DietaryEnergy', 'Kirk1983',     'Aythya_affinis' % PMR 619 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
     [3813   41.2 40.03 197.51]  'Loco.land', 'FedaPins1974', 'Anser_anser' % 0.63 3.108 ml O2/h.g
     % Columbiformes
    [ 302.0 41.7  4.34  28.24]  'Cold', 'HindBaud1993', 'Columba_livia' 
-   [ 419   41.7  7.08  162.8]  'Indirect', 'Pear1964',     'Columba_livia' % PMR 112 kcal/h.kg (4.184 J/cal; 20.1 kJ/l O2); FAS 23; omit metabolism based on weight loss not oxygen consumption
+   [ 419   41.7  7.08  162.8]  'WeightLoss', 'Pear1964',     'Columba_livia' % PMR 112 kcal/h.kg (4.184 J/cal; 20.1 kJ/l O2); FAS 23; omit metabolism based on weight loss not oxygen consumption
     [40.5   42.1   NaN   8.54] 'Loco.fly', 'WierChap2007', 'Columbina_talpacoti' % PMR 2.86 W; 20.1 kJ/l O2
     [39.2   42.1   NaN   5.82] 'Cold', 'WierChap2007', 'Columbina_talpacoti' % PMR 1.95 W; 20.1 kJ/l O2
     % Gruiformes
     [ 850.3 37.4  9.19  52.08]  'Cold', 'HindBaud1993', 'Porphyrio_martinica' 
     % Apodiformes
-    [ 5.7   40.7  NaN   5] 'Loco.fly', 'BergHart1972', 'Chionomesa_fimbriata' % PMR 43 ml/h.g, omit BMR not measured; values and FAS of 14 reported are based on Lasi's BMR values for other species and MMR may not be max
+    [ 5.7   40.7  NaN   5] 'Loco.flyActive', 'BergHart1972', 'Chionomesa_fimbriata' % PMR 43 ml/h.g, omit BMR not measured; values and FAS of 14 reported are based on Lasi's BMR values for other species and MMR may not be max
     [ 3.3   34    0.198 1.815] 'Loco.fly', 'Lasi1963',     'Archilochus_alexandri' % PMR 33 ml/h.g SMR 3.6 ml/h.g
     [ 4.1   39    0.232 9.157] 'Loco.fly', 'Lasi1963',     'Selasphorus_rufus' % PMR 124 ml/h.g SMR 3.4 ml/h.g
     [ 3.2   36.2  0.192 7.147] 'Loco.fly', 'Lasi1963',     'Selasphorus_sasin' % PMR 134 ml/h.g SMR 3.6 ml/h.g
@@ -328,7 +328,7 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [45000  36.0 301.5   2340] 'Loco.land', 'KooyPong1994', 'Aptenodytes_forsteri' % 6.7, 52 ml O2/min.kg
     [6210   38.2  63.2 345] 'Loco.land', 'BevaWoak1995', 'Pygoscelis_papua' %  9.54, 35.34 ml O2/min.kg
     % Suliformes
-  [1300   40.6   NaN  64.95]  'Indirect', 'Kirk1983',     'Phalacrocorax_pelagicus' % PMR 1880 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
+  [1300   40.6   NaN  64.95]  'DietaryEnergy', 'Kirk1983',     'Phalacrocorax_pelagicus' % PMR 1880 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
     % Charadriiformes
     [277    40.9  8.13  45.97] 'Loco.fly', 'BernThom1973', 'Leucophaeus_atricilla' % 0.0099 0.056 W/g
    [63.4   41.0 1.409 16.906] 'Indirect', 'Putt1980',     'Calidris_ferruginea' % 1699 kJ/h; FAS 12; 20.1 kJ/l O2; discard for now metabolism based on activity and feeding observations not O2 concumption
@@ -349,7 +349,7 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     % Strigiformes
     [ 76    41.0  1.86   8.85] 'Cold', 'RezeSwan2002', 'Glaucidium_nana' % 1.47 6.67 ml O2/h.g; (weight 98 g is given, but 76 g is max)
     % Falconiformes
-   [106    40.0   NaN  11.09]  'Indirect', 'Kirk1983',     'Falco_tinnunculus' % PMR 321 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
+   [106    40.0   NaN  11.09]  'DietaryEnergy', 'Kirk1983',     'Falco_tinnunculus' % PMR 321 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
     % Piciformes
     [ 25    41.0  1.275  7.94] 'Cold', 'RezeSwan2002', 'Dryobates_pubescens' % 3.06 19.05  ml O2/h.g
     [ 25.8  41.0   NaN   6.69] 'Cold', 'SwanLikn2006', 'Leuconotopicus_villosus' % PMR 2.24 W; 20.1 kJ/l O2
@@ -389,7 +389,7 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [12   41.6   NaN   3.34] 'Loco.fly', 'WierChap2007', 'Myiobius_atricaudus' % PMR 1.12 W; 20.1 kJ/l O2 Onychorhynchidae
     % % Passeri
     [275    41.6 10.67  68.13] 'Loco.fly', 'BernThom1973', 'Corvus_ossifragus' % 0.013 0.083 W/g Corvidae
-  [18.2   41.6   NaN   3.26]  'Indirect', 'Kirk1983',     'Delichon_urbicum' % PMR 94.5 kJ/d; 20.1 kJ/l O2 Hirundinidae omit MMR quantified as dietary energy intake
+  [18.2   41.6   NaN   3.26]  'DietaryEnergy', 'Kirk1983',     'Delichon_urbicum' % PMR 94.5 kJ/d; 20.1 kJ/l O2 Hirundinidae omit MMR quantified as dietary energy intake
    [61.5   41.6   NaN  14.66] 'Loco.fly', 'WierChap2007', 'Mimus_gilvus' %x PMR 4.91 W; 20.1 kJ/l O2 Mimidae
    [59.9   41.6   NaN  10.8] 'Cold', 'WierChap2007', 'Mimus_gilvus' %x PMR 3.63 W; 20.1 kJ/l O2 Mimidae
     [34.0   41.6 1.552  8.149] 'Cold', 'RezeSwan2002', 'Dumetella_carolinensis' % 2.74 14.38 cm^3 O2/h.g Mimidae
@@ -429,7 +429,7 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [27.2   41.6 1.314 10.605] 'Cold', 'DuteSwan1996', 'Passer_domesticus'  %  Passeridae 
    [13.2   41.6   NaN   3.88] 'Loco.fly', 'WierChap2007', 'Euphonia_laniirostris' %x PMR 1.3 W; 20.1 kJ/l O2 Fringillidae
    [13.2   41.6   NaN   3.13] 'Cold', 'WierChap2007', 'Euphonia_laniirostris' %x PMR 1.05 W; 20.1 kJ/l O2 Fringillidae
-   [30.0   41.6   NaN   3.80]  'Indirect',     'Kirk1983',     'Fringilla_coelebs' % PMR 110 kJ/d; 20.1 kJ/l O2 Fringillidae omit MMR quantified as dietary energy intake
+   [30.0   41.6   NaN   3.80]  'DietaryEnergy',     'Kirk1983',     'Fringilla_coelebs' % PMR 110 kJ/d; 20.1 kJ/l O2 Fringillidae omit MMR quantified as dietary energy intake
     [20.8   41.6 0.971  2.392] 'Cold', 'DawsButt1985', 'Haemorhous_mexicanus' % 2.8 6.9 cm^3 O2/h.g Fringillidae % cold stress down to 0C; at lower temp MR might be higher 
     [14.0   41.6 0.863  5.088] 'Cold', 'RezeSwan2002', 'Acanthis_flammea' %  3.70 21.80  cm^3 O2/h.g Fringillidae
     [13.0   41.6 0.867  4.314] 'Cold', 'RezeSwan2002', 'Spinus_tristis' % 4.0 19.91 cm^3 O2/h.g Fringillidae
@@ -452,8 +452,8 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [34.0   41.6  NaN   9.100] 'Cold', 'RezeSwan2002', 'Diuca_diuca' % 16.06 cm^3 O2/h.g Thraupidae
    [41.2   41.6   NaN   9.91] 'Loco.fly', 'WierChap2007', 'Arremonops_conirostris' %x PMR 3.32 W; 20.1 kJ/l O2 Passerellidae
    [40.0   41.6   NaN   7.07] 'Cold', 'WierChap2007', 'Arremonops_conirostris' %x PMR 2.37 W; 20.1 kJ/l O2 Passerellidae
-   [32.4   41.6   NaN   4.46] 'Indirect',         'Kirk1983',     'Zonotrichia_leucophrys' % PMR 129 kJ/d; 20.1 kJ/l O2 Passerellidae omit MMR quantified as dietary energy intake
-   [28.0   41.6   NaN   4.91]  'Indirect',         'Kirk1983',     'Zonotrichia_albicollis' % PMR 142 kJ/d; 20.1 kJ/l O2 Passerellidae omit MMR quantified as dietary energy intake
+   [32.4   41.6   NaN   4.46] 'DietaryEnergy',         'Kirk1983',     'Zonotrichia_leucophrys' % PMR 129 kJ/d; 20.1 kJ/l O2 Passerellidae omit MMR quantified as dietary energy intake
+   [28.0   41.6   NaN   4.91]  'DietaryEnergy',         'Kirk1983',     'Zonotrichia_albicollis' % PMR 142 kJ/d; 20.1 kJ/l O2 Passerellidae omit MMR quantified as dietary energy intake
     [20.0   41.6 1.037  5.433] 'Cold', 'RezeSwan2002', 'Zonotrichia_capensis' % 3.11 16.30 ml O2/h.g Passerellidae
     [12.8   41.6 0.722  4.539] 'Cold', 'DuteSwan1996', 'Spizella_pusilla' % Passerellidae
     [18.6   41.6 1.209  7.478] 'Cold', 'DuteSwan1996', 'Spizelloides_arborea' % Passerellidae
@@ -497,7 +497,7 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [ 1027.8 35.8  8.72  65.90] 'Cold', 'HindBaud1993', 'Potorous_tridactylus'
     [ 928 37.8  8.78  122.4] 'Loco.land', 'HindBaud1993', 'Potorous_tridactylus'
     [ 2026.5 35.8 13.85  74.65] 'Cold', 'HindBaud1993', 'Trichosurus_vulpecula'
-    [   34   30   21.42  70.04]  'Loco.land', 'WithThom2000', 'Notoryctes_caurinus' % 0.63 2.06 mL O2/h.g Omit COT not actually PMR
+    [   34   30   21.42  70.04]  'Loco.landActive', 'WithThom2000', 'Notoryctes_caurinus' % 0.63 2.06 mL O2/h.g Omit COT not actually PMR
   };
 
   %prt_tab({mar(:,[4 3 2]), cell2mat(mar(:,1))},{'species', 'bibkey', 'PMR.method','mass,g', 'temp,C', 'SMR,ml O2/min', 'PMR,ml O2/min'}, 'Marsupialia & Prototheria')
@@ -512,16 +512,16 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
    [  583   39.8   NaN   74.4] 'Loco.land', 'TaylMalo1980', 'Helogale_parvula' %x 1.24 ml O2/s
    [ 1151   39.8   NaN  139.8] 'Loco.land', 'TaylMalo1980', 'Mungos_mungo' %x 2.33 ml O2/s
    [ 1458   36.7   NaN  154.8] 'Loco.land', 'TaylMalo1980', 'Genetta_tigrina' %x 2.58 ml O2/s
-    [ 41000  39.0 311.2  14700] 'Indirect', 'ScanMill2014', 'Acinonyx_jubatus' % FMR=DEE 9006 kJ/d PMR 120 W/kg; 20.1 kJ/l O2 omit data based on DEE model
-   [ 25000  38.0 117.5   2900] 'Indirect', 'GormMill1998', 'Canis_familiaris' % BMR 3.4 MJ/d canid AS 25; 20.1 kJ/l O2 omit data based on DEE model
-  [450000  36.8   NaN   5782] 'Indirect', 'Kirk1983',     'Ursus_maritimus' % PMR 167360 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
-   [    86  39.6   NaN   7.34] 'Indirect', 'Kirk1983',     'Mustela_nivalis' % PMR 224 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
+    [ 41000  39.0 311.2  14700] 'DEEModel', 'ScanMill2014', 'Acinonyx_jubatus' % FMR=DEE 9006 kJ/d PMR 120 W/kg; 20.1 kJ/l O2 omit data based on DEE model
+   [ 25000  38.0 117.5   2900] 'DEEModel', 'GormMill1998', 'Canis_familiaris' % BMR 3.4 MJ/d canid AS 25; 20.1 kJ/l O2 omit data based on DEE model
+  [450000  36.8   NaN   5782] 'DietaryEnergy', 'Kirk1983',     'Ursus_maritimus' % PMR 167360 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
+   [    86  39.6   NaN   7.34] 'DietaryEnergy', 'Kirk1983',     'Mustela_nivalis' % PMR 224 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
     [   63e3 37   289.8    945] 'Loco.water', 'DaviWill1985', 'Phoca_vitulina' % 4.6 15 ml O2/min.kg   
    % Perissodactyla
     [500000  38.0  1600  88000] 'Loco.land', 'Hodg2025',     'Equus_ferus_caballus' % BMR 2.2-4.2 mL O2/kg/min; FAS 50-60
-   [635000  38.0   NaN   4957] 'Indirect', 'Kirk1983',     'Equus_ferus_caballus' % PMR 143470 kJ/d; 20.1 kJ/l O2. Reliable? PMR is less than for a cow omit MMR quantified as dietary energy intake
+   [635000  38.0   NaN   4957] 'DietaryEnergy', 'Kirk1983',     'Equus_ferus_caballus' % PMR 143470 kJ/d; 20.1 kJ/l O2. Reliable? PMR is less than for a cow omit MMR quantified as dietary energy intake
    % Cetartiodactyla
-   [205000  39.0   NaN   2371] 'Indirect', 'Kirk1983',     'Sus_domesticus' % PMR 68620 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
+   [205000  39.0   NaN   2371] 'DietaryEnergy', 'Kirk1983',     'Sus_domesticus' % PMR 68620 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
    [ 3500   36.7   NaN  355.2] 'Loco.land', 'TaylMalo1980', 'Nesotragus_moschatus' %x 5.92 ml O2/s
     [ 4354   39.4   NaN  237.0] 'Loco.land', 'TaylMalo1980', 'Madoqua_kirkii' % 3.95 ml O2/s
    [11200   38.9   NaN  600.0] 'Loco.land', 'TaylMalo1980', 'Gazella_granti' %x 10.0 ml O2/s
@@ -533,7 +533,7 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [ 22650  38.8   NaN  1050 ] 'Loco.land', 'TaylMalo1980', 'Ovis_aries' % 17.5 ml O2/s
    [550000  38.6   NaN   6082] 'Indirect', 'Kirk1983',     'Bos_primigenius_Holstein' % PMR 176040 kJ/d; 20.1 kJ/l O2 (milk production) omit MMR quantified as dietary energy intake
     [  817e3 35.5  3315  10897] 'Loco.water', 'JohnChri2024', 'Delphinapterus_leucas' % 4.058 13.338 ml O2/min.kg
- [5.318e6 36.0  6633  39635] 'Loco.water', 'WortWort2013', 'Orcinus_orca' % 8.0 47.8 MJ/h; 20.1 kJ/l O2 Omit PMR is estimates based on activity observations
+ [5.318e6 36.0  6633  39635] 'Loco.waterActive', 'WortWort2013', 'Orcinus_orca' % 8.0 47.8 MJ/h; 20.1 kJ/l O2 Omit PMR is estimates based on activity observations
    % Rodentia
    [   255  39.0 2.928  29.88] 'Cold', 'Bozi1992',     'Microcavia_niata' %x 175.7 1792.7 ml O2/h
    [    35  39.6 1.030   5.35] 'Cold', 'Bozi1992',     'Abrothrix_andinus' %x 61.8 321.1 ml O2/h
