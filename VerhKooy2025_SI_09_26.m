@@ -20,9 +20,9 @@ function VerhKooy2025_SI(fig)
 % Load this script-file in the Matlab Editor
 % To run the code for a figure: type in the Matlab window e.g. VerhKooy2025_SI(1)
 %
-AmPdataPath='/Users/x13j698/Library/CloudStorage/OneDrive-MontanaStateUniversity/MSU/MATLAB/Supply-Demand'
-AmPtoolPath='/Users/x13j698/Documents/GitHub/AmPtool';
-DEBtool_MPath='/Users/x13j698/Documents/GitHub/DEBtool_M';
+AmPdataPath = '/Users/x13j698/Library/CloudStorage/OneDrive-MontanaStateUniversity/MSU/MATLAB/Supply-Demand';
+AmPtoolPath = '/Users/x13j698/Documents/GitHub/AmPtool';
+DEBtool_MPath = '/Users/x13j698/Documents/GitHub/DEBtool_M';
 % Add three directories (and their subfolders) to the MATLAB path
 addpath(genpath(AmPdataPath));
 addpath(genpath(AmPtoolPath));
@@ -84,7 +84,7 @@ end
     {'o', 8, 3, [1 0 0], [1 .5 .5]}, 'Primates'; ....
   };
 
-PMRmethod = ['Loco.land';'Loco.water'; 'Digest'; 'Righting';'Growth';'Cold';'Fattening';'Activity';Check';]
+PMRmethod = {'Loco.land';'Loco.water'; 'Digest'; 'Righting';'Growth';'Cold';'Fattening';'Activity';'Check'};
 %for all 'Activity' entries - need to go back to the original source to
 %see if more details provided; 
 %For all 'Check' entries, source has not yet been examined 
