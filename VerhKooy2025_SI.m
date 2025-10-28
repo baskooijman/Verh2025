@@ -1250,6 +1250,15 @@ end
 %   author = {Todd T. Gleeson}
 % }
 %
+% @article{Gleeson1981,
+%   title = {Preferred Body Temperature, Aerobic Scope, and Activity Capacity in the Monitor Lizard, Varanus salvator},
+%   journal = {Physiological Zoology},
+%   volume = {54},
+%   year = {1981},
+%   pages = {423-429},
+%   author = {Todd T. Gleeson}
+% }
+%
 % @article{GormMill1998,
 %   title = {High hunting costs make African wild dogs vulnerable to kleptoparasitism by hyaenas},
 %   journal = {Nature},
@@ -1303,6 +1312,15 @@ end
 %   year = {2024},
 %   pages = {1-12},
 %   author = {Jason S. John and Dennis R. Christen and Katherine L. Flammer and Traci L. Kendall and Emily C. Nazario and Beau P. Richter and Verena Gill and Terrie M. Williams}
+% }
+% 
+% @article{KamelGatten1983,
+%   title = {Aerobic and Anaerobic Activity Metabolism of Limbless and Fossorial Reptiles},
+%   journal = {Physiological Zoology},
+%   volume = {56},
+%   year = {1983},
+%   pages = {416-429},
+%   author = {S. Kamel, R.E. Gatten}
 % }
 % 
 % @article{Kirk1983,
@@ -1368,6 +1386,15 @@ end
 %   pages = {67-73}
 % }
 %
+% @ARTICLE{Nespoloetal2017,
+%   author = {R.F. Nespolo, J.J. Solano-Iguaran, F. Bozinovic},
+%   title = {Phylogenetic Analysis Supports the Aerobic-Capacity Model for the Evolution of Endothermy},
+%   journal = {Am. Nat.},
+%   year = {2017},
+%   volume = {189},
+%   pages = {13-27}
+% }
+%
 % @ARTICLE{OchoTayl2005,
 %   author = {Dorota Ochoci\'{n}ska and Jan R. E. Taylor},
 %   title = {Living at the Physiological Limits: Field and Maximum Metabolic Rates of the Common Shrew (Sorex araneus)},
@@ -1413,6 +1440,16 @@ end
 %   year = {2002},
 %   volume = {205},
 %   pages = {101–107}
+% }
+%
+% @ARTICLE{Sandblometal2016,
+%   doi = { 10.1038/ncomms11447 | www.nature.com/naturecommunications},
+%   author = {E. Sandblom, T.D. Clark, A. Gräns, A. Ekström, J. Brijs, L.F. Sundström, A. Odelström, A. Adill, T. Aho, F. Jutfelt},
+%   title = {Physiological constraints to climate warming in fish follow principles of plastic floors and concrete ceilings},
+%   journal = {Nature Communications},
+%   year = {2016},
+%   volume = {7},
+%   pages = {11447}
 % }
 %
 % @ARTICLE{ScanMill2014,
@@ -1471,6 +1508,16 @@ end
 %   pages = {e02062}
 % }
 %
+% @ARTICLE{Verhilleetal2016,
+%   doi = {10.1093/conphys/cow057},
+%   author = {C.E. Verhille, K.K. English, D.E. Cocherell, A.P. Farrell, N.A. Fangue},
+%   title = {High thermal tolerance of a rainbow trout population near its southern range limit suggests local thermal adjustment},
+%   journal = {Conserv. Physiol.},
+%   year = {2016},
+%   volume = {4}, 
+%   pages = {cow057}
+% }
+%
 % @ARTICLE{VeziGers2017,
 %   doi = {10.1152/ajpregu.00453.2016},
 %   author = {Fran\c{c}ois V\'{e}zina and Alexander R. Gerson and Christopher G. Guglielmo and Theunis Piersma},
@@ -1507,7 +1554,16 @@ end
 %   author = {Willmer, P. W. and Stone, G. and Johnston, I.}
 % }
 %
-% @ARTICLE{WortWort2013,
+% @ARTICLE{Withers1981,
+%   doi = {10.2307/1444055}, 
+%   author = {P.C. Withers},
+%   title = {Physiological Correlates of Limblessness and Fossoriality in Scincid Lizards},
+%   journal = {Copeia},
+%   volume = {1981},
+%   year = {1981},
+%   pages = {197-204}
+% }
+%% @ARTICLE{WortWort2013,
 %   doi = {10.1111/mms.12091}, 
 %   author = {Graham A. J. Worthy and Tamara A. M. Worthy and Pamela K. Yochem},
 %   title = {Basal metabolism of an adult male killer whale (Orcinus orca)},
