@@ -110,14 +110,14 @@ PMR.method = ['Loco.land','Loco.water','Loco.fly', 'Loco.flyburst', 'Turpor.arou
   cho = { ... % Chondrichthyes, mass(g), temp(C), SMR(ml O2/min), MMR(ml O2/min), PMR.method
     [3400       25      6.3     10.2]   'Loco.water', 'GrahDewa1990', 'Negaprion_brevirostris' % 160 257 mg O2/h.kg
     [1000       28      2.4     6.25]   'Loco.water', 'BouyWat2020', 'Carcharhinus_melanopterus' % 143.5  375 mg O2/h.kg^-0.87
-    [1380       30      3.56   9.15]   'Loco.water', 'BouyMont2017', 'Negaprion_brevirostris' % 155  398 mg O2/h.kg
-    [1020       30	1.85     6.57]   'ChaseAir', 'BouyOrne2018', 'Carcharhinus_melanopterus' %110  390 mg O2/h.kg
-    [6310       18.2	2.10     20.98]   'Chase', 'PrinBign2023', 'Heterodontus_francisci' % 125.9 1258.92 mg/hr
-    [6000       15      7.4     10.8]   'Loco.water', 'GrahDewa1990', 'Triakis_semifasciata' % 105 154 mg O2/h.kg
-    [3900       18      13.7    21.2]   'Loco.water', 'GrahDewa1990', 'Isurus_oxyrinchus' % 300 466 mg O2/h.kg
+    [1380       30      3.56    9.15]   'Loco.water', 'BouyMont2017', 'Negaprion_brevirostris' % 155  398 mg O2/h.kg
+    [1020       30	    1.85    6.57]   'ChaseAir', 'BouyOrne2018', 'Carcharhinus_melanopterus' %110  390 mg O2/h.kg
+    [6310       18.2	2.10   20.98]   'Chase', 'PrinBign2023', 'Heterodontus_francisci' % 125.9 1258.92 mg/hr
+    [6000       15      7.4    10.8]   'Loco.water', 'GrahDewa1990', 'Triakis_semifasciata' % 105 154 mg O2/h.kg
+    [3900       18      13.7   21.2]   'Loco.water', 'GrahDewa1990', 'Isurus_oxyrinchus' % 300 466 mg O2/h.kg
     [2530       18.5    1.47    7.25]   'Loco.water', 'PiipMeye1977', 'Scyliorhinus_stellaris' % 0.026 0.128 mmol/kg.min
-    [10,700     20	    3.632	15.5]  'Loco.water', 'Nespoloetal2017', 'Dasyatis_violacea' 
-    [2000	    10	      0.54	1.4731]     'Loco.water', 'Nespoloetal2017', 'Squalus_acanthias' 
+    [10700     20	    3.632  15.5]  'Loco.water', 'Nespoloetal2017', 'Pteroplatytrygon_violacea' 
+    [2000	   10	    0.54	1.4731]     'Loco.water', 'Nespoloetal2017', 'Squalus_acanthias' 
   };
 %prt_tab({cho(:,[4 3 2]), cell2mat(cho(:,1))},{'species', 'bibkey', 'PMR.method','mass,g', 'temp,C', 'SMR,ml O2/min', 'MMR,ml O2/min'}, 'Chondrich')
 
@@ -684,7 +684,7 @@ end
     % Save original (unfiltered) table
     T_all = T;  % copy before filtering
     filename_all = fullfile(outputDir, ['species_raw_' groupName '.xlsx']);
-    writetable(T_all, filename_all);
+    %writetable(T_all, filename_all);
 
 % Filter to valid AmP species and PMR methods
     validEntries = T.inAmP & ~ismember(T.PMR_method, pmrExclusionList(:,1));
@@ -692,7 +692,7 @@ end
 
     % Save filtered table
     filename_filtered = fullfile(outputDir, ['species_filtered_' groupName '.xlsx']);
-    writetable(T, filename_filtered);
+    %writetable(T, filename_filtered);
 
     % Convert to cell array
     filteredGroup = cell(size(T,1), 4);
@@ -908,46 +908,46 @@ for c=1:length(fig)
       %prt_tab({entries_txt, data},{'species', 's_s, -', 'PMR/FMR, -'}, 'PMR/FMR')
    
     %CEV skip case 4 problem in function shstat—the taxa that do not have data (I think).  
-    % case 4 % kap_ss_kapRA: kapRA = pRi/ pAi
-    % 
-    %   shstat_options('default');
-    %   shstat_options('x_transform', 'none');
-    %   shstat_options('y_transform', 'none');
-    %   shstat_options('z_transform', 'none');
-    %   kapRA = get_kapRA(read_allStat({'p_Am','p_M','k_J','E_Hp','s_M','kap','L_i'})); 
-    %   kap_ss_kapRA = [read_allStat({'kap','s_s'}),kapRA(:,1)];
-    % 
-    %   [Hfig_vert, Hleg_vert] = shstat(kap_ss_kapRA, legend_custom, ['vertebrates @ ',datestr(datenum(date),'yyyy/mm/dd')]); % set title, output handle for adding items   
-    %   figure(Hfig_vert) % add items to figure
-    %   xlabel('\kappa, -'); ylabel('s_s, -'); zlabel('\kappa_R^A, -');
-    %   kap = linspace(.005,1,50)'; ss = linspace(1e-8, 4/27, 50); kapRA = 1 - kap*ones(1,50) - kap.^-2*ss; % set x,y,z values
-    %   mesh(kap,ss,kapRA'); % add surface to figure
-    %   kap_xy = linspace(0,1,100)'; ss_xy= kap_xy.^2.*(1-kap_xy); plot3(kap_xy,ss_xy,0*kap_xy); % curve in kapRA=0 plane
-    %   xlim([0 1]); ylim([0 4/27]); zlim([0 1]);
-    %   % define colormap for mesh: k->b->m->r->white
-    %   Colmap = [0 0 0; 0 0 .5; 0 0 1; .5 0 1; 1 0 1; 1 0 .5; 1 0 0; 1 .25 .25; 1 .5 .5; 1 .75 .75];
-    %   colormap(Hfig_vert, Colmap) % set color map to add_my_pet colors 
-    %   caxis([0 1]) % range for colormap
-    %   view(150,18)
-    %   saveas(gcf,fullfile(outputDir,'kap_ss_kapRA_vert.fig'))
-    %   saveas(gcf,fullfile(outputDir,'kap_ss_kapRA_vert.png'))
-    %   saveas(Hleg_vert,fullfile(outputDir,'legend_vert.png'))
-    %     
-    %   [Hfig_invert, Hleg_invert] = shstat(kap_ss_kapRA, legend_invert, ['invertebrates @ ',datestr(datenum(date),'yyyy/mm/dd')]); % set title, output handle for adding items   
-    %   figure(Hfig_invert) % add items to figure
-    %   xlabel('\kappa, -'); ylabel('s_s, -'); zlabel('\kappa_R^A, -');
-    %   %kap = linspace(.005,1,50)'; ss = linspace(1e-8, 4/27, 50); kapRA = 1 - kap*ones(1,50) - kap.^-2*ss; % set x,y,z values
-    %   mesh(kap,ss,kapRA'); % add surface to figure
-    %   plot3(kap_xy,ss_xy,0*kap_xy); % curve in kapRA=0 plane
-    %   xlim([0 1]); ylim([0 4/27]); zlim([0 1]);
-    %   % define colormap for mesh: k->b->m->r->white
-    %   % Colmap = [0 0 0; 0 0 .5; 0 0 1; .5 0 1; 1 0 1; 1 0 .5; 1 0 0; 1 .25 .25; 1 .5 .5; 1 .75 .75];
-    %   colormap(Hfig_invert, Colmap) % set color map to add_my_pet colors 
-    %   caxis([0 1]) % range for colormap
-    %   view(150,18)
-    %   saveas(gcf,fullfile(outputDir,'kap_ss_kapRA_invert.fig'))
-    %   saveas(gcf,fullfile(outputDir,'kap_ss_kapRA_invert.png'))
-    %   saveas(Hleg_invert,fullfile(outputDir,'legend_invert.png'))
+    case 4 % kap_ss_kapRA: kapRA = pRi/ pAi
+    
+      shstat_options('default');
+      shstat_options('x_transform', 'none');
+      shstat_options('y_transform', 'none');
+      shstat_options('z_transform', 'none');
+      kapRA = get_kapRA(read_allStat({'p_Am','p_M','k_J','E_Hp','s_M','kap','L_i'})); 
+      kap_ss_kapRA = [read_allStat({'kap','s_s'}),kapRA(:,1)];
+    
+      [Hfig_vert, Hleg_vert] = shstat(kap_ss_kapRA, legend_custom, ['vertebrates @ ',datestr(datenum(date),'yyyy/mm/dd')]); % set title, output handle for adding items   
+      figure(Hfig_vert) % add items to figure
+      xlabel('\kappa, -'); ylabel('s_s, -'); zlabel('\kappa_R^A, -');
+      kap = linspace(.005,1,50)'; ss = linspace(1e-8, 4/27, 50); kapRA = 1 - kap*ones(1,50) - kap.^-2*ss; % set x,y,z values
+      mesh(kap,ss,kapRA'); % add surface to figure
+      kap_xy = linspace(0,1,100)'; ss_xy= kap_xy.^2.*(1-kap_xy); plot3(kap_xy,ss_xy,0*kap_xy); % curve in kapRA=0 plane
+      xlim([0 1]); ylim([0 4/27]); zlim([0 1]);
+      % define colormap for mesh: k->b->m->r->white
+      Colmap = [0 0 0; 0 0 .5; 0 0 1; .5 0 1; 1 0 1; 1 0 .5; 1 0 0; 1 .25 .25; 1 .5 .5; 1 .75 .75];
+      colormap(Hfig_vert, Colmap) % set color map to add_my_pet colors 
+      caxis([0 1]) % range for colormap
+      view(150,18)
+      saveas(gcf,fullfile(outputDir,'kap_ss_kapRA_vert.fig'))
+      saveas(gcf,fullfile(outputDir,'kap_ss_kapRA_vert.png'))
+      saveas(Hleg_vert,fullfile(outputDir,'legend_vert.png'))
+        
+      [Hfig_invert, Hleg_invert] = shstat(kap_ss_kapRA, legend_invert, ['invertebrates @ ',datestr(datenum(date),'yyyy/mm/dd')]); % set title, output handle for adding items   
+      figure(Hfig_invert) % add items to figure
+      xlabel('\kappa, -'); ylabel('s_s, -'); zlabel('\kappa_R^A, -');
+      %kap = linspace(.005,1,50)'; ss = linspace(1e-8, 4/27, 50); kapRA = 1 - kap*ones(1,50) - kap.^-2*ss; % set x,y,z values
+      mesh(kap,ss,kapRA'); % add surface to figure
+      plot3(kap_xy,ss_xy,0*kap_xy); % curve in kapRA=0 plane
+      xlim([0 1]); ylim([0 4/27]); zlim([0 1]);
+      % define colormap for mesh: k->b->m->r->white
+      % Colmap = [0 0 0; 0 0 .5; 0 0 1; .5 0 1; 1 0 1; 1 0 .5; 1 0 0; 1 .25 .25; 1 .5 .5; 1 .75 .75];
+      colormap(Hfig_invert, Colmap) % set color map to add_my_pet colors 
+      caxis([0 1]) % range for colormap
+      view(150,18)
+      saveas(gcf,fullfile(outputDir,'kap_ss_kapRA_invert.fig'))
+      saveas(gcf,fullfile(outputDir,'kap_ss_kapRA_invert.png'))
+      saveas(Hleg_invert,fullfile(outputDir,'legend_invert.png'))
 
 
     case 5 % kap, s_s, kapRA
