@@ -77,20 +77,20 @@ end
   };
 
 PMR.method = {'Loco.land','Loco.water','Loco.fly', 'Loco.flyburst', 'Turpor.arousal', 'Digest', 'Righting','Cold','DietaryEnergy', 'WeightLoss', 'Loco.waterActive', 'Loco.flyActive', 'Loco.landActive', 'DEEModel','Check'};
-%For all 'Check' entries, source has not yet been examined 
+% For all 'Check' entries, source has not yet been examined 
 
   % 1 mg O2/h = 0.7 ml O2/h
   cho = { ... % Chondrichthyes, mass(g), temp(C), SMR(ml O2/min), MMR(ml O2/min), PMR.method
     [3400       25      6.3     10.2]   'Loco.water', 'GrahDewa1990',    'Negaprion_brevirostris' % 160 257 mg O2/h.kg
     [1000       28      2.4     6.25]   'Loco.water', 'BouyWat2020',     'Carcharhinus_melanopterus' % 143.5  375 mg O2/h.kg^-0.87
     [1380       30      3.56    9.15]   'Loco.water', 'BouyMont2017',    'Negaprion_brevirostris' % 155  398 mg O2/h.kg
-    [1020       30	    1.85    6.57]   'ChaseAir',    'BouyOrne2018',   'Carcharhinus_melanopterus' %110  390 mg O2/h.kg
+    [1020       30	    1.85    6.57]   'ChaseAir',   'BouyOrne2018',    'Carcharhinus_melanopterus' %110  390 mg O2/h.kg
     [6310       18.2	2.10   20.98]   'Chase',      'PrinBign2023',    'Heterodontus_francisci' % 125.9 1258.92 mg/hr
     [6000       15      7.4    10.8]    'Loco.water', 'GrahDewa1990',    'Triakis_semifasciata' % 105 154 mg O2/h.kg
     [3900       18      13.7   21.2]    'Loco.water', 'GrahDewa1990',    'Isurus_oxyrinchus' % 300 466 mg O2/h.kg
     [2530       18.5    1.47    7.25]   'Loco.water', 'PiipMeye1977',    'Scyliorhinus_stellaris' % 0.026 0.128 mmol/kg.min
-    [10700     20	    3.632  15.5]    'Loco.water', 'Nespoloetal2017', 'Pteroplatytrygon_violacea' 
-    [2000	   10	    0.54	1.4731] 'Loco.water', 'Nespoloetal2017', 'Squalus_acanthias' 
+    [10700     20	    3.632  15.5]    'Loco.water', 'NespSola2017', 'Pteroplatytrygon_violacea' 
+    [2000	   10	    0.54	1.4731] 'Loco.water', 'NespSola2017', 'Squalus_acanthias' 
   };
 
     % 1 mg O2/h = 0.7 ml O2/h
@@ -128,122 +128,124 @@ PMR.method = {'Loco.land','Loco.water','Loco.fly', 'Loco.flyburst', 'Turpor.arou
     [ 50    15   0.0362  0.2217] 'Loco.water', 'GrahDewa1990',    'Oncorhynchus_nerka'      % 62 380 mg O2/h.kg
     [258	18	 0.3926	 1.3055] 'Loco.water', 'Sandblometal2016','Perca_fluviatilis'     	%  91.3;MMR:303.6 mg/kg/hr
     [285	23	 0.5282	 1.7095] 'Loco.water', 'Sandblometal2016','Perca_fluviatilis'		% 111.2 ;MMR: 359.8mg/kg/hr
-    [285	15	 0.0550	 0.1904] 'Loco.water', 'Verhilleetal2016','Oncorhynchus_mykiss'		% 2.03 ;MMR: 7.03 mgkg^-0.95/min
+    [285	15	 0.0550	 0.1904] 'Loco.water', 'VerhEngl2016','Oncorhynchus_mykiss'		% 2.03 ;MMR: 7.03 mgkg^-0.95/min
   };
 
  % 1 mg O2/h = 0.7 ml O2/h; %x means not in AmP
  amp = { ... % Amphibia, mass(g), temp(C), SMR(ml O2/min), PMR(ml O2/min), PMR.method
-   [  2    13  0.0007   0.0075] 'Loco.land', 'Fede1986',        'Desmognathus_ochrophaeus' % 0.9 10 mumol/h.g
-   [  4.1  13  0.005    0.0376] 'Loco.land', 'Full1985',        'Plethodon_jordani' % PMR 0.55 ml O2/h.g; FAS 6-9
-   [ 30.7  20  0.0188	0.1361] 'Loco.land', 'Nespoloetal2017', 'Discoglossus_pictus' % 0.0063;0.0456 W
-   [  2.6  20  0.0024	0.0206] 'Loco.land', 'Nespoloetal2017', 'Bombina_orientalis' % 0.0008;0.0069 W
-   [252    22  0.1848	2.0576] 'Loco.land', 'Nespoloetal2017', 'Rhinella_marina' % 0.0619;0.6893 W
-   [ 26.1  25  0.0439	0.5555] 'Loco.land', 'Nespoloetal2017', 'Anaxyrus_boreas' % 0.0147;0.1861 W
-   [  8.7  20  0.0084	0.1128] 'Loco.land', 'Nespoloetal2017', 'Epidalea_calamita' % 0.0028;0.0378 W
-   [ 39.59 25  0.0746	0.7719] 'Loco.land', 'Nespoloetal2017', 'Anaxyrus_cognatus' % 0.025;0.2586 W
-   [  1.55 20  0.0024	0.0188] 'Loco.land', 'Nespoloetal2017', 'Colostethus_inguinalis' % 0.0008;0.0063 W
-   [  2.02 20  0.0024	0.0296] 'Loco.land', 'Nespoloetal2017', 'Dendrobates_auratus' % 0.0008;0.0099 W
-   [  0.27 20  0.0006	0.0024] 'Loco.land', 'Nespoloetal2017', 'Colostethus_nubicola' % 0.0002;0.0008 W
-   [  1.3  19  0.0024	0.0239] 'Loco.land', 'Nespoloetal2017', 'Pseudacris_crucifer' % 0.0008;0.008 W
-   [  2.76 20  0.0027	0.0125] 'Loco.land', 'Nespoloetal2017', 'Pseudacris_regilla' % 0.0009;0.0042 W
-   [  5    20  0.0027	0.0125] 'Loco.land', 'Nespoloetal2017', 'Osteopilus_septentrionalis' % 0.0018;0.0182 W
-   [  5.7  20  0.0057	0.0499] 'Loco.land', 'Nespoloetal2017', 'Agalychnis_callidryas' % 0.0019;0.0167 W
-   [ 15.1  20  0.0081	0.1]    'Loco.land', 'Nespoloetal2017', 'Smilisca_fodiens' % 0.0027;0.0335 W
-   [  5.1  27	0.0113	0.0866] 'Loco.land', 'Nespoloetal2017', 'Hyla_cinerea' %0.0038;0.029 W
-   [  3.4  20	0.0054	0.0472] 'Loco.land', 'Nespoloetal2017', 'Hyla_arenicolor' %0.0018;0.0158 W
-   [  5.47 20	0.0116	0.0896] 'Loco.land', 'Nespoloetal2017', 'Hyla_chrysoscelis' %0.0039;0.03 W
-   [ 13.85 29	0.0221	0.2875] 'Loco.land', 'Nespoloetal2017', 'Hyla_gratiosa' %0.0074;0.0963 W
-   [  2.2  28	0.006	0.0657] 'Loco.land', 'Nespoloetal2017', 'Hyla_squirella' %0.002;0.022 W
-   [  6.1  20	0.0101	0.1036] 'Loco.land', 'Nespoloetal2017', 'Hyla_versicolor' %0.0034;0.0347 W
-   [  0.9  25  0.0015	0.011]  'Loco.land', 'Nespoloetal2017', 'Hyperolius_viridiflavus' % 0.0005;0.0037 W
-   [  6.3  20	0.0057	0.0687] 'Loco.land', 'Nespoloetal2017', 'Semnodactylus_wealii' %0.0019;0.023 W
-   [  3	   20	0.0039	0.0415] 'Loco.land', 'Nespoloetal2017', 'Kassina_senegalensis' %0.0013;0.0139 W
-   [  1.78 25	0.0042	0.0558] 'Loco.land', 'Nespoloetal2017', 'Engystomops_pustulosus' %0.0014;0.0187 W
-   [  1.9  20	0.0018	0.0257] 'Loco.land', 'Nespoloetal2017', 'Gastrophryne_carolinensis' %0.0006;0.0086 W
-   [ 30.7  20	0.0134	0.3561] 'Loco.land', 'Nespoloetal2017', 'Kaloula_pulchra' %0.0045;0.1193 W
-   [ 22.1  18  0.0299	0.266]  'Loco.land', 'Nespoloetal2017', 'Xenopus_laevis' % 0.01;0.0891 W
-   [481.15 20  0.237	5.7322] 'Loco.land', 'Nespoloetal2017', 'Pyxicephalus_adspersus' % 0.0794;1.9203 W
-   [ 38.4  10  0.0269	0.094]  'Loco.land', 'Nespoloetal2017', 'Rana_pipiens' % 0.0090;0.0315 W
-   [ 43.58 20  0.0275	0.1155] 'Loco.land', 'Nespoloetal2017', 'Lithobates_catesbeiana' % 0.0092;0.0387 W
-   [ 12.7  20	0.0179	0.1576] 'Loco.land', 'Nespoloetal2017', 'Lithobates_sylvaticus' % 0.0060;0.0528 W
-   [ 10.88 15	0.0125	0.0725] 'Loco.land', 'Nespoloetal2017', 'Spea_hammondii' % 0.0042;0.0243 W
-   [ 26.43 15	0.0104	0.0337] 'Loco.land', 'Nespoloetal2017', 'Ambystoma_gracile' %0.0035;0.0113 W
-   [  7.06 15	0.0054	0.0069] 'Loco.land', 'Nespoloetal2017', 'Ambystoma_jeffersonianum' %0.0018;0.0023 W
-   [  2.79 15  0.0018	0.0048] 'Loco.land', 'Nespoloetal2017', 'Ambystoma_macrodactylum' % 0.0016;0.0113 W
-   [ 36.25 15	0.0257	0.0469] 'Loco.land', 'Nespoloetal2017', 'Ambystoma_tigrinum' %0.0086;0.0157 W
-   [104    18  0.0812	0.2457] 'Loco.land', 'Nespoloetal2017', 'Amphiuma_means' % 0.0272;0.0823 W
-   [493	   25	0.1642	0.5176] 'Loco.land', 'Nespoloetal2017', 'Amphiuma_tridactylum' % 0.055;0.1734 W    
-   [  3.47 14  0.0021	0.0066] 'Loco.land', 'Nespoloetal2017', 'Ensatina_eschscholtzii' % 0.0007;0.0022 W
-   [  4.69 15  0.0024	0.0104] 'Loco.land', 'Nespoloetal2017', 'Plethodon_glutinosus' % 0.0008;0.0035 W
-   [ 13.13 15	0.0033	0.0128] 'Loco.land', 'Nespoloetal2017', 'Pseudoeurycea_bellii' % 0.0011;0.0043 W
-   [  5.49 23	0.0024	0.063]  'Loco.land', 'Nespoloetal2017', 'Aneides_lugubris' %0.0008;0.0211 W    
-   [  0.78 15  0.0006	0.0024] 'Loco.land', 'Nespoloetal2017', 'Batrachoseps_attenuatus' %0.0002;0.0008 W
-   [  0.61 25	0.0003	0.0018] 'Loco.land', 'Nespoloetal2017', 'Bolitoglossa_occidentalis' %0.0001;0.0006 W
-   [  1.67 13  0.0009	0.0069] 'Loco.land', 'Nespoloetal2017', 'Bolitoglossa_subpalmata' % 0.0003;0.0023 W
-   [ 20.05 15  0.0072	0.0227] 'Loco.land', 'Nespoloetal2017', 'Desmognathus_quadramaculatus' % 0.0016;0.0076 W
-   [  1.41 15  0.0009	0.0048] 'Loco.land', 'Nespoloetal2017', 'Eurycea_longicauda' % 0.0003;0.0016 W
-   [  7.34 15	0.003	0.0119] 'Loco.land', 'Nespoloetal2017', 'Gyrinophilus_porphyriticus' %0.001;0.0040 W
-   [  1.83 15	0.0015	0.0045] 'Loco.land', 'Nespoloetal2017', 'Plethodon_jordani' %0.0005;0.0015 W
-   [  2.35 15	0.0015	0.0042] 'Loco.land', 'Nespoloetal2017', 'Pseudoeurycea_gadovii' %0.0005;0.0014 W
-   [  4.55 15	0.0018	0.0075] 'Loco.land', 'Nespoloetal2017', 'Pseudoeurycea_smithi' %0.0006;0.0025 W
-   [ 10.8  15	0.0039	0.017]  'Loco.land', 'Nespoloetal2017', 'Pseudotriton_ruber' %0.0013;0.0057 W
-   [101.9  15  0.0009	0.0036] 'Loco.land', 'Nespoloetal2017', 'Necturus_maculosus' % 0.0068;0.0176 W
-   [  1.48 15  0.0012	0.0051] 'Loco.land', 'Nespoloetal2017', 'Notophthalmus_viridescens' % 0.0003;0.0012 W
-   [  1.93 20	0.0012	0.0051] 'Loco.land', 'Nespoloetal2017', 'Geotrypetes_seraphini' %0.0004;0.0017 W
+   [  2    13  0.0007   0.0075] 'Loco.land', 'Fede1986',     'Desmognathus_ochrophaeus' % 0.9 10 mumol/h.g
+   [  4.1  13  0.005    0.0376] 'Loco.land', 'Full1985',     'Plethodon_jordani' % PMR 0.55 ml O2/h.g; FAS 6-9
+   [ 30.7  20  0.0188	0.1361] 'Loco.land', 'NespSola2017', 'Discoglossus_pictus' % 0.0063;0.0456 W
+   [  2.6  20  0.0024	0.0206] 'Loco.land', 'NespSola2017', 'Bombina_orientalis' % 0.0008;0.0069 W
+   [252    22  0.1848	2.0576] 'Loco.land', 'NespSola2017', 'Rhinella_marina' % 0.0619;0.6893 W
+   [ 26.1  25  0.0439	0.5555] 'Loco.land', 'NespSola2017', 'Anaxyrus_boreas' % 0.0147;0.1861 W
+   [  8.7  20  0.0084	0.1128] 'Loco.land', 'NespSola2017', 'Epidalea_calamita' % 0.0028;0.0378 W
+   [ 39.59 25  0.0746	0.7719] 'Loco.land', 'NespSola2017', 'Anaxyrus_cognatus' % 0.025;0.2586 W
+   [  1.55 20  0.0024	0.0188] 'Loco.land', 'NespSola2017', 'Colostethus_inguinalis' % 0.0008;0.0063 W
+   [  0.27 20  0.0006	0.0024] 'Loco.land', 'NespSola2017', 'Silverstoneia_nubicola' % 0.0002;0.0008 W
+   [  2.02 20  0.0024	0.0296] 'Loco.land', 'NespSola2017', 'Dendrobates_auratus' % 0.0008;0.0099 W
+   [  1.3  19  0.0024	0.0239] 'Loco.land', 'NespSola2017', 'Pseudacris_crucifer' % 0.0008;0.008 W
+   [  2.76 20  0.0027	0.0125] 'Loco.land', 'NespSola2017', 'Pseudacris_regilla' % 0.0009;0.0042 W
+   [  5    20  0.0027	0.0125] 'Loco.land', 'NespSola2017', 'Osteopilus_septentrionalis' % 0.0018;0.0182 W
+   [  5.7  20  0.0057	0.0499] 'Loco.land', 'NespSola2017', 'Agalychnis_callidryas' % 0.0019;0.0167 W
+   [ 15.1  20  0.0081	0.1]    'Loco.land', 'NespSola2017', 'Smilisca_fodiens' % 0.0027;0.0335 W
+   [  5.1  27	0.0113	0.0866] 'Loco.land', 'NespSola2017', 'Dryophytes_cinerea' %0.0038;0.029 W
+   [  3.4  20	0.0054	0.0472] 'Loco.land', 'NespSola2017', 'Dryophytes_arenicolor' %0.0018;0.0158 W
+   [  5.47 20	0.0116	0.0896] 'Loco.land', 'NespSola2017', 'Dryophytes_chrysoscelis' %0.0039;0.03 W
+   [ 13.85 29	0.0221	0.2875] 'Loco.land', 'NespSola2017', 'Dryophytes_gratiosa' %0.0074;0.0963 W
+   [  2.2  28	0.006	0.0657] 'Loco.land', 'NespSola2017', 'Dryophytes_squirellus' %0.002;0.022 W
+   [  6.1  20	0.0101	0.1036] 'Loco.land', 'NespSola2017', 'Dryophytes_versicolor' %0.0034;0.0347 W
+   [  0.9  25  0.0015	0.011]  'Loco.land', 'NespSola2017', 'Hyperolius_viridiflavus' % 0.0005;0.0037 W
+   [  6.3  20	0.0057	0.0687] 'Loco.land', 'NespSola2017', 'Semnodactylus_wealii' %0.0019;0.023 W
+   [  3	   20	0.0039	0.0415] 'Loco.land', 'NespSola2017', 'Kassina_senegalensis' %0.0013;0.0139 W
+   [  1.78 25	0.0042	0.0558] 'Loco.land', 'NespSola2017', 'Engystomops_pustulosus' %0.0014;0.0187 W
+   [  1.9  20	0.0018	0.0257] 'Loco.land', 'NespSola2017', 'Gastrophryne_carolinensis' %0.0006;0.0086 W
+   [ 30.7  20	0.0134	0.3561] 'Loco.land', 'NespSola2017', 'Kaloula_pulchra' % 0.0045;0.1193 W
+   [ 22.1  18  0.0299	0.266]  'Loco.land', 'NespSola2017', 'Xenopus_laevis' % 0.01;0.0891 W
+   [481.15 20  0.237	5.7322] 'Loco.land', 'NespSola2017', 'Pyxicephalus_adspersus' % 0.0794;1.9203 W
+   [ 38.4  10  0.0269	0.094]  'Loco.land', 'NespSola2017', 'Lithobates_pipiens' % 0.0090;0.0315 W
+   [ 43.58 20  0.0275	0.1155] 'Loco.land', 'NespSola2017', 'Lithobates_catesbeiana' % 0.0092;0.0387 W
+   [ 12.7  20	0.0179	0.1576] 'Loco.land', 'NespSola2017', 'Lithobates_sylvaticus' % 0.0060;0.0528 W
+   [ 10.88 15	0.0125	0.0725] 'Loco.land', 'NespSola2017', 'Spea_hammondii' % 0.0042;0.0243 W
+   % Urodela
+   [ 26.43 15	0.0104	0.0337] 'Loco.land', 'NespSola2017', 'Ambystoma_gracile' % 0.0035;0.0113 W
+   [  7.06 15	0.0054	0.0069] 'Loco.land', 'NespSola2017', 'Ambystoma_jeffersonianum' % 0.0018;0.0023 W
+   [  2.79 15  0.0018	0.0048] 'Loco.land', 'NespSola2017', 'Ambystoma_macrodactylum' % 0.0016;0.0113 W
+   [ 36.25 15	0.0257	0.0469] 'Loco.land', 'NespSola2017', 'Ambystoma_tigrinum' % 0.0086;0.0157 W
+   [104    18  0.0812	0.2457] 'Loco.land', 'NespSola2017', 'Amphiuma_means' % 0.0272;0.0823 W
+   [493	   25	0.1642	0.5176] 'Loco.land', 'NespSola2017', 'Amphiuma_tridactylum' % 0.055;0.1734 W    
+   [  3.47 14  0.0021	0.0066] 'Loco.land', 'NespSola2017', 'Ensatina_eschscholtzii' % 0.0007;0.0022 W
+   [  4.69 15  0.0024	0.0104] 'Loco.land', 'NespSola2017', 'Plethodon_glutinosus' % 0.0008;0.0035 W
+   [ 13.13 15	0.0033	0.0128] 'Loco.land', 'NespSola2017', 'Isthmura_bellii' % 0.0011;0.0043 W
+   [  5.49 23	0.0024	0.063]  'Loco.land', 'NespSola2017', 'Aneides_lugubris' %0.0008;0.0211 W    
+   [  0.78 15  0.0006	0.0024] 'Loco.land', 'NespSola2017', 'Batrachoseps_attenuatus' %0.0002;0.0008 W
+   [  0.61 25	0.0003	0.0018] 'Loco.land', 'NespSola2017', 'Bolitoglossa_occidentalis' %0.0001;0.0006 W
+   [  1.67 13  0.0009	0.0069] 'Loco.land', 'NespSola2017', 'Bolitoglossa_subpalmata' % 0.0003;0.0023 W
+   [ 20.05 15  0.0072	0.0227] 'Loco.land', 'NespSola2017', 'Desmognathus_quadramaculatus' % 0.0016;0.0076 W
+   [  1.41 15  0.0009	0.0048] 'Loco.land', 'NespSola2017', 'Eurycea_longicauda' % 0.0003;0.0016 W
+   [  7.34 15	0.003	0.0119] 'Loco.land', 'NespSola2017', 'Gyrinophilus_porphyriticus' %0.001;0.0040 W
+   [  1.83 15	0.0015	0.0045] 'Loco.land', 'NespSola2017', 'Plethodon_jordani' % 0.0005;0.0015 W
+   [  2.35 15	0.0015	0.0042] 'Loco.land', 'NespSola2017', 'Pseudoeurycea_gadovii' % 0.0005;0.0014 W
+   [  4.55 15	0.0018	0.0075] 'Loco.land', 'NespSola2017', 'Pseudoeurycea_smithi' % 0.0006;0.0025 W
+   [ 10.8  15	0.0039	0.017]  'Loco.land', 'NespSola2017', 'Pseudotriton_ruber' % 0.0013;0.0057 W
+   [101.9  15  0.0009	0.0036] 'Loco.land', 'NespSola2017', 'Necturus_maculosus' % 0.0068;0.0176 W
+   [  1.48 15  0.0012	0.0051] 'Loco.land', 'NespSola2017', 'Notophthalmus_viridescens' % 0.0003;0.0012 W
+   [  1.93 20	0.0012	0.0051] 'Loco.land', 'NespSola2017', 'Geotrypetes_seraphini' % 0.0004;0.0017 W
    };
 
-squ = { ... % Squamata mass (g), Tb (C), SMR (mg O2/min), PMR (mg O2/min), PMR.method
+squ = { ... % Squamata mass (g), Tb (C), SMR (ml O2/min), PMR (ml O2/min), PMR.method
+  % conversions 1 l O2 = 20.1 kJ; 1 mg O2/h = 0.7 ml O2/h; 1 W = 1 J/s = 60e-3 kJ/min = 60/20.1 ml O2/min = 2.9851 ml O2/min
   %Alligatoridae
-  [ 100.51 40.5	1.2432 14.3946]	 'Loco.land', 'Nespoloetal2017', 'Alligator_mississippiensis' %0.4165;4.8222 W  
+  [ 100.51 40.5	1.2432 14.3946]	 'Loco.land', 'NespSola2017', 'Alligator_mississippiensis' %0.4165;4.8222 W  
   %Anguidae
-  [  32.17 25   0.0205  0.6796]  'Loco.land', 'KamelGatten1983', 'Ophisaurus_ventralis'  % SMR 0.0382 ml/g/h; MMR: 1.2675
+  [  32.17 25   0.0205  0.6796]  'Loco.land', 'KameGatt1983', 'Ophisaurus_ventralis'  % SMR 0.0382 ml/g/h; MMR: 1.2675
   %Anniellidae
-  [   4.94 25  	0.0054  0.04]	 'Loco.land', 'KamelGatten1983', 'Anniella_pulchra'  	% SMR 0.0662 ml/g/h; MMR: 0.4863
+  [   4.94 25  	0.0054  0.04]	 'Loco.land', 'KameGatt1983', 'Anniella_pulchra'  	% SMR 0.0662 ml/g/h; MMR: 0.4863
   %Colubridae
-  [ 548	   30	0.0068	0.07092] 'Loco.land', 'Nespoloetal2017', 'Pituophis_catenifer' %0.1377;1.4256 W
-  [  19.04 25   0.0188  0.1477]  'Loco.land', 'KamelGatten1983', 'Thamnophis_butleri'  %0.0591;0.4653 ml/g/h
+  [ 548	   30	0.4110	4.2556]  'Loco.land', 'NespSola2017', 'Pituophis_catenifer' %0.1377; 1.4256 W
+  [  19.04 25   0.0188  0.1477]  'Loco.land', 'KameGatt1983', 'Thamnophis_butleri'  %0.0591; 0.4653 ml/g/h
   %Crocodylidae
-  [1030	   32	0.4015	7.0645]	 'Loco.land', 'Nespoloetal2017', 'Crocodylus_porosus' %0.1476;1.5383 W
+  [1030	   32	0.4015	7.0645]	 'Loco.land', 'NespSola2017', 'Crocodylus_porosus' %0.1476;1.5383 W
   %Helodermatidae
-  [ 463.9  25	0.4406	4.5919]	 'Loco.land', 'Nespoloetal2017', 'Heloderma_suspectum' %0.1476;1.5383 W
+  [ 463.9  25	0.4406	4.5919]	 'Loco.land', 'NespSola2017', 'Heloderma_suspectum' %0.1476;1.5383 W
   %Iguanidae
-  [ 690.16 35	1.2015 10.6651]	 'Loco.land', 'Nespoloetal2017', 'Ctenosaura_similis'  %4025;3.5728 W
-  [  80.99 40	0.2042	2.0472]	 'Loco.land', 'Nespoloetal2017', 'Dipsosaurus_dorsalis'  %0.0684;0.6858 W
-  [2149.83 35	3.1627 27.4173]	 'Loco.land', 'Nespoloetal2017', 'Iguana_iguana'  %1.0595;9.1848 W
-  [ 574	   37.5	0.8418	5.3373]	 'Loco.land', 'Nespoloetal2017', 'Sauromalus_hispidus'  %0.2820;1.7880 W
+  [ 690.16 35	1.2015 10.6651]	 'Loco.land', 'NespSola2017', 'Ctenosaura_similis'  %4025;3.5728 W
+  [  80.99 40	0.2042	2.0472]	 'Loco.land', 'NespSola2017', 'Dipsosaurus_dorsalis'  %0.0684;0.6858 W
+  [2149.83 35	3.1627 27.4173]	 'Loco.land', 'NespSola2017', 'Iguana_iguana'  %1.0595;9.1848 W
+  [ 574	   37.5	0.8418	5.3373]	 'Loco.land', 'NespSola2017', 'Sauromalus_hispidus'  %0.2820;1.7880 W
   [1136    35    NaN   16.9]	 'Loco.land', 'ChriConl1994',    'Cyclura_nubila'
   %Phrynosomatidae
-  [  19.77 35	0.0812  0.7427]	 'Loco.land', 'Nespoloetal2017', 'Sceloporus_occidentalis'  %0.0272;0.2488 W
-  [   3.76 35	0.0316	0.2140]	 'Loco.land', 'Nespoloetal2017', 'Uta_stansburiana'  %0.0106;0.0717 W
+  [  19.77 35	0.0812  0.7427]	 'Loco.land', 'NespSola2017', 'Sceloporus_occidentalis'  %0.0272;0.2488 W
+  [   3.76 35	0.0316	0.2140]	 'Loco.land', 'NespSola2017', 'Uta_stansburiana'  %0.0106;0.0717 W
   %Polychrotidae
-  [   5.1  20	0.0054	0.0263]	 'Loco.land', 'Nespoloetal2017', 'Anolis_carolinensis'  %0.0018;0.0088 W
+  [   5.1  20	0.0054	0.0263]	 'Loco.land', 'NespSola2017', 'Anolis_carolinensis'  %0.0018;0.0088 W
   %Teiidae
-  [1089	   35	2.4681 12.1946]	 'Loco.land', 'Nespoloetal2017', 'Tupinambis_nigropunctatus'	%0.8268;4.0852 W
+  [1089	   35	2.4681 12.1946]	 'Loco.land', 'NespSola2017', 'Tupinambis_teguixin'	%0.8268;4.0852 W
   %Testudines
-  [ 179	   25	0.1081	0.4376]	 'Loco.land', 'Nespoloetal2017', 'Chrysemys_picta'  %0.0362;0.1466 W
-  [ 354	   20	0.0549	1.2122]	 'Loco.land', 'Nespoloetal2017', 'Terrapene_ornata'  %0.0184;0.4061 W
-  [ 305	   20	0.0555	1.4048]	 'Loco.land', 'Nespoloetal2017', 'Trachemys_scripta'  %0.0186;0.4706 W
+  [ 179	   25	0.1081	0.4376]	 'Loco.land', 'NespSola2017', 'Chrysemys_picta'  %0.0362;0.1466 W
+  [ 354	   20	0.0549	1.2122]	 'Loco.land', 'NespSola2017', 'Terrapene_ornata'  %0.0184;0.4061 W
+  [ 305	   20	0.0555	1.4048]	 'Loco.land', 'NespSola2017', 'Trachemys_scripta'  %0.0186;0.4706 W
   %Trogonophidae
-  [   4.97 25   0.0032  0.0473]  'Loco.land', 'KamelGatten1983', 'Trogonophis_wiegmanni'  % SMR 0.0391 ml/g/h; MMR: 0.5705
+  [   4.97 25   0.0032  0.0473]  'Loco.land', 'KameGatt1983', 'Trogonophis_wiegmanni'  % SMR 0.0391 ml/g/h; MMR: 0.5705
   %Varanidae
   [1287    35   3.1    24.3]     'Loco.land', 'ChriConl1994',    'Varanus_rosenbergi' %x
-  [1788.5  35	4.7325 30.9949]	 'Loco.land', 'Nespolietal2017', 'Varanus_rosenbergi' %1.5854;10.3833 W
+  [1788.5  35	4.7325 30.9949]	 'Loco.land', 'NespSola2017', 'Varanus_rosenbergi' %1.5854;10.3833 W
   [1086    35   1.9    24.5]     'Loco.land', 'ChriConl1994',    'Varanus_gouldii' %x
   [ 931    35   2.1    20.8]     'Loco.land', 'ChriConl1994',    'Varanus_panoptes' %x
   [ 904    35   1.2    13.7]     'Loco.land', 'ChriConl1994',    'Varanus_mertensi' %x
-  [  63.51 35	0.1039	2.8328]	 'Loco.land', 'Nespolietal2017', 'Varanus_acanthurus' %0.0348;0.9490 W
-  [  17.44 35	0.0451	0.9397]	 'Loco.land', 'Nespolietal2017', 'Varanus_brevicauda' %0.0151;0.3148 W
-  [  14.03 35	0.0376	1.5663]	 'Loco.land', 'Nespolietal2017', 'Varanus_caudolineatus' %0.0126;0.5247 W
-  [  37.94 35	0.1027	1.5313]	 'Loco.land', 'Nespolietal2017', 'Varanus_eremius' %0.0344;0.5130 W
-  [ 505    35   1.212   9.2583]  'Loco.land', 'Gleeson1981',     'Varanus_salvator'	% all male; 0.144;1.10 ml/g/hr
+  [  63.51 35	0.1039	2.8328]	 'Loco.land', 'NespSola2017', 'Varanus_acanthurus' %0.0348;0.9490 W
+  [  17.44 35	0.0451	0.9397]	 'Loco.land', 'NespSola2017', 'Varanus_brevicauda' %0.0151;0.3148 W
+  [  14.03 35	0.0376	1.5663]	 'Loco.land', 'NespSola2017', 'Varanus_caudolineatus' %0.0126;0.5247 W
+  [  37.94 35	0.1027	1.5313]	 'Loco.land', 'NespSola2017', 'Varanus_eremius' %0.0344;0.5130 W
+  [ 505    35   1.212   9.2583]  'Loco.land', 'Glee1979',     'Varanus_salvator'	% all male; 0.144;1.10 ml/g/hr
   %Scincidae
   [ 517    35  	1.6    	5.4]     'Loco.land', 'ChriConl1994',    'Tiliqua_rugosa'  
-  [  10.2  15   0.0031  0.0139]	 'Righting',  'Withers1981',     'Mabuya_capensis'  %0.018;0.082 ml/g/hr
-  [  10.2  15   0.0031  0.0139]  'Righting',  'Withers1981',     'Mabuya_varia'  %0.018;0.082 ml/g/hr
-  [  10.2  15   0.0031  0.0139]	 'Righting',  'Withers1981',     'Mabuya_sulcata'  %0.018:0.082 ml/g/hr
-  [   1.1  15  	0.0009  0.0144]  'Righting',  'Withers1981',     'Scelotes_gronovii'  %0.048;0.783 ml/g/hr
-  [   7.3  15   0.0051  0.0623]  'Righting',  'Withers1981',     'Acontias_meleagris'  %0.042;0.512 ml/g/hr
-  [   1.7  15   0.0003  0.0055]  'Righting',  'Withers1981',     'Typhlacontias_brevipes'  %0.012;0.194 ml/g/hr
+  [  10.2  15   0.0031  0.0139]	 'Righting',  'With1981',     'Trachylepis_capensis'  %0.018;0.082 ml/g/hr
+  [  10.2  15   0.0031  0.0139]  'Righting',  'With1981',     'Trachylepis_varia'  %0.018;0.082 ml/g/hr
+  [  10.2  15   0.0031  0.0139]	 'Righting',  'With1981',     'Trachylepis_sulcata'  %0.018:0.082 ml/g/hr
+  [   1.1  15  	0.0009  0.0144]  'Righting',  'With1981',     'Scelotes_gronovii'  %0.048;0.783 ml/g/hr
+  [   7.3  15   0.0051  0.0623]  'Righting',  'With1981',     'Acontias_meleagris'  %0.042;0.512 ml/g/hr
+  [   1.7  15   0.0003  0.0055]  'Righting',  'With1981',     'Typhlacontias_brevipes'  %0.012;0.194 ml/g/hr
   };
 
 ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x means not in AmP
@@ -264,9 +266,9 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [   489   40.7  11.00   34.66]  'Loco.land', 'FedaPins1974', 'Alectoris_graeca' % 1.35 4.253 ml O2/h.g 
     [   194   38.9   4.33   11.97]  'Loco.land', 'FedaPins1974', 'Colinus_virginianus' % 1.34 3.703 ml O2/h.g 
     % Anseriformes 
-    [   275   41.2   NaN    23.22]  'DietaryEnergy', 'Kirk1983','Dendrocygna_autumnalis' % PMR 672 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
+   %[   275   41.2   NaN    23.22]  'DietaryEnergy', 'Kirk1983','Dendrocygna_autumnalis' % PMR 672 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
     [   944.1 39.7  12.23   61.51]  'Cold',     'HindBaud1993', 'Anas_castanea' %x
-    [   190   41.2   NaN    21.39]  'DietaryEnergy', 'Kirk1983','Aythya_affinis' % PMR 619 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
+   %[   190   41.2   NaN    21.39]  'DietaryEnergy', 'Kirk1983','Aythya_affinis' % PMR 619 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
     [  3813   41.2  40.03  197.51]  'Loco.land','FedaPins1974', 'Anser_anser' % 0.63 3.108 ml O2/h.g
     % Columbiformes
     [   302.0 41.7   4.34   28.24]  'Cold',     'HindBaud1993', 'Columba_livia' 
@@ -292,7 +294,7 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [ 45000   36.0 301.5  2340]    'Loco.land', 'KooyPong1994', 'Aptenodytes_forsteri' % 6.7, 52 ml O2/min.kg
     [  6210   38.2  63.2   345]    'Loco.land', 'BevaWoak1995', 'Pygoscelis_papua' %  9.54, 35.34 ml O2/min.kg
     % Suliformes
-    [  1300   40.6   NaN    64.95] 'DietaryEnergy', 'Kirk1983', 'Phalacrocorax_pelagicus' % PMR 1880 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
+   %[  1300   40.6   NaN    64.95] 'DietaryEnergy', 'Kirk1983', 'Phalacrocorax_pelagicus' % PMR 1880 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
     % Charadriiformes
     [   277   40.9   8.13   45.97] 'Loco.fly',  'BernThom1973', 'Leucophaeus_atricilla' % 0.0099 0.056 W/g
     [    63.4 41.0   1.409  16.906] 'Indirect', 'Putt1980',     'Calidris_ferruginea' % 1699 kJ/h; FAS 12; 20.1 kJ/l O2; discard for now metabolism based on activity and feeding observations not O2 concumption
@@ -313,7 +315,7 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     % Strigiformes
     [    76   41.0   1.86    8.85] 'Cold',      'RezeSwan2002', 'Glaucidium_nana' % 1.47 6.67 ml O2/h.g; (weight 98 g is given, but 76 g is max)
     % Falconiformes
-    [   106   40.0   NaN    11.09]  'DietaryEnergy', 'Kirk1983',     'Falco_tinnunculus' % PMR 321 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
+   %[   106   40.0   NaN    11.09]  'DietaryEnergy', 'Kirk1983',     'Falco_tinnunculus' % PMR 321 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
     % Piciformes
     [    25   41.0   1.275   7.94]  'Cold',     'RezeSwan2002', 'Dryobates_pubescens' % 3.06 19.05  ml O2/h.g
     [    25.8 41.0   NaN     6.69]  'Cold',     'SwanLikn2006', 'Leuconotopicus_villosus' % PMR 2.24 W; 20.1 kJ/l O2
@@ -333,7 +335,7 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [    10.8 41.5   NaN     4.21]  'Loco.fly', 'WierChap2007', 'Xenops_minutus' %x PMR 1.41 W; 20.1 kJ/l O2 Furnariidae  
     [    11.5 41.5   NaN     2.21]  'Cold',     'WierChap2007', 'Xenops_minutus' %x PMR 0.74 W; 20.1 kJ/l O2 Furnariidae  
     [    18.5 41.6   NaN     6.03]  'Loco.fly', 'WierChap2007', 'Chiroxiphia_lanceolata' % PMR 2.02 W; 20.1 kJ/l O2 Pipridae
-    [    13.5 41.6   NaN     4.96]  'Loco.fly', 'WierChap2007', 'Pipra_mentalis' %x PMR 1.66 W; 20.1 kJ/l O2 Pipridae
+    [    13.5 41.6   NaN     4.96]  'Loco.fly', 'WierChap2007', 'Ceratopipra_mentalis' %x PMR 1.66 W; 20.1 kJ/l O2 Pipridae
     [    14.75 41.6  NaN     4.48]  'Loco.fly', 'WierChap2007', 'Manacus_vitellinus' %x PMR 1.5 W; 20.1 kJ/l O2 Pipridae
     [    42.0 41.6   1.491   8.183] 'Cold',     'RezeSwan2002', 'Phytotoma_rara' % 2.13 11.69 ml O2/h.g Cotingidae
     [     7.5 41.6   NaN     1.40]  'Loco.fly', 'WierChap2007', 'Oncostoma_olivaceum' %x PMR 0.47 W; 20.1 kJ/l O2 Tyrannidae
@@ -353,7 +355,7 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [    12   41.6   NaN     3.34]  'Loco.fly', 'WierChap2007', 'Myiobius_atricaudus' % PMR 1.12 W; 20.1 kJ/l O2 Onychorhynchidae
     % % Passeri
     [   275   41.6  10.67   68.13]  'Loco.fly', 'BernThom1973', 'Corvus_ossifragus' % 0.013 0.083 W/g Corvidae
-    [    18.2 41.6   NaN     3.26]  'DietaryEnergy', 'Kirk1983','Delichon_urbicum' % PMR 94.5 kJ/d; 20.1 kJ/l O2 Hirundinidae omit MMR quantified as dietary energy intake
+   %[    18.2 41.6   NaN     3.26]  'DietaryEnergy', 'Kirk1983','Delichon_urbicum' % PMR 94.5 kJ/d; 20.1 kJ/l O2 Hirundinidae omit MMR quantified as dietary energy intake
     [    61.5 41.6   NaN    14.66]  'Loco.fly', 'WierChap2007', 'Mimus_gilvus' %x PMR 4.91 W; 20.1 kJ/l O2 Mimidae
     [    59.9 41.6   NaN    10.8]   'Cold',     'WierChap2007', 'Mimus_gilvus' %x PMR 3.63 W; 20.1 kJ/l O2 Mimidae
     [    34.0 41.6   1.552   8.149] 'Cold',     'RezeSwan2002', 'Dumetella_carolinensis' % 2.74 14.38 cm^3 O2/h.g Mimidae
@@ -393,7 +395,7 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [    27.2 41.6   1.314  10.605] 'Cold', 'DuteSwan1996', 'Passer_domesticus'  %  Passeridae 
     [    13.2 41.6   NaN     3.88]  'Loco.fly', 'WierChap2007', 'Euphonia_laniirostris' %x PMR 1.3 W; 20.1 kJ/l O2 Fringillidae
     [    13.2 41.6   NaN     3.13]  'Cold', 'WierChap2007', 'Euphonia_laniirostris' %x PMR 1.05 W; 20.1 kJ/l O2 Fringillidae
-    [    30.0 41.6   NaN     3.80]  'DietaryEnergy',     'Kirk1983',     'Fringilla_coelebs' % PMR 110 kJ/d; 20.1 kJ/l O2 Fringillidae omit MMR quantified as dietary energy intake
+   %[    30.0 41.6   NaN     3.80]  'DietaryEnergy',     'Kirk1983',     'Fringilla_coelebs' % PMR 110 kJ/d; 20.1 kJ/l O2 Fringillidae omit MMR quantified as dietary energy intake
     [    20.8 41.6   0.971   2.392] 'Cold', 'DawsButt1985', 'Haemorhous_mexicanus' % 2.8 6.9 cm^3 O2/h.g Fringillidae % cold stress down to 0C; at lower temp MR might be higher 
     [    14.0 41.6   0.863   5.088] 'Cold', 'RezeSwan2002', 'Acanthis_flammea' %  3.70 21.80  cm^3 O2/h.g Fringillidae
     [    13.0 41.6   0.867   4.314] 'Cold', 'RezeSwan2002', 'Spinus_tristis' % 4.0 19.91 cm^3 O2/h.g Fringillidae
@@ -416,8 +418,8 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [    34.0 41.6   NaN     9.100] 'Cold', 'RezeSwan2002', 'Diuca_diuca' % 16.06 cm^3 O2/h.g Thraupidae
     [    41.2 41.6   NaN     9.91]  'Loco.fly', 'WierChap2007', 'Arremonops_conirostris' %x PMR 3.32 W; 20.1 kJ/l O2 Passerellidae
     [    40.0 41.6   NaN     7.07]  'Cold', 'WierChap2007', 'Arremonops_conirostris' %x PMR 2.37 W; 20.1 kJ/l O2 Passerellidae
-    [    32.4 41.6   NaN     4.46]  'DietaryEnergy',         'Kirk1983',     'Zonotrichia_leucophrys' % PMR 129 kJ/d; 20.1 kJ/l O2 Passerellidae omit MMR quantified as dietary energy intake
-    [    28.0 41.6   NaN     4.91]  'DietaryEnergy',         'Kirk1983',     'Zonotrichia_albicollis' % PMR 142 kJ/d; 20.1 kJ/l O2 Passerellidae omit MMR quantified as dietary energy intake
+   %[    32.4 41.6   NaN     4.46]  'DietaryEnergy',         'Kirk1983',     'Zonotrichia_leucophrys' % PMR 129 kJ/d; 20.1 kJ/l O2 Passerellidae omit MMR quantified as dietary energy intake
+   %[    28.0 41.6   NaN     4.91]  'DietaryEnergy',         'Kirk1983',     'Zonotrichia_albicollis' % PMR 142 kJ/d; 20.1 kJ/l O2 Passerellidae omit MMR quantified as dietary energy intake
     [    20.0 41.6   1.037   5.433] 'Cold', 'RezeSwan2002', 'Zonotrichia_capensis' % 3.11 16.30 ml O2/h.g Passerellidae
     [    12.8 41.6   0.722   4.539] 'Cold', 'DuteSwan1996', 'Spizella_pusilla' % Passerellidae
     [    18.6 41.6   1.209   7.478] 'Cold', 'DuteSwan1996', 'Spizelloides_arborea' % Passerellidae
@@ -474,17 +476,17 @@ mar = { ... % Marsupialia & Prototheria; m(g), Tb(C), BMR(ml O2/min), PMR (ml O2
    [  583   39.8   NaN   74.4] 'Loco.land', 'TaylMalo1980', 'Helogale_parvula' %x 1.24 ml O2/s
    [ 1151   39.8   NaN  139.8] 'Loco.land', 'TaylMalo1980', 'Mungos_mungo' %x 2.33 ml O2/s
    [ 1458   36.7   NaN  154.8] 'Loco.land', 'TaylMalo1980', 'Genetta_tigrina' %x 2.58 ml O2/s
-   [ 41000  39.0 311.2  14700] 'DEEModel',  'ScanMill2014', 'Acinonyx_jubatus' % FMR=DEE 9006 kJ/d PMR 120 W/kg; 20.1 kJ/l O2 omit data based on DEE model
-   [ 25000  38.0 117.5   2900] 'DEEModel',  'GormMill1998', 'Canis_familiaris' % BMR 3.4 MJ/d canid AS 25; 20.1 kJ/l O2 omit data based on DEE model
-   [450000  36.8   NaN   5782] 'DietaryEnergy', 'Kirk1983', 'Ursus_maritimus' % PMR 167360 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
-   [    86  39.6   NaN   7.34] 'DietaryEnergy', 'Kirk1983', 'Mustela_nivalis' % PMR 224 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
+  %[ 41000  39.0 311.2  14700] 'DEEModel',  'ScanMill2014', 'Acinonyx_jubatus' % FMR=DEE 9006 kJ/d PMR 120 W/kg; 20.1 kJ/l O2 omit data based on DEE model
+  %[ 25000  38.0 117.5   2900] 'DEEModel',  'GormMill1998', 'Canis_familiaris' % BMR 3.4 MJ/d canid AS 25; 20.1 kJ/l O2 omit data based on DEE model
+  %[450000  36.8   NaN   5782] 'DietaryEnergy', 'Kirk1983', 'Ursus_maritimus' % PMR 167360 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
+  %[    86  39.6   NaN   7.34] 'DietaryEnergy', 'Kirk1983', 'Mustela_nivalis' % PMR 224 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
    [   63e3 37   289.8    945] 'Loco.water', 'DaviWill1985','Phoca_vitulina' % 4.6 15 ml O2/min.kg   
    % Perissodactyla
    [500000  38.0  1600  88000] 'Loco.land',  'Hodg2025',     'Equus_ferus_caballus' % BMR 2.2-4.2 mL O2/kg/min; FAS 50-60
-   [635000  38.0   NaN   4957] 'DietaryEnergy', 'Kirk1983',  'Equus_ferus_caballus' % PMR 143470 kJ/d; 20.1 kJ/l O2. Reliable? PMR is less than for a cow omit MMR quantified as dietary energy intake
+  %[635000  38.0   NaN   4957] 'DietaryEnergy', 'Kirk1983',  'Equus_ferus_caballus' % PMR 143470 kJ/d; 20.1 kJ/l O2. Reliable? PMR is less than for a cow omit MMR quantified as dietary energy intake
    % Cetartiodactyla
-   [205000  39.0   NaN   2371] 'DietaryEnergy', 'Kirk1983',  'Sus_domesticus' % PMR 68620 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
-   [ 3500   36.7   NaN  355.2] 'Loco.land',  'TaylMalo1980', 'Nesotragus_moschatus' %x 5.92 ml O2/s
+  %[205000  39.0   NaN   2371] 'DietaryEnergy', 'Kirk1983',  'Sus_domesticus' % PMR 68620 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
+   [ 3500   36.7   NaN  355.2] 'Loco.land',  'TaylMalo1980', 'Neotragus_moschatus' %x 5.92 ml O2/s
    [ 4354   39.4   NaN  237.0] 'Loco.land',  'TaylMalo1980', 'Madoqua_kirkii' % 3.95 ml O2/s
    [11200   38.9   NaN  600.0] 'Loco.land',  'TaylMalo1980', 'Gazella_granti' %x 10.0 ml O2/s
    [32000   39.5 152.5   9792] 'Loco.land',  'LindHoka1991', 'Antilocapra_americana' % 5.1 ml O2/s.kg = 9792 ml O2/min; Bish1999 FAS 64.2; BMR 9792/64.2 ml O2/min
@@ -493,9 +495,9 @@ mar = { ... % Marsupialia & Prototheria; m(g), Tb(C), BMR(ml O2/min), PMR (ml O2
    [217000  36.5   NaN   7860] 'Loco.land',  'TaylMalo1980', 'Taurotragus_oryx' % 131 ml O2/s
    [ 21150  39.3   NaN   1098] 'Loco.land',  'TaylMalo1980', 'Capra_hircus' % 18.3 ml O2/s
    [ 22650  38.8   NaN   1050] 'Loco.land',  'TaylMalo1980', 'Ovis_aries' % 17.5 ml O2/s
-   [550000  38.6   NaN   6082] 'Indirect',   'Kirk1983',     'Bos_primigenius_Holstein' % PMR 176040 kJ/d; 20.1 kJ/l O2 (milk production) omit MMR quantified as dietary energy intake
+  %[550000  38.6   NaN   6082] 'Indirect',   'Kirk1983',     'Bos_primigenius_Holstein' % PMR 176040 kJ/d; 20.1 kJ/l O2 (milk production) omit MMR quantified as dietary energy intake
    [  817e3 35.5  3315  10897] 'Loco.water', 'JohnChri2024', 'Delphinapterus_leucas' % 4.058 13.338 ml O2/min.kg
-   [5.318e6 36.0  6633  39635] 'Loco.waterActive', 'WortWort2013', 'Orcinus_orca' % 8.0 47.8 MJ/h; 20.1 kJ/l O2 Omit PMR is estimates based on activity observations
+  %[5.318e6 36.0  6633  39635] 'Loco.waterActive', 'WortWort2013', 'Orcinus_orca' % 8.0 47.8 MJ/h; 20.1 kJ/l O2 Omit PMR is estimates based on activity observations
    % Rodentia
    [   255  39.0 2.928  29.88] 'Cold', 'Bozi1992',     'Microcavia_niata' %x 175.7 1792.7 ml O2/h
    [    35  39.6 1.030   5.35] 'Cold', 'Bozi1992',     'Abrothrix_andinus' %x 61.8 321.1 ml O2/h
@@ -515,7 +517,7 @@ mar = { ... % Marsupialia & Prototheria; m(g), Tb(C), BMR(ml O2/min), PMR (ml O2
    [    17  36.6 0.468   3.00] 'Cold', 'Bozi1992',     'Calomys_musculinus' % 28.1 180.2 ml O2/h
    [    28  36.6 1.283   6.30] 'Cold', 'Bozi1992',     'Myodes_rutilus' % 77.0 378.0 ml O2/h
    [    15  36.6 0.813   6.60] 'Cold', 'Bozi1992',     'Myodes_rutilus' % Winter acclimated 48.8 396.0 ml O2/h   
-   [   28.0 37.0  1.28   6.30] 'Cold', 'Lech1978',     'Myodes_rutilus'%Summer acclimated
+   [   28.0 37.0  1.28   6.30] 'Cold', 'Lech1978',     'Myodes_rutilus' % Summer acclimated
    [    21  39.6 0.560   6.66] 'Cold', 'Bozi1992',     'Eligmodontia_typus' % 33.6 399.6 ml O2/h
    [    18  39.6 0.513   3.45] 'Cold', 'Bozi1992',     'Eligmodontia_typus' % 30.8 207.0 ml O2/h
    [    69  39.6 1.392   7.25] 'Cold', 'Bozi1992',     'Graomys_griseoflavus' %x 83.5 434.7 ml O2/h
@@ -532,9 +534,9 @@ mar = { ... % Marsupialia & Prototheria; m(g), Tb(C), BMR(ml O2/min), PMR (ml O2
    [    33  37.0 0.772   3.79] 'Cold', 'Bozi1992',     'Dipodomys_merriami' % 46.3 227.5 ml O2/h
    [    34  37.0 0.627   4.29] 'Cold', 'Bozi1992',     'Dipodomys_merriami' % 37.6 257.5 ml O2/h
    [    45  39.6 0.835   3.34] 'Cold', 'Bozi1992',     'Heteromys_salvini' % 50.1 200.3 ml O2/h
-   [    20  34.7 0.397   2.84] 'Cold', 'Bozi1992',     'Chaetodipus fallax' % 23.8 170.2 ml O2/h
-   [    21  34.7 0.463   2.78] 'Cold', 'Bozi1992',     'Chaetodipus fallax' % 27.8 166.6 ml O2/h
-   [    18  34.7 0.425   2.56] 'Cold', 'Bozi1992',     'Chaetodipus fallax' % 25.5 147.5 ml O2/h
+   [    20  34.7 0.397   2.84] 'Cold', 'Bozi1992',     'Chaetodipus_fallax' % 23.8 170.2 ml O2/h
+   [    21  34.7 0.463   2.78] 'Cold', 'Bozi1992',     'Chaetodipus_fallax' % 27.8 166.6 ml O2/h
+   [    18  34.7 0.425   2.56] 'Cold', 'Bozi1992',     'Chaetodipus_fallax' % 25.5 147.5 ml O2/h
    [   176  37.6 3.053  12.91] 'Cold', 'Bozi1992',     'Octodon_bridgesii' %x 183.2 774.4 ml O2/h
    [   195  37.6 3.023  17.88] 'Cold', 'Bozi1992',     'Octodon_degus' % 181.4 1072.5 ml O2/h
    [   173  37.6 2.855  15.28] 'Cold', 'Bozi1992',     'Octodon_lunatus' %x 171.3 916.9 ml O2/h
@@ -1045,7 +1047,7 @@ for c=1:length(fig)
       xlabel('supply stress, s_s, -')
       ylabel('_{10}log spec O_2 consumption J_O^\infty/ W_w^\infty, mol/d.g')
       saveas(gca,'ss_jOi.png')
-
+      
     case 12 % care-corrected s_s
       shstat_options('default');
       shstat_options('x_transform', 'none');
@@ -1332,7 +1334,8 @@ end
 %   author = {Todd T. Gleeson}
 % }
 %
-% @article{Gleeson1981,
+%
+% @article{Glee1979,
 %   title = {Preferred Body Temperature, Aerobic Scope, and Activity Capacity in the Monitor Lizard, Varanus salvator},
 %   journal = {Physiological Zoology},
 %   volume = {54},
@@ -1396,15 +1399,16 @@ end
 %   author = {Jason S. John and Dennis R. Christen and Katherine L. Flammer and Traci L. Kendall and Emily C. Nazario and Beau P. Richter and Verena Gill and Terrie M. Williams}
 % }
 % 
-% @article{KamelGatten1983,
+% @article{KameGatt1983,
 %   title = {Aerobic and Anaerobic Activity Metabolism of Limbless and Fossorial Reptiles},
 %   journal = {Physiological Zoology},
 %   volume = {56},
 %   year = {1983},
 %   pages = {416-429},
-%   author = {S. Kamel, R.E. Gatten}
+%   author = {S. Kamel and R. E. Gatten}
 % }
 % 
+%
 % @article{Kirk1983,
 %   title = {A LIMIT TO METABOLISABLE ENERGY INTAKE IN MAMMALS AND BIRDS},
 %   journal = {Comp. Biochem. Physiol.},
@@ -1468,8 +1472,8 @@ end
 %   pages = {67-73}
 % }
 %
-% @ARTICLE{Nespoloetal2017,
-%   author = {R.F. Nespolo, J.J. Solano-Iguaran, F. Bozinovic},
+% @ARTICLE{NespSola2017,
+%   author = {R. F. Nespolo and J. J. Solano-Iguaran and F. Bozinovic},
 %   title = {Phylogenetic Analysis Supports the Aerobic-Capacity Model for the Evolution of Endothermy},
 %   journal = {Am. Nat.},
 %   year = {2017},
@@ -1524,9 +1528,9 @@ end
 %   pages = {101–107}
 % }
 %
-% @ARTICLE{Sandblometal2016,
+% @ARTICLE{SandClar2016,
 %   doi = { 10.1038/ncomms11447 | www.nature.com/naturecommunications},
-%   author = {E. Sandblom, T.D. Clark, A. Gräns, A. Ekström, J. Brijs, L.F. Sundström, A. Odelström, A. Adill, T. Aho, F. Jutfelt},
+%   author = {E. Sandblom and T.D. Clark and A. Grans and A. Ekstrom and J. Brijs and L.F. Sundstrom and A. Odelstrom and A. Adill and T. Aho and F. Jutfelt},
 %   title = {Physiological constraints to climate warming in fish follow principles of plastic floors and concrete ceilings},
 %   journal = {Nature Communications},
 %   year = {2016},
@@ -1590,9 +1594,9 @@ end
 %   pages = {e02062}
 % }
 %
-% @ARTICLE{Verhilleetal2016,
+% @ARTICLE{VerhEngl2016,
 %   doi = {10.1093/conphys/cow057},
-%   author = {C.E. Verhille, K.K. English, D.E. Cocherell, A.P. Farrell, N.A. Fangue},
+%   author = {C.E. Verhille and K.K. English and D.E. Cocherell and A.P. Farrell and N.A. Fangue},
 %   title = {High thermal tolerance of a rainbow trout population near its southern range limit suggests local thermal adjustment},
 %   journal = {Conserv. Physiol.},
 %   year = {2016},
@@ -1636,16 +1640,6 @@ end
 %   author = {Willmer, P. W. and Stone, G. and Johnston, I.}
 % }
 %
-% @ARTICLE{Withers1981,
-%   doi = {10.2307/1444055}, 
-%   author = {P.C. Withers},
-%   title = {Physiological Correlates of Limblessness and Fossoriality in Scincid Lizards},
-%   journal = {Copeia},
-%   volume = {1981},
-%   year = {1981},
-%   pages = {197-204}
-% }
-%
 % @ARTICLE{WortWort2013,
 %   doi = {10.1111/mms.12091}, 
 %   author = {Graham A. J. Worthy and Tamara A. M. Worthy and Pamela K. Yochem},
@@ -1654,6 +1648,16 @@ end
 %   volume = {80(5)},
 %   year = {2013},
 %   pages = {1-9}
+% }
+%
+% @ARTICLE{With1981,
+%   doi = {10.2307/1444055}, 
+%   author = {P.C. Withers},
+%   title = {Physiological Correlates of Limblessness and Fossoriality in Scincid Lizards},
+%   journal = {Copeia},
+%   volume = {1981},
+%   year = {1981},
+%   pages = {197-204}
 % }
 %
 % @ARTICLE{WithThom2000,
