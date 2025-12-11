@@ -1,10 +1,10 @@
 function VerhKooy2025_SI(fig)
 % Supporting Information for VerhKooy2025
-% Title: Aerobic scope in the context of the supply-demand spectrum
+% Title: The aerobic scope links clearly to the supply-demand spectrum
 % Authors: Verhille, Kooijman
 % Journal: Ecol. Mod
 % DOI: 
-% Date: 2025/07/02
+% Date: 2025/12/10
 % 
 % Matlab scripts to generate the figures in the publication
 %
@@ -16,7 +16,7 @@ function VerhKooy2025_SI(fig)
 % 4) Copy AmPtool from http://www.github.com/add-my-pet/AmPtool/ in a directory, set the path in Matlab to this directory.
 % 5) Copy wget.exe from e.g. https://eternallybored.org/misc/wget/ and make a path to it in the system-setting (Windows/Mac OS)
 %
-% Set Path in Matlab is in the toolbar of the Command Window of Matlab if full-screen
+% "Set Path" in Matlab is in the toolbar of the Command Window of Matlab if full-screen
 % Load this script-file in the Matlab Editor
 % To run the code for a figure: type in the Matlab window e.g. VerhKooy2025_SI(1)
 %
@@ -33,7 +33,7 @@ function VerhKooy2025_SI(fig)
 
 close all
 if ~exist('fig','var')
-   fig = 1:31;
+   fig = 1:12;
 end
 
   legend = { ... % colors from legend_vert
@@ -81,14 +81,14 @@ PMR.method = {'Loco.land','Loco.water','Loco.fly', 'Loco.flyburst', 'Turpor.arou
 
   % 1 mg O2/h = 0.7 ml O2/h
   cho = { ... % Chondrichthyes, mass(g), temp(C), SMR(ml O2/min), MMR(ml O2/min), PMR.method
-    [3400       25      6.3     10.2]   'Loco.water', 'GrahDewa1990',    'Negaprion_brevirostris' % 160 257 mg O2/h.kg
-    [1000       28      2.4     6.25]   'Loco.water', 'BouyWat2020',     'Carcharhinus_melanopterus' % 143.5  375 mg O2/h.kg^-0.87
-    [1380       30      3.56    9.15]   'Loco.water', 'BouyMont2017',    'Negaprion_brevirostris' % 155  398 mg O2/h.kg
-    [1020       30	    1.85    6.57]   'ChaseAir',   'BouyOrne2018',    'Carcharhinus_melanopterus' %110  390 mg O2/h.kg
-    [6310       18.2	2.10   20.98]   'Chase',      'PrinBign2023',    'Heterodontus_francisci' % 125.9 1258.92 mg/hr
-    [6000       15      7.4    10.8]    'Loco.water', 'GrahDewa1990',    'Triakis_semifasciata' % 105 154 mg O2/h.kg
-    [3900       18      13.7   21.2]    'Loco.water', 'GrahDewa1990',    'Isurus_oxyrinchus' % 300 466 mg O2/h.kg
-    [2530       18.5    1.47    7.25]   'Loco.water', 'PiipMeye1977',    'Scyliorhinus_stellaris' % 0.026 0.128 mmol/kg.min
+    [3400       25      6.3     10.2]   'Loco.water', 'GrahDewa1990', 'Negaprion_brevirostris' % 160 257 mg O2/h.kg
+    [1000       28      2.4     6.25]   'Loco.water', 'BouyWat2020',  'Carcharhinus_melanopterus' % 143.5  375 mg O2/h.kg^-0.87
+    [1380       30      3.56    9.15]   'Loco.water', 'BouyMont2017', 'Negaprion_brevirostris' % 155  398 mg O2/h.kg
+    [1020       30	    1.85    6.57]   'ChaseAir',   'BouyOrne2018', 'Carcharhinus_melanopterus' %110  390 mg O2/h.kg
+    [6310       18.2	2.10   20.98]   'Chase',      'PrinBign2023', 'Heterodontus_francisci' % 125.9 1258.92 mg/hr
+    [6000       15      7.4    10.8]    'Loco.water', 'GrahDewa1990', 'Triakis_semifasciata' % 105 154 mg O2/h.kg
+    [3900       18      13.7   21.2]    'Loco.water', 'GrahDewa1990', 'Isurus_oxyrinchus' % 300 466 mg O2/h.kg
+    [2530       18.5    1.47    7.25]   'Loco.water', 'PiipMeye1977', 'Scyliorhinus_stellaris' % 0.026 0.128 mmol/kg.min
     [10700     20	    3.632  15.5]    'Loco.water', 'NespSola2017', 'Pteroplatytrygon_violacea' 
     [2000	   10	    0.54	1.4731] 'Loco.water', 'NespSola2017', 'Squalus_acanthias' 
   };
@@ -128,7 +128,7 @@ PMR.method = {'Loco.land','Loco.water','Loco.fly', 'Loco.flyburst', 'Turpor.arou
     [ 50    15   0.0362  0.2217] 'Loco.water', 'GrahDewa1990',    'Oncorhynchus_nerka'      % 62 380 mg O2/h.kg
     [258	18	 0.3926	 1.3055] 'Loco.water', 'Sandblometal2016','Perca_fluviatilis'     	%  91.3;MMR:303.6 mg/kg/hr
     [285	23	 0.5282	 1.7095] 'Loco.water', 'Sandblometal2016','Perca_fluviatilis'		% 111.2 ;MMR: 359.8mg/kg/hr
-    [285	15	 0.0550	 0.1904] 'Loco.water', 'VerhEngl2016','Oncorhynchus_mykiss'		% 2.03 ;MMR: 7.03 mgkg^-0.95/min
+    [285	15	 0.0550	 0.1904] 'Loco.water', 'VerhEngl2016',    'Oncorhynchus_mykiss'		% 2.03 ;MMR: 7.03 mgkg^-0.95/min
   };
 
  % 1 mg O2/h = 0.7 ml O2/h; %x means not in AmP
@@ -149,7 +149,7 @@ PMR.method = {'Loco.land','Loco.water','Loco.fly', 'Loco.flyburst', 'Turpor.arou
    [  5    20  0.0027	0.0125] 'Loco.land', 'NespSola2017', 'Osteopilus_septentrionalis' % 0.0018;0.0182 W
    [  5.7  20  0.0057	0.0499] 'Loco.land', 'NespSola2017', 'Agalychnis_callidryas' % 0.0019;0.0167 W
    [ 15.1  20  0.0081	0.1]    'Loco.land', 'NespSola2017', 'Smilisca_fodiens' % 0.0027;0.0335 W
-   [  5.1  27	0.0113	0.0866] 'Loco.land', 'NespSola2017', 'Dryophytes_cinerea' %0.0038;0.029 W
+   [  5.1  27	0.0113	0.0866] 'Loco.land', 'NespSola2017', 'Dryophytes_cinereus' %0.0038;0.029 W
    [  3.4  20	0.0054	0.0472] 'Loco.land', 'NespSola2017', 'Dryophytes_arenicolor' %0.0018;0.0158 W
    [  5.47 20	0.0116	0.0896] 'Loco.land', 'NespSola2017', 'Dryophytes_chrysoscelis' %0.0039;0.03 W
    [ 13.85 29	0.0221	0.2875] 'Loco.land', 'NespSola2017', 'Dryophytes_gratiosa' %0.0074;0.0963 W
@@ -164,10 +164,10 @@ PMR.method = {'Loco.land','Loco.water','Loco.fly', 'Loco.flyburst', 'Turpor.arou
    [ 22.1  18  0.0299	0.266]  'Loco.land', 'NespSola2017', 'Xenopus_laevis' % 0.01;0.0891 W
    [481.15 20  0.237	5.7322] 'Loco.land', 'NespSola2017', 'Pyxicephalus_adspersus' % 0.0794;1.9203 W
    [ 38.4  10  0.0269	0.094]  'Loco.land', 'NespSola2017', 'Lithobates_pipiens' % 0.0090;0.0315 W
-   [ 43.58 20  0.0275	0.1155] 'Loco.land', 'NespSola2017', 'Lithobates_catesbeiana' % 0.0092;0.0387 W
+   [ 43.58 20  0.0275	0.1155] 'Loco.land', 'NespSola2017', 'Lithobates_catesbeianus' % 0.0092;0.0387 W 
    [ 12.7  20	0.0179	0.1576] 'Loco.land', 'NespSola2017', 'Lithobates_sylvaticus' % 0.0060;0.0528 W
    [ 10.88 15	0.0125	0.0725] 'Loco.land', 'NespSola2017', 'Spea_hammondii' % 0.0042;0.0243 W
-   % Urodela
+   % Caudata
    [ 26.43 15	0.0104	0.0337] 'Loco.land', 'NespSola2017', 'Ambystoma_gracile' % 0.0035;0.0113 W
    [  7.06 15	0.0054	0.0069] 'Loco.land', 'NespSola2017', 'Ambystoma_jeffersonianum' % 0.0018;0.0023 W
    [  2.79 15  0.0018	0.0048] 'Loco.land', 'NespSola2017', 'Ambystoma_macrodactylum' % 0.0016;0.0113 W
@@ -213,7 +213,7 @@ squ = { ... % Squamata mass (g), Tb (C), SMR (ml O2/min), PMR (ml O2/min), PMR.m
   [  80.99 40	0.2042	2.0472]	 'Loco.land', 'NespSola2017', 'Dipsosaurus_dorsalis'  %0.0684;0.6858 W
   [2149.83 35	3.1627 27.4173]	 'Loco.land', 'NespSola2017', 'Iguana_iguana'  %1.0595;9.1848 W
   [ 574	   37.5	0.8418	5.3373]	 'Loco.land', 'NespSola2017', 'Sauromalus_hispidus'  %0.2820;1.7880 W
-  [1136    35    NaN   16.9]	 'Loco.land', 'ChriConl1994',    'Cyclura_nubila'
+  [1136    35    NaN   16.9]	 'Loco.land', 'ChriConl1994', 'Cyclura_nubila'
   %Phrynosomatidae
   [  19.77 35	0.0812  0.7427]	 'Loco.land', 'NespSola2017', 'Sceloporus_occidentalis'  %0.0272;0.2488 W
   [   3.76 35	0.0316	0.2140]	 'Loco.land', 'NespSola2017', 'Uta_stansburiana'  %0.0106;0.0717 W
@@ -228,18 +228,18 @@ squ = { ... % Squamata mass (g), Tb (C), SMR (ml O2/min), PMR (ml O2/min), PMR.m
   %Trogonophidae
   [   4.97 25   0.0032  0.0473]  'Loco.land', 'KameGatt1983', 'Trogonophis_wiegmanni'  % SMR 0.0391 ml/g/h; MMR: 0.5705
   %Varanidae
-  [1287    35   3.1    24.3]     'Loco.land', 'ChriConl1994',    'Varanus_rosenbergi' %x
+  [1287    35   3.1    24.3]     'Loco.land', 'ChriConl1994', 'Varanus_rosenbergi'
   [1788.5  35	4.7325 30.9949]	 'Loco.land', 'NespSola2017', 'Varanus_rosenbergi' %1.5854;10.3833 W
-  [1086    35   1.9    24.5]     'Loco.land', 'ChriConl1994',    'Varanus_gouldii' %x
-  [ 931    35   2.1    20.8]     'Loco.land', 'ChriConl1994',    'Varanus_panoptes' %x
-  [ 904    35   1.2    13.7]     'Loco.land', 'ChriConl1994',    'Varanus_mertensi' %x
+  [1086    35   1.9    24.5]     'Loco.land', 'ChriConl1994', 'Varanus_gouldii' 
+  [ 931    35   2.1    20.8]     'Loco.land', 'ChriConl1994', 'Varanus_panoptes' 
+  [ 904    35   1.2    13.7]     'Loco.land', 'ChriConl1994', 'Varanus_mertensi'
   [  63.51 35	0.1039	2.8328]	 'Loco.land', 'NespSola2017', 'Varanus_acanthurus' %0.0348;0.9490 W
   [  17.44 35	0.0451	0.9397]	 'Loco.land', 'NespSola2017', 'Varanus_brevicauda' %0.0151;0.3148 W
   [  14.03 35	0.0376	1.5663]	 'Loco.land', 'NespSola2017', 'Varanus_caudolineatus' %0.0126;0.5247 W
   [  37.94 35	0.1027	1.5313]	 'Loco.land', 'NespSola2017', 'Varanus_eremius' %0.0344;0.5130 W
-  [ 505    35   1.212   9.2583]  'Loco.land', 'Glee1979',     'Varanus_salvator'	% all male; 0.144;1.10 ml/g/hr
+  [ 505    35   1.212   9.2583]  'Loco.land', 'Glee1979',     'Varanus_salvator' % all male; 0.144;1.10 ml/g/hr
   %Scincidae
-  [ 517    35  	1.6    	5.4]     'Loco.land', 'ChriConl1994',    'Tiliqua_rugosa'  
+  [ 517    35  	1.6    	5.4]     'Loco.land', 'ChriConl1994', 'Tiliqua_rugosa'  
   [  10.2  15   0.0031  0.0139]	 'Righting',  'With1981',     'Trachylepis_capensis'  %0.018;0.082 ml/g/hr
   [  10.2  15   0.0031  0.0139]  'Righting',  'With1981',     'Trachylepis_varia'  %0.018;0.082 ml/g/hr
   [  10.2  15   0.0031  0.0139]	 'Righting',  'With1981',     'Trachylepis_sulcata'  %0.018:0.082 ml/g/hr
@@ -267,7 +267,7 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [   194   38.9   4.33   11.97]  'Loco.land', 'FedaPins1974', 'Colinus_virginianus' % 1.34 3.703 ml O2/h.g 
     % Anseriformes 
    %[   275   41.2   NaN    23.22]  'DietaryEnergy', 'Kirk1983','Dendrocygna_autumnalis' % PMR 672 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
-    [   944.1 39.7  12.23   61.51]  'Cold',     'HindBaud1993', 'Anas_castanea' %x
+    [   944.1 39.7  12.23   61.51]  'Cold',     'HindBaud1993', 'Anas_castanea' 
    %[   190   41.2   NaN    21.39]  'DietaryEnergy', 'Kirk1983','Aythya_affinis' % PMR 619 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
     [  3813   41.2  40.03  197.51]  'Loco.land','FedaPins1974', 'Anser_anser' % 0.63 3.108 ml O2/h.g
     % Columbiformes
@@ -315,7 +315,7 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     % Strigiformes
     [    76   41.0   1.86    8.85] 'Cold',      'RezeSwan2002', 'Glaucidium_nana' % 1.47 6.67 ml O2/h.g; (weight 98 g is given, but 76 g is max)
     % Falconiformes
-   %[   106   40.0   NaN    11.09]  'DietaryEnergy', 'Kirk1983',     'Falco_tinnunculus' % PMR 321 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
+   %[   106   40.0   NaN    11.09]  'DietaryEnergy','Kirk1983', 'Falco_tinnunculus' % PMR 321 kJ/d; 20.1 kJ/l O2 omit MMR quantified as dietary energy intake
     % Piciformes
     [    25   41.0   1.275   7.94]  'Cold',     'RezeSwan2002', 'Dryobates_pubescens' % 3.06 19.05  ml O2/h.g
     [    25.8 41.0   NaN     6.69]  'Cold',     'SwanLikn2006', 'Leuconotopicus_villosus' % PMR 2.24 W; 20.1 kJ/l O2
@@ -379,61 +379,61 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [    11.0 41.6   0.422   2.867] 'Cold',     'RezeSwan2002', 'Zosterops_lateralis' % 2.30 15.64 ml O2/h.g Zosteropidae
     [     5.9 41.6   NaN     2.324] 'Cold',     'RezeSwan2002', 'Corthylio_calendula'  % PMR 23.63 ml O2/h.g Regulidae
     [     5.8 41.6   NaN     2.510] 'Cold',     'RezeSwan2002', 'Regulus_satrapa'  % PMR 25.97 ml O2/h.g Regulidae
-    [    72.0 42.1   NaN    15.19]  'Loco.fly', 'WierChap2007', 'Turdus_grayi' %x PMR 5.09 W; 20.1 kJ/l O2 Turdidae
-    [    70.96 42.1  NaN    12.18]  'Cold',     'WierChap2007', 'Turdus_grayi' %x PMR 4.08 W; 20.1 kJ/l O2 Turdidae
-    [    18.2 41.9   NaN     5.19]  'Loco.fly', 'WierChap2007', 'Vireo_flavoviridis' %x PMR 1.74 W; 20.1 kJ/l O2 Vireonidae
-    [    17.3 41.9   NaN     3.73]  'Cold',     'WierChap2007', 'Vireo_flavoviridis' %x PMR 1.25 W; 20.1 kJ/l O2 Vireonidae
+    [    72.0 42.1   NaN    15.19]  'Loco.fly', 'WierChap2007', 'Turdus_grayi' % PMR 5.09 W; 20.1 kJ/l O2 Turdidae
+    [    70.96 42.1  NaN    12.18]  'Cold',     'WierChap2007', 'Turdus_grayi' % PMR 4.08 W; 20.1 kJ/l O2 Turdidae
+    [    18.2 41.9   NaN     5.19]  'Loco.fly', 'WierChap2007', 'Vireo_flavoviridis' % PMR 1.74 W; 20.1 kJ/l O2 Vireonidae
+    [    17.3 41.9   NaN     3.73]  'Cold',     'WierChap2007', 'Vireo_flavoviridis' % PMR 1.25 W; 20.1 kJ/l O2 Vireonidae
     [     9.2 41.9   NaN     2.537] 'Cold',     'SwanLikn2006', 'Vireo_bellii' % PMR 0.85 W; 20.1 kJ/l O2  Vireonidae
     [    13.0 41.9   0.685   4.108] 'Cold',     'RezeSwan2002', 'Vireo_gilvus' % 3.16 18.96 ml O2/h.g Vireonidae
     [    12   41.6   NaN     4.48]  'Loco.fly', 'WierChap2007', 'Hylophilus_flavipes' %x PMR 1.5 W; 20.1 kJ/l O2 Vireonidae
     [    13.7 41.6   1.092   7.714] 'Cold',     'DuteSwan1996', 'Poecile_atricapillus' % Paridae 
     [    11.0 41.6   0.744   4.670] 'Cold',     'RezeSwan2002', 'Poecile_gambeli' % 4.06 25.47 ml O2/h.g Paridae 
     % % % Passerida
-    [    11.3 39     0.68    4.03]  'Cold', 'HindBaud1993', 'Taeniopygia_guttata' % Estrildidae
-    [    12.0 41.6   0.722   4.098] 'Cold', 'RezeSwan2002', 'Taeniopygia_guttata' % 3.61 20.49 ml O2/h.g Estrildidae 
+    [    11.3 39     0.68    4.03]  'Cold',     'HindBaud1993', 'Taeniopygia_guttata' % Estrildidae
+    [    12.0 41.6   0.722   4.098] 'Cold',     'RezeSwan2002', 'Taeniopygia_guttata' % 3.61 20.49 ml O2/h.g Estrildidae 
     [    23.1 41.6   0.97    9.99]  'Loco.flyburst', 'ButtBech2010', 'Passer_domesticus' % for adults; juveniles 22.34 g, 1.06, 8.81 ml O2/min Passeridae
-    [    27.2 41.6   1.314  10.605] 'Cold', 'DuteSwan1996', 'Passer_domesticus'  %  Passeridae 
+    [    27.2 41.6   1.314  10.605] 'Cold',     'DuteSwan1996', 'Passer_domesticus'  %  Passeridae 
     [    13.2 41.6   NaN     3.88]  'Loco.fly', 'WierChap2007', 'Euphonia_laniirostris' %x PMR 1.3 W; 20.1 kJ/l O2 Fringillidae
-    [    13.2 41.6   NaN     3.13]  'Cold', 'WierChap2007', 'Euphonia_laniirostris' %x PMR 1.05 W; 20.1 kJ/l O2 Fringillidae
-   %[    30.0 41.6   NaN     3.80]  'DietaryEnergy',     'Kirk1983',     'Fringilla_coelebs' % PMR 110 kJ/d; 20.1 kJ/l O2 Fringillidae omit MMR quantified as dietary energy intake
-    [    20.8 41.6   0.971   2.392] 'Cold', 'DawsButt1985', 'Haemorhous_mexicanus' % 2.8 6.9 cm^3 O2/h.g Fringillidae % cold stress down to 0C; at lower temp MR might be higher 
-    [    14.0 41.6   0.863   5.088] 'Cold', 'RezeSwan2002', 'Acanthis_flammea' %  3.70 21.80  cm^3 O2/h.g Fringillidae
-    [    13.0 41.6   0.867   4.314] 'Cold', 'RezeSwan2002', 'Spinus_tristis' % 4.0 19.91 cm^3 O2/h.g Fringillidae
-    [    40.7 41.6   1.564   8.922] 'Cold', 'DuteSwan1996', 'Pheucticus_ludovicianus' % Cardinalidae 
+    [    13.2 41.6   NaN     3.13]  'Cold',     'WierChap2007', 'Euphonia_laniirostris' %x PMR 1.05 W; 20.1 kJ/l O2 Fringillidae
+   %[    30.0 41.6   NaN     3.80]  'DietaryEnergy','Kirk1983', 'Fringilla_coelebs' % PMR 110 kJ/d; 20.1 kJ/l O2 Fringillidae omit MMR quantified as dietary energy intake
+    [    20.8 41.6   0.971   2.392] 'Cold',     'DawsButt1985', 'Haemorhous_mexicanus' % 2.8 6.9 cm^3 O2/h.g Fringillidae % cold stress down to 0C; at lower temp MR might be higher 
+    [    14.0 41.6   0.863   5.088] 'Cold',     'RezeSwan2002', 'Acanthis_flammea' %  3.70 21.80  cm^3 O2/h.g Fringillidae
+    [    13.0 41.6   0.867   4.314] 'Cold',     'RezeSwan2002', 'Spinus_tristis' % 4.0 19.91 cm^3 O2/h.g Fringillidae
+    [    40.7 41.6   1.564   8.922] 'Cold',     'DuteSwan1996', 'Pheucticus_ludovicianus' % Cardinalidae 
     [    27.9 41.6   NaN     6.51]  'Loco.fly', 'WierChap2007', 'Cyanocompsa_cyanoides' %x PMR 2.18 W; 20.1 kJ/l O2 Cardinalidae
-    [    26.8 41.6   NaN     4.18]  'Cold', 'WierChap2007', 'Cyanocompsa_cyanoides' %x PMR 1.4 W; 20.1 kJ/l O2 Cardinalidae
+    [    26.8 41.6   NaN     4.18]  'Cold',     'WierChap2007', 'Cyanocompsa_cyanoides' %x PMR 1.4 W; 20.1 kJ/l O2 Cardinalidae
     [    38.67 41.6  NaN     7.97]  'Loco.fly', 'WierChap2007', 'Habia_fuscicauda' %x PMR 2.67 W; 20.1 kJ/l O2 Cardinalidae
-    [    46.0 41.6   NaN     9.721] 'Cold', 'RezeSwan2002', 'Cardinalis_cardinalis' % 12.68 cm^3 O2/h.g Cardinalidae
-    [    13.9 41.6   NaN     3.881] 'Cold', 'SwanLikn2006', 'Passerina_cyanea' % 1.3 W; 20.1 kJ/l O2 Cardinalidae
-    [    27.0 41.6   NaN     6.21]  'Cold', 'RezeSwan2002', 'Phrygilus_gayi' %x PMR 13.80 ml O2/h.g Thraupidae
+    [    46.0 41.6   NaN     9.721] 'Cold',     'RezeSwan2002', 'Cardinalis_cardinalis' % 12.68 cm^3 O2/h.g Cardinalidae
+    [    13.9 41.6   NaN     3.881] 'Cold',     'SwanLikn2006', 'Passerina_cyanea' % 1.3 W; 20.1 kJ/l O2 Cardinalidae
+    [    27.0 41.6   NaN     6.21]  'Cold',     'RezeSwan2002', 'Phrygilus_gayi' %x PMR 13.80 ml O2/h.g Thraupidae
     [    12.25 41.6  NaN     4.09]  'Loco.fly', 'WierChap2007', 'Oryzoborus_angolensis' %x PMR 1.37 W; 20.1 kJ/l O2 Thraupidae
     [    28.8 41.6   NaN     8.24]  'Loco.fly', 'WierChap2007', 'Eucometis_penicillata' %x PMR 2.76 W; 20.1 kJ/l O2 Thraupidae
     [    39.0 41.6   NaN     7.79]  'Loco.fly', 'WierChap2007', 'Saltator_striatipectus' %x PMR 2.61 W; 20.1 kJ/l O2 Thraupidae
     [    10.1 41.6   NaN     4.09]  'Loco.fly', 'WierChap2007', 'Sporophila_americana' %x PMR 1.37 W; 20.1 kJ/l O2 Thraupidae
-    [     9.8 41.6   NaN     2.78]  'Cold', 'WierChap2007', 'Sporophila_americana' %x PMR 0.93 W; 20.1 kJ/l O2 Thraupidae
+    [     9.8 41.6   NaN     2.78]  'Cold',     'WierChap2007', 'Sporophila_americana' %x PMR 0.93 W; 20.1 kJ/l O2 Thraupidae
     [     9   41.6   NaN     4.39]  'Loco.fly', 'WierChap2007', 'Sporophila_nigricollis' %x PMR 1.47 W; 20.1 kJ/l O2 Thraupidae
     [    29.7 41.3   NaN     7.28]  'Loco.fly', 'WierChap2007', 'Thraupis_episcopus' % PMR 2.44 W; 20.1 kJ/l O2 Thraupidae
-    [    31.0 41.3   NaN     4.42]  'Cold', 'WierChap2007', 'Thraupis_episcopus' % PMR 1.48 W; 20.1 kJ/l O2 Thraupidae
+    [    31.0 41.3   NaN     4.42]  'Cold',     'WierChap2007', 'Thraupis_episcopus' % PMR 1.48 W; 20.1 kJ/l O2 Thraupidae
     [    30.5 41.6   NaN     6.42]  'Loco.fly', 'WierChap2007', 'Thraupis_palmarum' %x PMR 2.15 W; 20.1 kJ/l O2 Thraupidae
-    [    34.0 41.6   NaN     9.100] 'Cold', 'RezeSwan2002', 'Diuca_diuca' % 16.06 cm^3 O2/h.g Thraupidae
+    [    34.0 41.6   NaN     9.100] 'Cold',     'RezeSwan2002', 'Diuca_diuca' % 16.06 cm^3 O2/h.g Thraupidae
     [    41.2 41.6   NaN     9.91]  'Loco.fly', 'WierChap2007', 'Arremonops_conirostris' %x PMR 3.32 W; 20.1 kJ/l O2 Passerellidae
-    [    40.0 41.6   NaN     7.07]  'Cold', 'WierChap2007', 'Arremonops_conirostris' %x PMR 2.37 W; 20.1 kJ/l O2 Passerellidae
-   %[    32.4 41.6   NaN     4.46]  'DietaryEnergy',         'Kirk1983',     'Zonotrichia_leucophrys' % PMR 129 kJ/d; 20.1 kJ/l O2 Passerellidae omit MMR quantified as dietary energy intake
-   %[    28.0 41.6   NaN     4.91]  'DietaryEnergy',         'Kirk1983',     'Zonotrichia_albicollis' % PMR 142 kJ/d; 20.1 kJ/l O2 Passerellidae omit MMR quantified as dietary energy intake
-    [    20.0 41.6   1.037   5.433] 'Cold', 'RezeSwan2002', 'Zonotrichia_capensis' % 3.11 16.30 ml O2/h.g Passerellidae
-    [    12.8 41.6   0.722   4.539] 'Cold', 'DuteSwan1996', 'Spizella_pusilla' % Passerellidae
-    [    18.6 41.6   1.209   7.478] 'Cold', 'DuteSwan1996', 'Spizelloides_arborea' % Passerellidae
-    [    20.0 41.6   1.423   8.619] 'Cold', 'DuteSwan1996', 'Junco_hyemalis' % Passerellidae   
-    [    17.0 41.6   0.941   5.879] 'Cold', 'RezeSwan2002', 'Junco_hyemalis' % 3.32 20.75 ml O2/h.g Passerellidae   
-    [    19.0 41.6   1.311   7.638] 'Cold', 'RezeSwan2002', 'Spizelloides_arborea' % 4.14 24.12 ml O2/h.g Passerellidae   
-    [    11.0 41.6   0.638   3.584] 'Cold', 'RezeSwan2002', 'Spizella_passerina' % 3.48 19.55 ml O2/h.g Passerellidae   
-    [    13.0 41.6   0.789   4.611] 'Cold', 'RezeSwan2002', 'Spizella_pusilla' % 3.64 21.28 ml O2/h.g Passerellidae   
+    [    40.0 41.6   NaN     7.07]  'Cold',     'WierChap2007', 'Arremonops_conirostris' %x PMR 2.37 W; 20.1 kJ/l O2 Passerellidae
+   %[    32.4 41.6   NaN     4.46]  'DietaryEnergy','Kirk1983', 'Zonotrichia_leucophrys' % PMR 129 kJ/d; 20.1 kJ/l O2 Passerellidae omit MMR quantified as dietary energy intake
+   %[    28.0 41.6   NaN     4.91]  'DietaryEnergy','Kirk1983', 'Zonotrichia_albicollis' % PMR 142 kJ/d; 20.1 kJ/l O2 Passerellidae omit MMR quantified as dietary energy intake
+    [    20.0 41.6   1.037   5.433] 'Cold',     'RezeSwan2002', 'Zonotrichia_capensis' % 3.11 16.30 ml O2/h.g Passerellidae
+    [    12.8 41.6   0.722   4.539] 'Cold',     'DuteSwan1996', 'Spizella_pusilla' % Passerellidae
+    [    18.6 41.6   1.209   7.478] 'Cold',     'DuteSwan1996', 'Spizelloides_arborea' % Passerellidae
+    [    20.0 41.6   1.423   8.619] 'Cold',     'DuteSwan1996', 'Junco_hyemalis' % Passerellidae   
+    [    17.0 41.6   0.941   5.879] 'Cold',     'RezeSwan2002', 'Junco_hyemalis' % 3.32 20.75 ml O2/h.g Passerellidae   
+    [    19.0 41.6   1.311   7.638] 'Cold',     'RezeSwan2002', 'Spizelloides_arborea' % 4.14 24.12 ml O2/h.g Passerellidae   
+    [    11.0 41.6   0.638   3.584] 'Cold',     'RezeSwan2002', 'Spizella_passerina' % 3.48 19.55 ml O2/h.g Passerellidae   
+    [    13.0 41.6   0.789   4.611] 'Cold',     'RezeSwan2002', 'Spizella_pusilla' % 3.64 21.28 ml O2/h.g Passerellidae   
     [    11.0 41.6   NaN     3.52]  'Loco.fly', 'WierChap2007', 'Basileuterus_rufifrons' %x PMR 1.18 W; 20.1 kJ/l O2 Parulidae
-    [     9.3 41.6   0.546   3.018] 'Cold', 'DuteSwan1996', 'Setophaga_petechia' % Parulidae
-    [     9.0 41.6   0.744   3.894] 'Cold', 'RezeSwan2002', 'Setophaga_petechia' % 3.72 19.47 cm^3 O2/h.g Parulidae
-    [    12.0 41.6   0.746   3.937] 'Cold', 'RezeSwan2002', 'Setophaga_coronata' % 3.73 19.69 cm^3 O2/h.g Parulidae
-    [    32.0 41.6   1.499   7.242] 'Cold', 'RezeSwan2002', 'Icterus_galbula' % 2.81 13.58 cm^3 O2/h.g Icteridae
-    [    20.4 41.6   NaN     5.015] 'Cold', 'SwanLikn2006', 'Icterus_spurius' % 1.68 W; 20.1 kJ/l O2 Icteridae
+    [     9.3 41.6   0.546   3.018] 'Cold',     'DuteSwan1996', 'Setophaga_petechia' % Parulidae
+    [     9.0 41.6   0.744   3.894] 'Cold',     'RezeSwan2002', 'Setophaga_petechia' % 3.72 19.47 cm^3 O2/h.g Parulidae
+    [    12.0 41.6   0.746   3.937] 'Cold',     'RezeSwan2002', 'Setophaga_coronata' % 3.73 19.69 cm^3 O2/h.g Parulidae
+    [    32.0 41.6   1.499   7.242] 'Cold',     'RezeSwan2002', 'Icterus_galbula' % 2.81 13.58 cm^3 O2/h.g Icteridae
+    [    20.4 41.6   NaN     5.015] 'Cold',     'SwanLikn2006', 'Icterus_spurius' % 1.68 W; 20.1 kJ/l O2 Icteridae
 };   
    
 mar = { ... % Marsupialia & Prototheria; m(g), Tb(C), BMR(ml O2/min), PMR (ml O2/min), PMR.method; %x means not in AmP
@@ -499,17 +499,17 @@ mar = { ... % Marsupialia & Prototheria; m(g), Tb(C), BMR(ml O2/min), PMR (ml O2
    [  817e3 35.5  3315  10897] 'Loco.water', 'JohnChri2024', 'Delphinapterus_leucas' % 4.058 13.338 ml O2/min.kg
   %[5.318e6 36.0  6633  39635] 'Loco.waterActive', 'WortWort2013', 'Orcinus_orca' % 8.0 47.8 MJ/h; 20.1 kJ/l O2 Omit PMR is estimates based on activity observations
    % Rodentia
-   [   255  39.0 2.928  29.88] 'Cold', 'Bozi1992',     'Microcavia_niata' %x 175.7 1792.7 ml O2/h
-   [    35  39.6 1.030   5.35] 'Cold', 'Bozi1992',     'Abrothrix_andinus' %x 61.8 321.1 ml O2/h
-   [    29  39.6 0.877   6.91] 'Cold', 'Bozi1992',     'Abrothrix_andinus' %x 52.6 414.6 ml O2/h
-   [    25  39.6 0.660   6.11] 'Cold', 'Bozi1992',     'Abrothrix_andinus' %x 39.6 366.6 ml O2/h
-   [    33  39.6 0.977   5.92] 'Cold', 'Bozi1992',     'Abrothrix_andinus' %x 58.6 355.3 ml O2/h
-   [    23  39.6 0.735   4.87] 'Cold', 'Bozi1992',     'Abrothrix_andinus' %x 44.1 292.3 ml O2/h
-   [    42  39.6 1.308   6.09] 'Cold', 'Bozi1992',     'Abrothrix_longipilis' %x 78.5 365.4 ml O2/h
-   [    27  39.6 0.823   4.14] 'Cold', 'Bozi1992',     'Abrothrix_olivaceus' %x 49.4 248.4 ml O2/h
-   [    24  39.6 0.760   5.00] 'Cold', 'Bozi1992',     'Abrothrix_lanosus' %x 45.6 300.0 ml O2/h
-   [    31  36.2 0.775   6.10] 'Cold', 'Bozi1992',     'Akodon_albiventer' %x 46.5 365.8 ml O2/h
-   [    77  39.6 1.848   9.75] 'Cold', 'Bozi1992',     'Auliscomys_boliviensis' %x 110.9 585.2 ml O2/h
+   [   255  39.0 2.928  29.88] 'Cold', 'Bozi1992',     'Microcavia_niata' % 175.7 1792.7 ml O2/h
+   [    35  39.6 1.030   5.35] 'Cold', 'Bozi1992',     'Abrothrix_andinus' % 61.8 321.1 ml O2/h
+   [    29  39.6 0.877   6.91] 'Cold', 'Bozi1992',     'Abrothrix_andinus' % 52.6 414.6 ml O2/h
+   [    25  39.6 0.660   6.11] 'Cold', 'Bozi1992',     'Abrothrix_andinus' % 39.6 366.6 ml O2/h
+   [    33  39.6 0.977   5.92] 'Cold', 'Bozi1992',     'Abrothrix_andinus' % 58.6 355.3 ml O2/h
+   [    23  39.6 0.735   4.87] 'Cold', 'Bozi1992',     'Abrothrix_andinus' % 44.1 292.3 ml O2/h
+   [    42  39.6 1.308   6.09] 'Cold', 'Bozi1992',     'Abrothrix_longipilis' % 78.5 365.4 ml O2/h
+   [    27  39.6 0.823   4.14] 'Cold', 'Bozi1992',     'Abrothrix_olivaceus' % 49.4 248.4 ml O2/h
+   [    24  39.6 0.760   5.00] 'Cold', 'Bozi1992',     'Abrothrix_lanosus' % 45.6 300.0 ml O2/h
+   [    31  36.2 0.775   6.10] 'Cold', 'Bozi1992',     'Akodon_albiventer' % 46.5 365.8 ml O2/h
+   [    77  39.6 1.848   9.75] 'Cold', 'Bozi1992',     'Auliscomys_boliviensis' % 110.9 585.2 ml O2/h
    [    62  39.6 1.622   7.44] 'Cold', 'Bozi1992',     'Loxodontomys_micropus' % 97.3 446.4 ml O2/h
    [    6.9 36.0  0.24   1.41] 'Cold', 'Lech1978',     'Baiomys_taylori'
    [    48  38.0  0.93   5.34] 'Cold', 'Lech1978',     'Calomys_callosus'
@@ -520,8 +520,8 @@ mar = { ... % Marsupialia & Prototheria; m(g), Tb(C), BMR(ml O2/min), PMR (ml O2
    [   28.0 37.0  1.28   6.30] 'Cold', 'Lech1978',     'Myodes_rutilus' % Summer acclimated
    [    21  39.6 0.560   6.66] 'Cold', 'Bozi1992',     'Eligmodontia_typus' % 33.6 399.6 ml O2/h
    [    18  39.6 0.513   3.45] 'Cold', 'Bozi1992',     'Eligmodontia_typus' % 30.8 207.0 ml O2/h
-   [    69  39.6 1.392   7.25] 'Cold', 'Bozi1992',     'Graomys_griseoflavus' %x 83.5 434.7 ml O2/h
-   [    28  36.2 0.845   4.57] 'Cold', 'Bozi1992',     'Oligoryzomys longicaudatus' %x 50.7 274.4 ml O2/h
+   [    69  39.6 1.392   7.25] 'Cold', 'Bozi1992',     'Graomys_griseoflavus' % 83.5 434.7 ml O2/h
+   [    28  36.2 0.845   4.57] 'Cold', 'Bozi1992',     'Oligoryzomys_longicaudatus' % 50.7 274.4 ml O2/h
    [    32  38.4 1.280   6.67] 'Cold', 'Bozi1992',     'Microtus_oeconomus' % 76.8 400.0 ml O2/h
    [    41  36.4 0.941   3.48] 'Cold', 'Bozi1992',     'Peromyscus_californicus' % 56.5 208.9 ml O2/h
    [    18  36.6 0.405   2.41] 'Cold', 'Bozi1992',     'Peromyscus_eremicus' % 24.3 144.3 ml O2/h
@@ -530,26 +530,26 @@ mar = { ... % Marsupialia & Prototheria; m(g), Tb(C), BMR(ml O2/min), PMR (ml O2
    [    49  39.6 1.093   5.86] 'Cold', 'Bozi1992',     'Phyllotis_darwini' % 65.6 351.4 ml O2/h
    [    59  39.6 1.190   6.79] 'Cold', 'Bozi1992',     'Phyllotis_darwini' % 71.4 407.1 ml O2/h
    [    36  39.6 0.757   5.15] 'Cold', 'Bozi1992',     'Phyllotis_darwini' % 45.4 308.9 ml O2/h
-   [    79  39.6 1.280   9.48] 'Cold', 'Bozi1992',     'Reithrodon_auritus' %x 76.8 569.0 ml O2/h
+   [    79  39.6 1.280   9.48] 'Cold', 'Bozi1992',     'Reithrodon_auritus' % 76.8 569.0 ml O2/h
    [    33  37.0 0.772   3.79] 'Cold', 'Bozi1992',     'Dipodomys_merriami' % 46.3 227.5 ml O2/h
    [    34  37.0 0.627   4.29] 'Cold', 'Bozi1992',     'Dipodomys_merriami' % 37.6 257.5 ml O2/h
    [    45  39.6 0.835   3.34] 'Cold', 'Bozi1992',     'Heteromys_salvini' % 50.1 200.3 ml O2/h
    [    20  34.7 0.397   2.84] 'Cold', 'Bozi1992',     'Chaetodipus_fallax' % 23.8 170.2 ml O2/h
    [    21  34.7 0.463   2.78] 'Cold', 'Bozi1992',     'Chaetodipus_fallax' % 27.8 166.6 ml O2/h
    [    18  34.7 0.425   2.56] 'Cold', 'Bozi1992',     'Chaetodipus_fallax' % 25.5 147.5 ml O2/h
-   [   176  37.6 3.053  12.91] 'Cold', 'Bozi1992',     'Octodon_bridgesii' %x 183.2 774.4 ml O2/h
+   [   176  37.6 3.053  12.91] 'Cold', 'Bozi1992',     'Octodon_bridgesii' % 183.2 774.4 ml O2/h
    [   195  37.6 3.023  17.88] 'Cold', 'Bozi1992',     'Octodon_degus' % 181.4 1072.5 ml O2/h
-   [   173  37.6 2.855  15.28] 'Cold', 'Bozi1992',     'Octodon_lunatus' %x 171.3 916.9 ml O2/h
+   [   173  37.6 2.855  15.28] 'Cold', 'Bozi1992',     'Octodon_lunatus' % 171.3 916.9 ml O2/h
    [    98  36   2.47    9.9]  'Cold', 'Lech1978',     'Mesocricetus_auratus'
    [   113  38.0  2.47  11.20] 'Loco.land', 'Lech1978','Mesocricetus_auratus'
-   [  819.0 34.6  9.51  44.27] 'Cold', 'HindBaud1993', 'Uromys_caudimaculatus' %x
+   [  819.0 34.6  9.51  44.27] 'Cold', 'HindBaud1993', 'Uromys_caudimaculatus' 
    [  212.3 35.9  2.71  14.85] 'Cold', 'HindBaud1993', 'Conilurus_penicillatus' 
    [   38.8 36.2  0.83   3.48] 'Cold', 'HindBaud1993', 'Notomys_alexis'
    [   30   37.0  0.88   5.46] 'Cold', 'Lech1978',     'Mus_musculus' %lab mouse
    [   17   37.0  0.48   3.48] 'Cold', 'Lech1978',     'Mus_musculus' %feral mouse
    [  253   38.0  4.47  21.90] 'Cold', 'Lech1978',     'Rattus_norvegicus' 
-   [  165.7 36.2  2.05  11.51] 'Cold', 'HindBaud1993', 'Rattus_colletti' %x
-   [  247.8 36.0  2.43  14.48] 'Cold', 'HindBaud1993', 'Rattus_villosissimus' %x
+   [  165.7 36.2  2.05  11.51] 'Cold', 'HindBaud1993', 'Rattus_colletti' 
+   [  247.8 36.0  2.43  14.48] 'Cold', 'HindBaud1993', 'Rattus_villosissimus' 
    [ 3200.0 37.0  10.1  80.00] 'Turpor.arousal', 'HampNels2010', 'Marmota_marmota' %  0.19 1.5 ml O2/h.g 
    [  800.0 35.5  6.67  35.33] 'Turpor.arousal', 'HampNels2010', 'Urocitellus_parryii' % 0.5 2.65 ml O2/h.g 
    [  240.0 35.5  4.47  21.90] 'Turpor.arousal', 'HampNels2010', 'Ictidomys_tridecemlineatus' % 0.96 4.7 ml O2/h.g 
@@ -562,161 +562,161 @@ mar = { ... % Marsupialia & Prototheria; m(g), Tb(C), BMR(ml O2/min), PMR (ml O2
 for c=1:length(fig)
  
   switch fig(c)
-    case 1 % ss_AS
+    case 1 % Fig 6a: ss_FAS
     
-      data = cell2mat(act(:,1)); PMR_SMR_act = data(:,4)./data(:,3);
+      data = cell2mat(act(:,1)); PMR_BMR_act = data(:,4)./data(:,3);
       ss_act = read_stat(act(:,4),'s_s');
       %
-      data = cell2mat(cho(:,1)); PMR_SMR_cho = data(:,4)./data(:,3);
+      data = cell2mat(cho(:,1)); PMR_BMR_cho = data(:,4)./data(:,3);
       ss_cho = read_stat(cho(:,4),'s_s');
       %
-      data = cell2mat(amp(:,1)); PMR_SMR_amp = data(:,4)./data(:,3);
+      data = cell2mat(amp(:,1)); PMR_BMR_amp = data(:,4)./data(:,3);
       ss_amp = read_stat(amp(:,4),'s_s');
       %
-      data = cell2mat(squ(:,1)); PMR_SMR_squ = data(:,4)./data(:,3);
+      data = cell2mat(squ(:,1)); PMR_BMR_squ = data(:,4)./data(:,3);
       ss_squ = read_stat(squ(:,4),'s_s');
       %
-      data = cell2mat(ave(:,1)); PMR_SMR_ave = data(:,4)./data(:,3);
+      data = cell2mat(ave(:,1)); PMR_BMR_ave = data(:,4)./data(:,3);
       ss_ave = read_stat(ave(:,4),'s_s');
       %
-      data = cell2mat(mar(:,1)); PMR_SMR_mar = data(:,4)./data(:,3);
+      data = cell2mat(mar(:,1)); PMR_BMR_mar = data(:,4)./data(:,3);
       ss_mar = read_stat(mar(:,4),'s_s');
       %
-      data = cell2mat(pla(:,1)); PMR_SMR_pla = data(:,4)./data(:,3);
+      data = cell2mat(pla(:,1)); PMR_BMR_pla = data(:,4)./data(:,3);
       ss_pla = read_stat(pla(:,4),'s_s');
 
       Hfig = figure;
-      plot(ss_cho, log10(PMR_SMR_cho), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[0 0 1], 'MarkerFaceColor',[0 1 1])
+      plot(ss_cho, log10(PMR_BMR_cho), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[0 0 1], 'MarkerFaceColor',[0 1 1])
       hold on
-      plot(ss_act, log10(PMR_SMR_act), '.b', 'MarkerSize',20)
-      plot(ss_amp, log10(PMR_SMR_amp), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[1 0 1], 'MarkerFaceColor',[0 1 1])
-      plot(ss_squ, log10(PMR_SMR_squ), '.m', 'MarkerSize',20)
-      plot(ss_ave, log10(PMR_SMR_ave), '.r', 'MarkerSize',20)
-      plot(ss_mar, log10(PMR_SMR_mar), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[1 .5 .5], 'MarkerFaceColor',[0 0 0])
-      plot(ss_pla, log10(PMR_SMR_pla), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[1 .5 .5], 'MarkerFaceColor',[1 .5 .5])
-      xlim([0 4/27])
+      plot(ss_act, log10(PMR_BMR_act), '.b', 'MarkerSize',20)
+      plot(ss_amp, log10(PMR_BMR_amp), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[1 0 1], 'MarkerFaceColor',[0 1 1])
+      plot(ss_squ, log10(PMR_BMR_squ), '.m', 'MarkerSize',20)
+      plot(ss_ave, log10(PMR_BMR_ave), '.r', 'MarkerSize',20)
+      plot(ss_mar, log10(PMR_BMR_mar), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[1 .5 .5], 'MarkerFaceColor',[0 0 0])
+      plot(ss_pla, log10(PMR_BMR_pla), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[1 .5 .5], 'MarkerFaceColor',[1 .5 .5])
       xlabel('supply stress s_s, -')
-      ylabel('_{10}log PMR/SMR, -')
+      ylabel('_{10}log PMR/BMR, -')
+      xlim([0 4/27]); ylim([-1 2.5])
 
       % set species names behind markers in plot figure
       h = datacursormode(Hfig); entries_txt = [cho(:,4); act(:,4); amp(:,4); squ(:,4); ave(:,4); mar(:,4); pla(:,4)]; 
-      data = [[ss_cho;ss_act;ss_amp;ss_squ;ss_ave;ss_mar;ss_pla],log10([PMR_SMR_cho;PMR_SMR_act;PMR_SMR_amp;PMR_SMR_squ;PMR_SMR_ave;PMR_SMR_mar;PMR_SMR_pla])];
+      data = [[ss_cho;ss_act;ss_amp;ss_squ;ss_ave;ss_mar;ss_pla],log10([PMR_BMR_cho;PMR_BMR_act;PMR_BMR_amp;PMR_BMR_squ;PMR_BMR_ave;PMR_BMR_mar;PMR_BMR_pla])];
       for i=1:length(entries_txt); entries_txt{i} = strrep(entries_txt{i}, '_' , ' '); end
       h.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries_txt, data);
       datacursormode on % mouse click on plot
 
-      saveas(gcf,'ss_PSMR.fig')
-      saveas(gcf,'ss_PSMR.png')
+      saveas(gcf,'ss_PBMR.fig')
+      saveas(gcf,'ss_PBMR.png')
 
-    case 2  % predicted FMR_measured SMR   
+    case 2  % Fig 3: predicted FMR_measured BMR; this case takes a while to run 
       WD0 = pwd; % store original directory
       nm_cho = cho(:,4); n_cho = length(nm_cho); FMR_cho = zeros(n_cho,1); 
-      data_cho = cell2mat(cho(:,1)); PMR_cho = data_cho(:,4); SMR_cho = data_cho(:,3); T_cho = data_cho(:,2); W_cho = data_cho(:,1); 
+      data_cho = cell2mat(cho(:,1)); PMR_cho = data_cho(:,4); BMR_cho = data_cho(:,3); T_cho = data_cho(:,2); W_cho = data_cho(:,1); 
       for i=1:n_cho
         FMR_cho(i) = 15.55 * get_FMR(nm_cho{i}, W_cho(i), T_cho(i), 1); % ml O2/min
       end
       %
       nm_act = act(:,4); n_act = length(nm_act); FMR_act = zeros(n_act,1); 
-      data_act = cell2mat(act(:,1)); PMR_act = data_act(:,4); SMR_act = data_act(:,3); T_act = data_act(:,2); W_act = data_act(:,1); 
+      data_act = cell2mat(act(:,1)); PMR_act = data_act(:,4); BMR_act = data_act(:,3); T_act = data_act(:,2); W_act = data_act(:,1); 
       for i=1:n_act
         FMR_act(i) = 15.55 * get_FMR(nm_act{i}, W_act(i), T_act(i), 1); % ml O2/min
       end
       %
       nm_amp = amp(:,4); n_amp = length(nm_amp); FMR_amp = zeros(n_amp,1); 
-      data_amp = cell2mat(amp(:,1)); PMR_amp = data_amp(:,4); SMR_amp = data_amp(:,3); T_amp = data_amp(:,2); W_amp = data_amp(:,1); 
+      data_amp = cell2mat(amp(:,1)); PMR_amp = data_amp(:,4); BMR_amp = data_amp(:,3); T_amp = data_amp(:,2); W_amp = data_amp(:,1); 
       for i=1:n_amp
         FMR_amp(i) = 15.55 * get_FMR(nm_amp{i}, W_amp(i), T_amp(i), 1); % ml O2/min
       end
       %
       nm_squ = squ(:,4); n_squ = length(nm_squ); FMR_squ = zeros(n_squ,1); 
-      data_squ = cell2mat(squ(:,1)); PMR_squ = data_squ(:,4); SMR_squ = data_squ(:,3); T_squ = data_squ(:,2); W_squ = data_squ(:,1); 
+      data_squ = cell2mat(squ(:,1)); PMR_squ = data_squ(:,4); BMR_squ = data_squ(:,3); T_squ = data_squ(:,2); W_squ = data_squ(:,1); 
       for i=1:n_squ
         FMR_squ(i) = 15.55 * get_FMR(nm_squ{i}, W_squ(i), T_squ(i), 1); % ml O2/min
       end
       %
       nm_ave = ave(:,4); n_ave = length(nm_ave); FMR_ave = zeros(n_ave,1);
-      data_ave = cell2mat(ave(:,1)); PMR_ave = data_ave(:,4); SMR_ave = data_ave(:,3); T_ave = data_ave(:,2); W_ave = data_ave(:,1); 
+      data_ave = cell2mat(ave(:,1)); PMR_ave = data_ave(:,4); BMR_ave = data_ave(:,3); T_ave = data_ave(:,2); W_ave = data_ave(:,1); 
       for i=1:n_ave
         FMR_ave(i) = 15.55 * get_FMR(nm_ave{i}, W_ave(i), T_ave(i), 1); % ml O2/min
       end
       %
       nm_mar = mar(:,4); n_mar = length(nm_mar); FMR_mar = zeros(n_mar,1);
-      data_mar = cell2mat(mar(:,1)); PMR_mar = data_mar(:,4); SMR_mar = data_mar(:,3); T_mar = data_mar(:,2); W_mar = data_mar(:,1); 
+      data_mar = cell2mat(mar(:,1)); PMR_mar = data_mar(:,4); BMR_mar = data_mar(:,3); T_mar = data_mar(:,2); W_mar = data_mar(:,1); 
       for i=1:n_mar
         FMR_mar(i) = 15.55 * get_FMR(nm_mar{i}, W_mar(i), T_mar(i), 1); % ml O2/min
       end
       %
       nm_pla = pla(:,4); n_pla = length(nm_pla); FMR_pla = zeros(n_pla,1);
-      data_pla = cell2mat(pla(:,1)); PMR_pla = data_pla(:,4); SMR_pla = data_pla(:,3); T_pla = data_pla(:,2); W_pla = data_pla(:,1); 
+      data_pla = cell2mat(pla(:,1)); PMR_pla = data_pla(:,4); BMR_pla = data_pla(:,3); T_pla = data_pla(:,2); W_pla = data_pla(:,1); 
       for i=1:n_pla
         FMR_pla(i) = 15.55 * get_FMR(nm_pla{i}, W_pla(i), T_pla(i), 1); % ml O2/min
       end
       cd(WD0); % return to original directory
 
       Hfig = figure;
-      plot([-3;4], [-3;4], 'k', 'linewidth',2); % equality line
+      plot([-4;4], [-4;4], 'k', 'linewidth',2); % equality line
       hold on
-      plot(log10(FMR_cho), log10(SMR_cho), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[0 0 1], 'MarkerFaceColor',[0 1 1])
-      plot(log10(FMR_act), log10(SMR_act), '.b', 'MarkerSize',20)
-      plot(log10(FMR_amp), log10(SMR_amp), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[1 0 1], 'MarkerFaceColor',[0 1 1])
-      plot(log10(FMR_squ), log10(SMR_squ), '.m', 'MarkerSize',20)
-      plot(log10(FMR_ave), log10(SMR_ave), '.r', 'MarkerSize',20)
-      plot(log10(FMR_mar), log10(SMR_mar), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[1 .5 .5], 'MarkerFaceColor',[0 0 0])
-      plot(log10(FMR_pla), log10(SMR_pla), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[1 .5 .5], 'MarkerFaceColor',[1 .5 .5])
+      plot(log10(FMR_cho), log10(BMR_cho), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[0 0 1], 'MarkerFaceColor',[0 1 1])
+      plot(log10(FMR_act), log10(BMR_act), '.b', 'MarkerSize',20)
+      plot(log10(FMR_amp), log10(BMR_amp), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[1 0 1], 'MarkerFaceColor',[0 1 1])
+      plot(log10(FMR_squ), log10(BMR_squ), '.m', 'MarkerSize',20)
+      plot(log10(FMR_ave), log10(BMR_ave), '.r', 'MarkerSize',20)
+      plot(log10(FMR_mar), log10(BMR_mar), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[1 .5 .5], 'MarkerFaceColor',[0 0 0])
+      plot(log10(FMR_pla), log10(BMR_pla), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[1 .5 .5], 'MarkerFaceColor',[1 .5 .5])
       xlabel('predicted _{10}log FMR, ml O2/min')
-      ylabel('measured _{10}log SMR, ml O2/min')
+      ylabel('measured _{10}log BMR, ml O2/min')
  
       % set species names behind markers in plot figure
       h = datacursormode(Hfig); entries_txt = [cho(:,4);act(:,4);amp(:,4);squ(:,4);ave(:,4);mar(:,4);pla(:,4)]; 
-      data = log10([[FMR_cho;FMR_act;FMR_amp;FMR_squ;FMR_ave;FMR_mar;FMR_pla],[SMR_cho;SMR_act;SMR_amp;SMR_squ;SMR_ave;SMR_mar;SMR_pla]]);
+      data = log10([[FMR_cho;FMR_act;FMR_amp;FMR_squ;FMR_ave;FMR_mar;FMR_pla],[BMR_cho;BMR_act;BMR_amp;BMR_squ;BMR_ave;BMR_mar;BMR_pla]]);
       for i=1:length(entries_txt); entries_txt{i} = strrep(entries_txt{i}, '_' , ' '); end
       h.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries_txt, data);
       datacursormode on % mouse click on plot
 
       %prt_tab({nm_act, W_act, T_act, FMR_act, SMR_act, PMR_act},{'species', 'weight, g', 'T, C', 'FMR, ml O2/min', 'SMR, ml O2/min', 'PMR, ml O2/min'}, 'act')
-      saveas(gcf,'FMR_SMR.fig')
-      saveas(gcf,'FMR_SMR.png')
+      saveas(gcf,'FMR_BMR.fig')
+      saveas(gcf,'FMR_BMR.png')
 
-    case 3  % ss_PMR/FMR
+    case 3  % Fig 6b: ss_PMR/FMR; this case takes a while to run 
       WD0 = pwd; % store original directory
       nm_cho = cho(:,4); n_cho = length(nm_cho); FMR_cho = zeros(n_cho,1); ss_cho = read_stat(nm_cho, 's_s');
-      data_cho = cell2mat(cho(:,1)); PMR_cho = data_cho(:,4); SMR_cho = data_cho(:,3); T_cho = data_cho(:,2); W_cho = data_cho(:,1); 
+      data_cho = cell2mat(cho(:,1)); PMR_cho = data_cho(:,4); BMR_cho = data_cho(:,3); T_cho = data_cho(:,2); W_cho = data_cho(:,1); 
       for i=1:n_cho
         FMR_cho(i) = 15.55 * get_FMR(nm_cho{i}, W_cho(i), T_cho(i), 1); % ml O2/min
       end
       %
       nm_act = act(:,4); n_act = length(nm_act); FMR_act = zeros(n_act,1); ss_act = read_stat(nm_act, 's_s');
-      data_act = cell2mat(act(:,1)); PMR_act = data_act(:,4); SMR_act = data_act(:,3); T_act = data_act(:,2); W_act = data_act(:,1); 
+      data_act = cell2mat(act(:,1)); PMR_act = data_act(:,4); BMR_act = data_act(:,3); T_act = data_act(:,2); W_act = data_act(:,1); 
       for i=1:n_act
         FMR_act(i) = 15.55 * get_FMR(nm_act{i}, W_act(i), T_act(i), 1); % ml O2/min
       end
       %
       nm_amp = amp(:,4); n_amp = length(nm_amp); FMR_amp = zeros(n_amp,1); ss_amp = read_stat(nm_amp, 's_s');
-      data_amp = cell2mat(amp(:,1)); PMR_amp = data_amp(:,4); SMR_amp = data_amp(:,3); T_amp = data_amp(:,2); W_amp = data_amp(:,1); 
+      data_amp = cell2mat(amp(:,1)); PMR_amp = data_amp(:,4); BMR_amp = data_amp(:,3); T_amp = data_amp(:,2); W_amp = data_amp(:,1); 
       for i=1:n_amp
         FMR_amp(i) = 15.55 * get_FMR(nm_amp{i}, W_amp(i), T_amp(i), 1); % ml O2/min
       end
       %
       nm_squ = squ(:,4); n_squ = length(nm_squ); FMR_squ = zeros(n_squ,1); ss_squ = read_stat(nm_squ, 's_s');
-      data_squ = cell2mat(squ(:,1)); PMR_squ = data_squ(:,4); SMR_squ = data_squ(:,3); T_squ = data_squ(:,2); W_squ = data_squ(:,1); 
+      data_squ = cell2mat(squ(:,1)); PMR_squ = data_squ(:,4); BMR_squ = data_squ(:,3); T_squ = data_squ(:,2); W_squ = data_squ(:,1); 
       for i=1:n_squ
         FMR_squ(i) = 15.55 * get_FMR(nm_squ{i}, W_squ(i), T_squ(i), 1); % ml O2/min
       end
       %
       nm_ave = ave(:,4); n_ave = length(nm_ave); FMR_ave = zeros(n_ave,1); ss_ave = read_stat(nm_ave, 's_s');
-      data_ave = cell2mat(ave(:,1)); PMR_ave = data_ave(:,4); SMR_ave = data_ave(:,3); T_ave = data_ave(:,2); W_ave = data_ave(:,1); 
+      data_ave = cell2mat(ave(:,1)); PMR_ave = data_ave(:,4); BMR_ave = data_ave(:,3); T_ave = data_ave(:,2); W_ave = data_ave(:,1); 
       for i=1:n_ave
         FMR_ave(i) = 15.55 * get_FMR(nm_ave{i}, W_ave(i), T_ave(i), 1); % ml O2/min
       end
       %
       nm_mar = mar(:,4); n_mar = length(nm_mar); FMR_mar = zeros(n_mar,1); ss_mar = read_stat(nm_mar, 's_s');
-      data_mar = cell2mat(mar(:,1)); PMR_mar = data_mar(:,4); SMR_mar = data_mar(:,3); T_mar = data_mar(:,2); W_mar = data_mar(:,1); 
+      data_mar = cell2mat(mar(:,1)); PMR_mar = data_mar(:,4); BMR_mar = data_mar(:,3); T_mar = data_mar(:,2); W_mar = data_mar(:,1); 
       for i=1:n_mar
         FMR_mar(i) = 15.55 * get_FMR(nm_mar{i}, W_mar(i), T_mar(i), 1); % ml O2/min
       end
       %
       nm_pla = pla(:,4); n_pla = length(nm_pla); FMR_pla = zeros(n_pla,1); ss_pla = read_stat(nm_pla, 's_s');
-      data_pla = cell2mat(pla(:,1)); PMR_pla = data_pla(:,4); SMR_pla = data_pla(:,3); T_pla = data_pla(:,2); W_pla = data_pla(:,1); 
+      data_pla = cell2mat(pla(:,1)); PMR_pla = data_pla(:,4); BMR_pla = data_pla(:,3); T_pla = data_pla(:,2); W_pla = data_pla(:,1); 
       for i=1:n_pla
         FMR_pla(i) = 15.55 * get_FMR(nm_pla{i}, W_pla(i), T_pla(i), 1); % ml O2/min
       end
@@ -733,7 +733,7 @@ for c=1:length(fig)
       plot(ss_mar, log10(PMR_mar./FMR_mar), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[1 .5 .5], 'MarkerFaceColor',[0 0 0])
       plot(ss_pla, log10(PMR_pla./FMR_pla), 'o', 'MarkerSize',4, 'LineWidth',2, 'MarkerEdgeColor',[1 .5 .5], 'MarkerFaceColor',[1 .5 .5])
       xlabel('supply stress s_s, -')
-      xlim([0 4/27])
+      xlim([0 4/27]); ylim([-1 2.5])
       ylabel('_{10}log measured PMR/ predicted FMR, -')
        
       % set species names behind markers in plot figure
@@ -747,7 +747,7 @@ for c=1:length(fig)
       saveas(gcf,'ss_PFMR.png')
       %prt_tab({entries_txt, data},{'species', 's_s, -', 'PMR/FMR, -'}, 'PMR/FMR')
        
-    case 4 % kap_ss_kapRA: kapRA = pRi/ pAi
+    case 4 % Fig 1: kap_ss_kapRA: kapRA = pRi/ pAi
 
       shstat_options('default');
       shstat_options('x_transform', 'none');
@@ -790,9 +790,9 @@ for c=1:length(fig)
       saveas(gcf,'kap_ss_kapRA_invert.png')
       saveas(Hleg_invert,'legend_invert.png')
        
-    case 5 % kap, s_s, kapRA
+    case 5 % Fig 2 & 8: kap, s_s, kapRA
         
-      figure % kap 
+      figure % Fig 2a: kap 
       kap = read_allStat('kap');
       kap_med = median(kap); kap_min = min(kap);  m = mean(kap); v = mean(kap.^2) - mean(kap)^2;
       surv_kap = surv(kap); 
@@ -810,7 +810,7 @@ for c=1:length(fig)
       %title([num2str(length(kap)),' @ ',datestr(datenum(date),'yyyy/mm/dd')])
       saveas(gca,'kap.png')
 
-      figure % s_s
+      figure % Fig 2b: s_s
       ss = read_allStat('s_s'); ss_max = 4/27;
       ss_med = median(ss); ss_min = min(ss);  m = mean(ss); v = mean(ss.^2) - mean(ss)^2;
       surv_ss = surv(ss); 
@@ -827,7 +827,7 @@ for c=1:length(fig)
       ylabel('survivor function')
       saveas(gca,'ss.png')
 
-      figure % kapRA
+      figure % Fig 2c: kapRA
       kapRA = get_kapRA(read_allStat({'p_Am','p_M','k_J','E_Hp','s_M','kap','L_i'})); kapRA = kapRA(:,1); 
       kapRA_med = median(kapRA); kapRA_min = min(kapRA);  m = mean(kapRA); v = mean(kapRA.^2) - mean(kapRA)^2;
       surv_kapRA = surv(kapRA); 
@@ -865,7 +865,7 @@ for c=1:length(fig)
       ylabel('survivor function')
       saveas(gca,'pAi.png')
 
-      figure % p_R
+      figure % Fig 8a: p_R
       pRcT = read_allStat('p_Ri', 'c_T'); pR = pRcT(:,1) ./ pRcT(:,2);
       pR = pR(pR>0); % remove entreis for wich pR == 0 (some insects) 
       surv_pR = surv(pR); 
@@ -887,7 +887,7 @@ for c=1:length(fig)
       ylabel('survivor function')
       saveas(gca,'pRi.png')
 
-      figure % p_M
+      figure % Fig 8b: p_M
       pMLi = read_allStat('p_M', 'L_i'); pM = pMLi(:,1) .* pMLi(:,2).^3;
       pM_med = median(pM); pM_min = min(pM); pM_max = max(pM);
       surv_pM = surv(pM); 
@@ -908,7 +908,7 @@ for c=1:length(fig)
       ylabel('survivor function')
       saveas(gca,'pMi.png')
 
-      figure % p_J 
+      figure % Fig 8c: p_J 
       vars = read_allStat('k_J', 'E_Hp'); pJ = vars(:,1) .* vars(:,2);
       pJ_med = median(pJ); pJ_min = min(pJ); pJ_max = max(pJ); 
       surv_pJ = surv(pJ); 
@@ -929,8 +929,10 @@ for c=1:length(fig)
       ylabel('survivor function')
       saveas(gca,'pJi.png')
 
-    case 6 % simulation of standard DEB model with stochastic searching
+    case 6 % Fig 7: simulation of standard DEB model with stochastic searching
       shtraject % description see DEBtool_M/animal/shtraject
+      % the parameters are set in this function and all can be changed
+      % type "edit shtraject" (without the quotes) in the Matlab window
       saveas(Hfig_O,'organics.png')
       saveas(Hfig_M,'minerals.png')
       
@@ -976,11 +978,11 @@ for c=1:length(fig)
       xlabel('spec ultimate respiration mmol O2/d.g')
       ylabel('standard dev spec ultimate resp, mmol O_2/d.g')
       
-    case 8 % FMR_BMR for mammals
+    case 8 % Fig 4a: FMR_BMR for mammals
       % data from GenoIsle2018
       GenoIsle2018 % the plotting is in this script
  
-    case 9 % FMR_BMR for birds
+    case 9 % Fig 4b: FMR_BMR for birds
       % data from GavrGolu2023
       GavrGolu2023 % the plotting is in this script
 
@@ -1048,7 +1050,7 @@ for c=1:length(fig)
       ylabel('_{10}log spec O_2 consumption J_O^\infty/ W_w^\infty, mol/d.g')
       saveas(gca,'ss_jOi.png')
       
-    case 12 % care-corrected s_s
+    case 12 % Fig 9: care-corrected s_s
       shstat_options('default');
       shstat_options('x_transform', 'none');
       shstat_options('y_transform', 'none');
