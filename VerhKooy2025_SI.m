@@ -1016,7 +1016,7 @@ for c=1:length(fig)
       ylabel('survivor function')
       %saveas(gca,'pJi.png')
 
-    case 12 % Fig 10: care-corrected s_s
+    case 12 % Fig 10: ss_kap, yes & no care-corrected for birds
       shstat_options('default');
       shstat_options('x_transform', 'none');
       shstat_options('y_transform', 'none');
@@ -1027,7 +1027,7 @@ for c=1:length(fig)
       s_s = p_Ji.*p_Si.^2./p_Ai.^3; % -, supply stress
       
       [Hfig, Hleg] = shstat([s_s, kap], legend_aves, datestr(datenum(date),'yyyy/mm/dd')); % set title, output handle for adding items    
-      figure(Hfig) % care-corrected  s_s-kap
+      figure(Hfig) % ss-kap
       xlabel('supply stress, s_s, -')
       ylabel('allocation fraction to soma, \kappa, -')
       text(0.01,0.5,'\kappa_J^M = 0')
@@ -1044,7 +1044,7 @@ for c=1:length(fig)
       s_scor = (p_Ji + kap_JM * p_Si)*(1-kap_JM)^2.*p_Si.^2./p_Ai.^3; % -, care-corrected supply stress
       [Hfig, Hleg] = shstat([s_scor, (1 - kap_JM)*kap], legend_aves, datestr(datenum(date),'yyyy/mm/dd')); % set title, output handle for adding items
     
-      figure(Hfig) % care-corrected s_s-care-corrected kap
+      figure(Hfig) % care-corrected ss_care-corrected kap
       xlabel('care-corrected supply stress, s_s^c, -')
       ylabel('corr alloc frac to soma, (1 - \kappa_J^M) \kappa, -')
       text(0.01,0.5,['\kappa_J^M = ', num2str(kap_JM)])
@@ -1062,7 +1062,7 @@ for c=1:length(fig)
       p_Ji = data(:,1); p_Si = data(:,2); p_Ai = data(:,3); kap = data(:,4);
       s_s_ave = p_Ji.*p_Si.^2./p_Ai.^3; % -, supply stress
 
-      Hfig = figure; % ss-FAS for birds
+      Hfig = figure; % ss_FAS for birds
       plot([0;4/27],[1/2;3/2],'-', 'Color',[.85 .85 .85], 'LineWidth',15) % grey "model" prediction
       hold on
       plot(s_s_ave, log10(FAS_ave), '.r', 'MarkerSize',20)
@@ -1080,7 +1080,7 @@ for c=1:length(fig)
       %saveas(gcf,'ss_FAS_ave.fig')
       %saveas(gcf,'ss_FAS_ave.png')
 
-      Hfig = figure; % care-corrected ss-FAS for birds
+      Hfig = figure; % care-corrected ss-_FAS for birds
       plot([0;4/27],[1/2;3/2],'-', 'Color',[.85 .85 .85], 'LineWidth',15) % grey "model" prediction
       hold on
       s_scor_ave = (p_Ji + kap_JM * p_Si)*(1-kap_JM)^2.*p_Si.^2./p_Ai.^3; % -, care-corrected supply stress
@@ -1127,7 +1127,19 @@ for c=1:length(fig)
       ylabel('_{10}log spec O_2 consumption J_O^\infty/ W_w^\infty, mol/d.g')
       %saveas(gca,'ss_jOi.png')
       
-    case 15 % GavrGolu2023: compute scaling exponent wrongly and do strange claims on origin of endothermy
+    case 15 % ss_am; life span is indendent of s_s
+      shstat_options('default');
+      shstat_options('x_transform', 'none');
+
+      acs = read_allStat({'a_m','c_T','s_s'}); s_s = acs(:,3); aT_m = acs(:,1) ./ acs(:,2);
+      [Hfig, Hleg] = shstat([s_s, log10(aT_m)], legend, datestr(datenum(date),'yyyy/mm/dd'));
+      
+      figure(Hfig)
+      xlabel('supply stress, s_s, -')
+      ylabel('_{10}log life span a_m, d')
+      %saveas(gca,'ss_am.png')
+
+    case 16 % GavrGolu2023: compute scaling exponent wrongly and do strange claims on origin of endothermy
         
       legend_GavrGolu2023 = {...        % scaling exponent according to GavrGolu2023
         {'o', 5, 2, [1 .5 .5], [1 1 1]}, 'Monotremata'   % 0.26
@@ -1718,4 +1730,3 @@ end
 %   pages = {241–258},
 %   author = {P. C. Withers and G. G. Thompson and R. S. Seymour}
 % }
-
