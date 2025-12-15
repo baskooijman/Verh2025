@@ -50,7 +50,7 @@ end
 
   legend_aves = {...
    %{'o', 8, 3, [0 0 0], [0 0 0]}, 'Crocodilia'
-    {'o', 8, 3, [0 0 1], [0 0 0]}, 'Paleognathae'
+    {'o', 8, 3, [0 0 0], [0 0 0]}, 'Paleognathae'
     {'o', 8, 3, [0 0 1], [0 0 1]}, 'Galloanserae'
     % Neoaves: edge magenta and red
     {'o', 8, 3, [1 0 1], [0 0 0]}, 'Mirandornithes'
@@ -1052,7 +1052,7 @@ for c=1:length(fig)
       plot(ss, kkap, 'k', 'Linewidth', 2)
       xlim([0 4/27]); ylim([0 1]);
       %saveas(gca,'ssc_kap.png')
-      
+            
       nm = select; nm_ave = ave(:,4); n_ave = length(nm_ave); FMR_ave = NaN(n_ave,1);
       data_ave = cell2mat(ave(:,1)); PMR_ave = data_ave(:,4); T_ave = data_ave(:,2); W_ave = data_ave(:,1); 
       for i=1:n_ave
@@ -1098,7 +1098,7 @@ for c=1:length(fig)
       %saveas(gcf,'ssc_FAS_ave.fig')
       %saveas(gcf,'ssc_FAS_ave.png')
 
-    case 13 % Wwi_FAS
+    case 13 % Wwi_FAS; FAS is independent of max body weight
       figure
       data = cell2mat(pla(:,1)); FAS_pla = data(:,4)./data(:,3);
       Wwi_pla = read_stat(pla(:,4),'Wwi');
@@ -1115,7 +1115,7 @@ for c=1:length(fig)
       ylabel('_{10}log measured FAS, -')
       title(['Aves @ ', datestr(datenum(date),'yyyy/mm/dd')])
 
-    case 14 % ss_jOi
+    case 14 % ss_jOi; specific respiration is indendent of s_s
       shstat_options('default');
       shstat_options('x_transform', 'none');
 
@@ -1127,15 +1127,15 @@ for c=1:length(fig)
       ylabel('_{10}log spec O_2 consumption J_O^\infty/ W_w^\infty, mol/d.g')
       %saveas(gca,'ss_jOi.png')
       
-    case 15 % GavrGolu2023
+    case 15 % GavrGolu2023: compute scaling exponent wrongly and do strange claims on origin of endothermy
         
-      legend_GavrGolu2023 = {...
+      legend_GavrGolu2023 = {...        % scaling exponent according to GavrGolu2023
         {'o', 5, 2, [1 .5 .5], [1 1 1]}, 'Monotremata'   % 0.26
         {'o', 5, 2, [1 .5 .5], [0 0 0]}, 'Marsupialia'   % 0.44
-        {'o', 5, 2, [1 .5 .5], [1 .5 .5]}, 'Placentalia'   % 0.57
-        {'o', 5, 2, [1 0 0], [0 0 0]}, 'Paleognathae'  % 0.53
-        {'o', 5, 2, [1 0 0], [1 1 1]}, 'Passeriformes' % 1.00
-        {'o', 5, 2, [1 0 0], [1 0 0]}, 'Neognathae'    % 0.75  Neognathae - Passeriformes
+        {'o', 5, 2, [1 .5 .5], [1 .5 .5]}, 'Placentalia' % 0.57
+        {'o', 5, 2, [1 0 0], [0 0 0]}, 'Paleognathae'    % 0.53
+        {'o', 5, 2, [1 0 0], [1 1 1]}, 'Passeriformes'   % 1.00
+        {'o', 5, 2, [1 0 0], [1 0 0]}, 'Neognathae'      % 0.75  Neognathae - Passeriformes
       };
 
       shstat_options('default');
