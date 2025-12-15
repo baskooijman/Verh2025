@@ -279,7 +279,7 @@ ave = { ...  % Aves ; m(g) Tb(C) BMR(ml O2/min) PMR (ml O2/min), PMRmethod; %x m
     [   850.3 37.4   9.19   52.08]  'Cold',     'HindBaud1993', 'Porphyrio_martinica' 
     % Apodiformes
     [     5.7 40.7   NaN     5]     'Loco.flyActive', 'BergHart1972', 'Chionomesa_fimbriata' % PMR 43 ml/h.g, omit BMR not measured; values and FAS of 14 reported are based on Lasi's BMR values for other species and MMR may not be max
-    [     3.3 34     0.198   1.815] 'Loco.fly', 'Lasi1963',     'Archilochus_alexandri' % PMR 33 ml/h.g SMR 3.6 ml/h.g
+    [     3.3 34     0.198   NaN] 'Loco.fly', 'Lasi1963',     'Archilochus_alexandri' % PMR 33 ml/h.g SMR 3.6 ml/h.g
     [     4.1 39     0.232   9.157] 'Loco.fly', 'Lasi1963',     'Selasphorus_rufus' % PMR 124 ml/h.g SMR 3.4 ml/h.g
     [     3.2 36.2   0.192   7.147] 'Loco.fly', 'Lasi1963',     'Selasphorus_sasin' % PMR 134 ml/h.g SMR 3.6 ml/h.g
     [     2.3 36     0.153   2.542] 'Loco.fly', 'Lasi1963',     'Selasphorus_calliope' % PMR 66.3 ml/h.g SMR 4.0 ml/h.g
