@@ -150,7 +150,7 @@ PMR.method = {'Loco.land','Loco.water','Loco.fly', 'Loco.flyburst', 'Turpor.arou
    [  5    20  0.0027	0.0125] 'Loco.land', 'NespSola2017', 'Osteopilus_septentrionalis' % 0.0018;0.0182 W
    [  5.7  20  0.0057	0.0499] 'Loco.land', 'NespSola2017', 'Agalychnis_callidryas' % 0.0019;0.0167 W
    [ 15.1  20  0.0081	0.1]    'Loco.land', 'NespSola2017', 'Smilisca_fodiens' % 0.0027;0.0335 W
-   [  5.1  27	0.0113	0.0866] 'Loco.land', 'NespSola2017', 'Dryophytes_cinereus' %0.0038;0.029 W
+   [  5.1  27	0.0113	0.0866] 'Loco.land', 'NespSola2017', 'Dryophytes_cinereus' % 0.0038;0.029 W
    [  3.4  20	0.0054	0.0472] 'Loco.land', 'NespSola2017', 'Dryophytes_arenicolor' %0.0018;0.0158 W
    [  5.47 20	0.0116	0.0896] 'Loco.land', 'NespSola2017', 'Dryophytes_chrysoscelis' %0.0039;0.03 W
    [ 13.85 29	0.0221	0.2875] 'Loco.land', 'NespSola2017', 'Dryophytes_gratiosa' %0.0074;0.0963 W
@@ -178,13 +178,13 @@ PMR.method = {'Loco.land','Loco.water','Loco.fly', 'Loco.flyburst', 'Turpor.arou
    [  3.47 14  0.0021	0.0066] 'Loco.land', 'NespSola2017', 'Ensatina_eschscholtzii' % 0.0007;0.0022 W
    [  4.69 15  0.0024	0.0104] 'Loco.land', 'NespSola2017', 'Plethodon_glutinosus' % 0.0008;0.0035 W
    [ 13.13 15	0.0033	0.0128] 'Loco.land', 'NespSola2017', 'Isthmura_bellii' % 0.0011;0.0043 W
-   [  5.49 23	0.0024	0.063]  'Loco.land', 'NespSola2017', 'Aneides_lugubris' %0.0008;0.0211 W    
-   [  0.78 15  0.0006	0.0024] 'Loco.land', 'NespSola2017', 'Batrachoseps_attenuatus' %0.0002;0.0008 W
-   [  0.61 25	0.0003	0.0018] 'Loco.land', 'NespSola2017', 'Bolitoglossa_occidentalis' %0.0001;0.0006 W
+   [  5.49 23	0.0024	0.063]  'Loco.land', 'NespSola2017', 'Aneides_lugubris' % 0.0008;0.0211 W    
+   [  0.78 15  0.0006	0.0024] 'Loco.land', 'NespSola2017', 'Batrachoseps_attenuatus' % 0.0002;0.0008 W
+   [  0.61 25	0.0003	0.0018] 'Loco.land', 'NespSola2017', 'Bolitoglossa_occidentalis' % 0.0001;0.0006 W
    [  1.67 13  0.0009	0.0069] 'Loco.land', 'NespSola2017', 'Bolitoglossa_subpalmata' % 0.0003;0.0023 W
    [ 20.05 15  0.0072	0.0227] 'Loco.land', 'NespSola2017', 'Desmognathus_quadramaculatus' % 0.0016;0.0076 W
    [  1.41 15  0.0009	0.0048] 'Loco.land', 'NespSola2017', 'Eurycea_longicauda' % 0.0003;0.0016 W
-   [  7.34 15	0.003	0.0119] 'Loco.land', 'NespSola2017', 'Gyrinophilus_porphyriticus' %0.001;0.0040 W
+   [  7.34 15	0.003	0.0119] 'Loco.land', 'NespSola2017', 'Gyrinophilus_porphyriticus' % 0.001;0.0040 W
    [  1.83 15	0.0015	0.0045] 'Loco.land', 'NespSola2017', 'Plethodon_jordani' % 0.0005;0.0015 W
    [  2.35 15	0.0015	0.0042] 'Loco.land', 'NespSola2017', 'Pseudoeurycea_gadovii' % 0.0005;0.0014 W
    [  4.55 15	0.0018	0.0075] 'Loco.land', 'NespSola2017', 'Pseudoeurycea_smithi' % 0.0006;0.0025 W
